@@ -1,14 +1,7 @@
 github_users:
-  - torvalds
-  - alshedivat
-
-repo_description_lines_max: 2
+  - zhaozewang
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - zhaozewang/NN4Neurosci
+  - digital-biopsy/GBM_measurement_pipeline
+  - RickyWang1020/Netflix_Searching-Recommendation_Web

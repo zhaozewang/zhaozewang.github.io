@@ -1,8 +1,8 @@
 ---
-layout: post
-date: 2015-10-22 15:59:00-0400
+layout: page
+date: 2023-12-29 03:00:00
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+[NN4Neurosim](https://nn4n.org) released
