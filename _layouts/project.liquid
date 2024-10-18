@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% if page._styles %}
+  <!-- Custom styles for this project page -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+  {% endif %}
+</head>
+<body>
+  <div class="post">
+    <header class="post-header">
+      <div class="post-title">{{ page.title }}</div>
+      <p class="post-description">{{ page.description }}</p>
+
+      <!-- Authors section -->
+      <div class="authors">
+        {% for author in page.authors %}
+            <span class="author">
+            {% if author.url %}
+              <a href="{{ author.url }}">{{ author.name }}</a>
+            {% else %}
+              {{ author.name }}
+            {% endif %}
+            </span>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Affiliations section -->
+      <div class="affiliations">
+        {% for affiliation in page.affiliations %}
+          <span class="affiliation">
+            <a href="{{ affiliation.url }}">{{ affiliation.name }}</a>
+          </span>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </div>
+    </header>
+
+    <!-- Buttons section -->
+    <div class="buttons">
+      {% if page.paper_link %}
+        <a class="button" href="{{ page.paper_link }}" target="_blank">Paper</a>
+      {% endif %}
+      {% if page.arxiv_link %}
+        <a class="button" href="{{ page.arxiv_link }}" target="_blank">arXiv</a>
+      {% endif %}
+      {% if page.video_link %}
+        <a class="button" href="{{ page.video_link }}" target="_blank">Video</a>
+      {% endif %}
+      {% if page.code_link %}
+        <a class="button" href="{{ page.code_link }}" target="_blank">Code</a>
+      {% endif %}
+      {% if page.data_link %}
+        <a class="button" href="{{ page.data_link }}" target="_blank">Data</a>
+      {% endif %}
+    </div>
+
+    <!-- Image Grid -->
+    <div class="grid-container">
+      {% if page.capture_image %}
+      <div class="grid-item">
+        <img src="{{ page.capture_image }}" alt="Capture Process">
+        <div class="caption">(a) Capture Process</div>
+      </div>
+      {% endif %}
+      {% if page.input_image %}
+      <div class="grid-item">
+        <img src="{{ page.input_image }}" alt="Input">
+        <div class="caption">(b) Input</div>
+      </div>
+      {% endif %}
+      {% if page.nerfie_image %}
+      <div class="grid-item">
+        <img src="{{ page.nerfie_image }}" alt="Nerfie">
+        <div class="caption">(c) Nerfie</div>
+      </div>
+      {% endif %}
+      {% if page.depth_image %}
+      <div class="grid-item">
+        <img src="{{ page.depth_image }}" alt="Nerfie Depth">
+        <div class="caption">(d) Nerfie Depth</div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Main content section (Markdown content) -->
+    <article>
+      {{ content }}
+    </article>
+
+    {% if page.related_publications %}
+      <h2>References</h2>
+      <div class="publications">
+        {% bibliography --cited_in_order %}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
