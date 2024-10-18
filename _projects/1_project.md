@@ -33,4 +33,4 @@ Immense thanks to [Dr. Christopher J. Cueva](https://www.metaconscious.org/autho
 
 #### License
 
-This project is licensed under the terms of the MIT license. See the [LICENSE](https://opensource.mit.edu/license) file for details.
+This project is licensed under the terms of the MIT license.
