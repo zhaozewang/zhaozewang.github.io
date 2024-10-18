@@ -21,5 +21,6 @@ Glomerular podocyte foot process effacement is one of the characteristics indica
 The implementation of this pipeline is available on [GitHub](https://github.com/digital-biopsy/GBM_measurement_pipeline).
 
 Abstract and results can be found in the following links (\*: equal contribution):
+
 1. BU Bioengineering Senior Thesis Handbook 2022 [[link](https://www.bu.edu/eng/files/2022/07/2022-BME-SDP-book-6E2.pdf)].
 2. Aksel Laudon\*, Connor Kim\*, Yingzhe Qian\*, Zhaoze Wang\*, Ye Qin\*, Vijaya B. Kolachalama, Joel M. Henderson, and Weining Lu. 2022. Computational Assessment of Glomerular Basement Membrane (GBM) Width and Podocyte Foot Process Width in An Animal Model of Podocytopathy. ASN Kidney Week Abstract. [[link](https://www.asn-online.org/education/kidneyweek/2022/program-abstract.aspx?controlId=3766852)].
