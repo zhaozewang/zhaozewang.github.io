@@ -101,7 +101,9 @@ _styles: >
 The vertebrate hippocampus is believed to use recurrent connectivity in area CA3 to support episodic memory recall from partial cues. This brain area also contains place cells, whose location-selective firing fields implement maps supporting spatial memory. Here we show that place cells emerge in networks trained to remember temporally continuous sensory episodes. We model CA3 as a recurrent autoencoder that recalls and reconstructs sensory experiences from noisy and partially occluded observations by agents traversing simulated arenas. The agents move in realistic trajectories modeled from rodents and environments are modeled as continuously varying, high-dimensional, sensory experience maps (spatially smoothed Gaussian random fields). Training our autoencoder to accurately pattern-complete and reconstruct sensory experiences with a constraint on total activity causes spatially localized firing fields, i.e., place cells, to emerge in the encoding layer.
 
 ## More Details
+
 ### An Recurrent Autoencoder Model of Episodic Memory
+
 <div class="row" align="center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/projects/episodic_mem_RAE.png" title="example image" class="img-fluid rounded" %}
@@ -109,6 +111,7 @@ The vertebrate hippocampus is believed to use recurrent connectivity in area CA3
 </div>
 
 ### Emergence of Place Fields
+
 <div class="row" align="center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/projects/RAE_results.png" title="example image" class="img-fluid rounded" %}
@@ -116,6 +119,7 @@ The vertebrate hippocampus is believed to use recurrent connectivity in area CA3
 </div>
 
 ### Place Fields Remapping
+
 <div class="row" align="center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/projects/remapping.png" title="example image" class="img-fluid rounded" %}
@@ -123,6 +127,7 @@ The vertebrate hippocampus is believed to use recurrent connectivity in area CA3
 </div>
 
 ### Robust Emergeance of Place Fields
+
 <div class="row" align="center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/projects/robust_emergence.png" title="example image" class="img-fluid rounded" %}
@@ -130,6 +135,7 @@ The vertebrate hippocampus is believed to use recurrent connectivity in area CA3
 </div>
 
 ## Ackowledgements
-We thank Dori Derdikman, Genela Morris, and Shai Abramson for many illuminating discussions in the course of this work, which was supported by NIH CRCNS grant 1R01MH125544-01 and in part by the NSF and DoD OUSD (R&E) under  Agreement PHY-2229929 (The NSF AI Institute for Artificial and Natural Intelligence).
-VB was supported in part by the Eastman Professorship at Balliol College, Oxford. 
+
+We thank Dori Derdikman, Genela Morris, and Shai Abramson for many illuminating discussions in the course of this work, which was supported by NIH CRCNS grant 1R01MH125544-01 and in part by the NSF and DoD OUSD (R&E) under Agreement PHY-2229929 (The NSF AI Institute for Artificial and Natural Intelligence).
+VB was supported in part by the Eastman Professorship at Balliol College, Oxford.
 We are also grateful to Pratik Chaudhari for his insightful suggestions on designing the RAE and analyzing its dynamics.
