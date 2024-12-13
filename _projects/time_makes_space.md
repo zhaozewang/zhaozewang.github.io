@@ -1,7 +1,7 @@
 ---
 layout: project
 importance: 4
-category: course
+category: none
 title: "Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences"
 # description: Some description.
 authors:
@@ -20,6 +20,10 @@ affiliations: "<sup>1</sup> Department of Computer and Information Science, <sup
 arxiv_link: "https://arxiv.org/abs/2408.05798"
 
 code_link: "https://github.com/zhaozewang/time_makes_space"
+
+open_review_link: "https://openreview.net/forum?id=ioe66JeCMF"
+
+related_project_link: "https://neurips.cc/virtual/2024/poster/95187"
 
 citation: |
   @inproceedings{wang2024time,
@@ -64,7 +68,7 @@ _styles: >
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
     color: #fff;
-    background-color: #7697ad;
+    background-color: #5483e1;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -95,6 +99,9 @@ _styles: >
     max-height: 300px;
   }
 ---
+
+## TL;DR
+We modeled the hippocampal CA3 region as a recurrent autoencoder that learns to recall sensory episodes weakly modulated by spatial location, simulating how animals traverse and encode environments. This model naturally produced place-like firing patterns in the encoding layer, capturing key aspects of hippocampal spatial memory, such as remapping and representational stability. ​
 
 ## Abstract
 

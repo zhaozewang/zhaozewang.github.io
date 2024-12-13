@@ -49,11 +49,14 @@
           {% if page.arxiv_link %}
             <a class="button" href="{{ page.arxiv_link }}" target="_blank">arXiv</a>
           {% endif %}
-          {% if page.video_link %}
-            <a class="button" href="{{ page.video_link }}" target="_blank">Video</a>
+          {% if page.open_review_link %}
+            <a class="button" href="{{ page.open_review_link }}" target="_blank">OpenReview</a>
           {% endif %}
           {% if page.code_link %}
             <a class="button" href="{{ page.code_link }}" target="_blank">Code</a>
+          {% endif %}
+          {% if page.related_project_link %}
+            <a class="button" href="{{ page.related_project_link }}" target="_blank">Related</a>
           {% endif %}
           {% if page.data_link %}
             <a class="button" href="{{ page.data_link }}" target="_blank">Data</a>
