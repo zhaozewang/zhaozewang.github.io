@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Makes Space</title>
+    <link rel="stylesheet" href="../paper-template.css">
+</head>
+<body>
+    <div class="title">
+        Your Paper Title Here: A Comprehensive Study of Something Important
+    </div>
+
+    <div class="authors">
+        <a href="#">Author One</a><sup>1†</sup>, Author Two<sup>2†</sup>, <a href="#">Author Three</a><sup>3</sup>, <a href="#">Author Four</a><sup>3,4,5</sup>
+    </div>
+
+    <div class="equal-contribution">
+        <sup>†</sup> Equal contribution
+    </div>
+
+    <div class="affiliations">
+        <sup>1</sup> Department of Computer Science, University Name;<br>
+        <sup>2</sup> Department of Another Field, University Name;<br>
+        <sup>3</sup> Third Department, University Name;<br>
+        <sup>4</sup> Research Center, Another University;<br>
+        and <sup>5</sup> Institute Name
+    </div>
+
+    <div class="buttons">
+        <a href="#" class="button">arXiv</a>
+        <a href="#" class="button">OpenReview</a>
+        <a href="#" class="button">Code</a>
+        <a href="#" class="button">Related</a>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TL;DR</div>
+        <div class="section-content">
+            Brief summary of your work goes here. This should be a concise explanation of the main contribution and findings of your research. Keep it engaging and accessible to a broader audience.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Abstract</div>
+        <div class="section-content">
+            Your abstract goes here. This is a more detailed summary of your research problem, methodology, key findings, and implications. It should provide readers with a clear understanding of what your work contributes to the field and why it matters. The abstract is typically longer than the TL;DR but still concise and focused.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Acknowledgements</div>
+        <div class="section-content">
+            We thank [acknowledgements go here]. This work was supported by [funding sources]. We are grateful to [additional acknowledgements].
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Cite this Paper</div>
+        <div class="citation-container">
+            <div class="citation-box" id="citation-text">
+@inproceedings{yourpaper2024,<br>
+&nbsp;&nbsp;title={Your Paper Title Here},<br>
+&nbsp;&nbsp;author={Author One and Author Two and Author Three and Author Four},<br>
+&nbsp;&nbsp;booktitle={Conference Name},<br>
+&nbsp;&nbsp;year={2024}<br>
+}
+            </div>
+            <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            // Get the citation text without HTML tags
+            const citationText = `@inproceedings{yourpaper2024,
+  title={Your Paper Title Here},
+  author={Author One and Author Two and Author Three and Author Four},
+  booktitle={Conference Name},
+  year={2024}
+}`;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(citationText).then(function() {
+                // Change button text to "Copied!"
+                const button = document.getElementById('copy-button');
+                button.textContent = 'copied';
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        function resetCopyButton() {
+            const button = document.getElementById('copy-button');
+            button.textContent = 'copy';
+        }
+    </script>
+</body>
+</html> 
