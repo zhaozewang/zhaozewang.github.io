@@ -1,157 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Makes Space</title>
-    <link rel="stylesheet" href="../paper-template.css">
+---
+layout: project
+title: Time Makes Space - Zhaoze Wang
+citation: |
+  @inproceedings{wang2024time,
+    title={Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences},
+    author={Zhaoze Wang and Ronald W. Di. Tullio and Spencer Rooke and Vijay Balasubramanian},
+    booktitle={Proceedings of the 2024 Conference on Neural Information Processing Systems (NeurIPS)},
+    year={2024}
+  }
+---
 
-    <!-- Add MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-    <h1 class="title">
-        Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences
-    </h1>
+<h1 class="title">
+    Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences
+</h1>
 
-    <div class="authors">
-        <a class="link" href="https://zhaozewang.github.io/" target="_blank">Zhaoze Wang</a><sup>1†</sup>, 
-        &nbsp;Ronald W. Di Tullio<sup>2†</sup>, 
-        &nbsp;Spencer Rooke<sup>3</sup>, 
-        &nbsp;<a class="link" href="https://www.physics.upenn.edu/~vbalasub/Home.html" target="_blank">Vijay Balasubramanian</a><sup>3,4,5</sup>
+<div class="authors">
+    <a class="link" href="https://zhaozewang.github.io/" target="_blank">Zhaoze Wang</a><sup>1†</sup>,
+    &nbsp;Ronald W. Di Tullio<sup>2†</sup>,
+    &nbsp;Spencer Rooke<sup>3</sup>,
+    &nbsp;<a class="link" href="https://www.physics.upenn.edu/~vbalasub/Home.html" target="_blank">Vijay Balasubramanian</a><sup>3,4,5</sup>
+</div>
+
+<div class="equal-contribution">
+    <sup>†</sup> Equal contribution
+</div>
+<div class="affiliations">
+    <sup>1</sup> Department of Computer and Information Science,
+    &nbsp;&nbsp;<sup>2</sup> Neuroscience,
+    &nbsp;&nbsp;and <sup>3</sup> Physics, University of Pennsylvania;<br>
+    <sup>4</sup> Rudolf Peierls Centre for Theoretical Physics, University of Oxford;
+    &nbsp;&nbsp;and <sup>5</sup> Santa Fe Institute
+</div>
+
+<div class="conference">
+    NeurIPS 2024
+</div>
+
+<div class="buttons">
+    <a href="https://arxiv.org/pdf/2408.05798" target="_blank" class="button">Paper</a>
+    <a href="https://github.com/zhaozewang/place_cells_episodic_rnn" target="_blank" class="button">Code</a>
+    <a href="https://neurips.cc/virtual/2024/poster/93988" target="_blank" class="button">Video</a>
+    <a href="https://neurips.cc/virtual/2024/poster/95187" target="_blank" class="button">Related</a>
+</div>
+
+<div class="section">
+    <!-- <div class="mode-toggle" style="font-size: 1.2em; margin-bottom: 20px;">
+        <span style="font-size: 0.7em;">View this work as a:</span>
+        <button id="mode-ns" onclick="toggleMode()" class="mode-btn active">Neuroscientist</button>
+        <button id="mode-cs" onclick="toggleMode()" class="mode-btn">AI Researcher</button>
+    </div> -->
+    <div class="section-title">Abstract (Infomal)</div>
+    <div class="section-content">
+        In 1976, John O'Keefe and colleagues discovered place cells in the hippocampus—neurons that fire when an animal occupies a specific location. This finding introduced the idea of a biological spatial map. Later studies revealed that these cells are not only tuned to physical position but also modulated by contextual and multi-sensory cues. Remarkably, the same population of place cells can produce different spatial maps in different environments and return to previous maps upon revisiting familiar ones—even after long delays or intervening learning. These properties suggest that the brain constructs spatial memory through <span class="inline-highlight">multi-modal sensory integration</span> and supports <span class="inline-highlight">robust continual learning</span> without catastrophic forgetting.
+        <br><br>
+        <span style="color: #677077; font-weight: 600">But how do such structured, flexible representations emerge? Can similar principles be observed in artificial networks trained on realistic experience streams? What kinds of learning objectives or inductive biases support these phenomena?</span>
+        <br><br>
+        In this work, we trained a recurrent autoencoder to reconstruct high-dimensional, temporally continuous sensory signals collected by an agent traversing simulated environments. Without any explicit spatial supervision, the network developed internal representations strongly reminiscent of biological place cells: units fired in localized regions, remapped across different environments, and reverted upon returning to familiar spaces. These representations were stable over time, formed orthogonal spatial maps to prevent interference, and adapted gradually—mimicking representational drift of Cornu Ammonis area (CA3) place cells. Our results suggest that spatial coding can arise naturally as a side effect of reconstructive memory over structured sensory streams, offering insights for <span class="inline-highlight">continual representation learning</span> in artificial agents.
     </div>
+</div>
 
-    <div class="equal-contribution">
-        <sup>†</sup> Equal contribution
+<div class="section">
+    <div class="section-title">Setup</div>
+    <div class="section-content">
+        We frame the encoding of space as the task of auto-associating sensory signals (potentially from different modalities) collected during an agent's random spatial traversal. In biological systems, this kind of mechanism may improve the reliability of <span class="inline-highlight">localization and mapping</span>, especially in dynamic environments where subsets of sensory inputs can vary over time—making any single input insufficient on its own.
+        <br><br>
+        To model this process, we use a <span class="inline-highlight">masked autoencoding</span> objective: a recurrent neural network (RNN) is trained to reconstruct missing parts of the sensory input as the agent explores a 2D environment.
+        <br><br>
+        <img src="../images/TMS/setup.png" alt="Setup" class="section-image" style="width: 80%;">
     </div>
-    <div class="affiliations">
-        <sup>1</sup> Department of Computer and Information Science, 
-        &nbsp;&nbsp;<sup>2</sup> Neuroscience,
-        &nbsp;&nbsp;and <sup>3</sup> Physics, University of Pennsylvania;<br>
-        <sup>4</sup> Rudolf Peierls Centre for Theoretical Physics, University of Oxford;
-        &nbsp;&nbsp;and <sup>5</sup> Santa Fe Institute
-    </div>
+</div>
 
-    <div class="conference">
-        NeurIPS 2024
-    </div>
+<div class="section">
+    <div class="section-title">Results</div>
+    <div class="section-content">
+        The RNN is trained on short sequences of sensory inputs collected along the agent's random trajectories. After training, we find that the RNN also learns to encode spatial structure in its internal activity—showing patterns similar to place-like responses.
+        <br>
+        <h3>Spatial Maps</h3>
+        <img src="../images/TMS/place_cells.png" alt="RNN Encoding" class="section-image" style="width: 80%;"><br><br>
+        The left plot shows a sample unit's spatial activity map in a 2D square room (averaging its responses at each location), and the right shows a unit's spatial activity in a 3D room. These patterns are automatically learned and reflect sparse, spatially localized responses.
 
-    <div class="buttons">
-        <a href="https://arxiv.org/pdf/2408.05798" target="_blank" class="button">Paper</a>
-        <a href="https://github.com/zhaozewang/place_cells_episodic_rnn" target="_blank" class="button">Code</a>
-        <a href="https://neurips.cc/virtual/2024/poster/93988" target="_blank" class="button">Video</a>
-        <a href="https://neurips.cc/virtual/2024/poster/95187" target="_blank" class="button">Related</a>
+        <h3>Continual Learning of Multiple Rooms</h3>
+        Place-like units in the hippocampus are known to form distinct spatial maps for different environments. In neuroscience, a "map" refers to the average activity pattern of units at different locations within a space. When the same group of units changes its pattern between environments, this is called remapping.
+        <br><br>
+        These units can form many such maps without forgetting the old ones, and can quickly return to previously learned maps when revisiting familiar environments. This reflects a form of <span class="inline-highlight">continuous learning</span>. We suggest that this ability does not require a specialized network architecture, but instead emerges naturally from the structure of the task.
+        <br><br>
+        <img src="../images/TMS/remap_theory.png" alt="Remap-Theory" class="section-image" style="width: 50%;"><br>
+        That is, the autoencoding objective implicitly guides the network to switch between "learning" and "recall" depending on how familiar the current sensory experience is. Sensory inputs from each room form a \(n\)-D (where \(n\) is the navigable dimension) manifold in the network's latent space. When the agent is in a location shared by two rooms (i.e., the manifolds intersect), the network tends to recall. In unfamiliar regions, it learns. We also show that the structure of these sensory manifolds defines preferred directions in weight space, allowing learning updates to be naturally reversible—supporting recovery of old maps (see paper for details).
+        <br><br>
+        <img src="../images/TMS/remapping.png" alt="Remapping" class="section-image" style="width: 80%;"><br><br>
+        The above plots show how the network can recover previously learned spatial maps, even after training on a new environment. <b>T\(i\)R\(j\)</b> means trial \(i\) in room \(j\).
+        <br>
+        <h3>Stability of Spatial Maps Over Time</h3>
+        Finally, we show that even after the network is continuously trained while the agent explores 20 different rooms over 30 cycles, the learned spatial representations remain stable—only drifting slowly over time. This gradual change reflects a shift in memory, rather than catastrophic forgetting.
+        <br><br>
+        The plot below shows the activity of sample units across repeated visits to the same room. Between each plot, the agent has explored (and the network has been trained on) all 20 rooms. We visualize the unit's response only when the agent re-enters the same environment, showing how the place-like patterns are preserved over time with minor drift.
+        <br><br>
+        <img src="../images/TMS/drifting_place_cells.png" alt="Forget" class="section-image">
     </div>
+</div>
 
-    <div class="section">
-        <div class="section-title">Abstract (Infomal)</div>
-        <div class="section-content">
-            In 1976, John O'Keefe and colleagues discovered place cells in the hippocampus—neurons that fire when an animal occupies a specific location. This finding introduced the idea of a biological spatial map. Later studies revealed that these cells are not only tuned to physical position but also modulated by contextual and multi-sensory cues. Remarkably, the same population of place cells can produce different spatial maps in different environments and return to previous maps upon revisiting familiar ones—even after long delays or intervening learning. These properties suggest that the brain constructs spatial memory through <span class="inline-highlight">multi-modal sensory integration</span> and supports <span class="inline-highlight">robust continual learning</span> without catastrophic forgetting.
-            <br><br>
-            <span style="color: #677077; font-weight: 600">But how do such structured, flexible representations emerge? Can similar principles be observed in artificial networks trained on realistic experience streams? What kinds of learning objectives or inductive biases support these phenomena?</span>
-            <br><br>
-            In this work, we trained a recurrent autoencoder to reconstruct high-dimensional, temporally continuous sensory signals collected by an agent traversing simulated environments. Without any explicit spatial supervision, the network developed internal representations strongly reminiscent of biological place cells: units fired in localized regions, remapped across different environments, and reverted upon returning to familiar spaces. These representations were stable over time, formed orthogonal spatial maps to prevent interference, and adapted gradually—mimicking representational drift of Cornu Ammonis area (CA3) place cells. Our results suggest that spatial coding can arise naturally as a side effect of reconstructive memory over structured sensory streams, offering insights for <span class="inline-highlight">continual representation learning</span> in artificial agents.
-        </div>
+
+<div class="section">
+    <div class="section-title">Acknowledgements</div>
+    <div class="section-content">
+        We thank
+        <a href="https://md.technion.ac.il/dori-derdikman/" target="_blank" class="inline-link">Dori Derdikman</a>,
+        Genela Morris, and Shai Abramson for many illuminating discussions in the course of this work, which was supported by <b style="color: #606d8e;">NIH CRCNS grant 1R01MH125544-01</b> and in part by the <b style="color: #606d8e;">NSF and DoD OUSD (R&E) under Agreement PHY-2229929</b> (The <a href="https://arni-institute.org/" target="_blank" class="inline-link">NSF AI Institute for Artificial and Natural Intelligence</a>).
+        <br><br>
+        <a href="https://www.sas.upenn.edu/~vbalasub/public-html/Home.html" target="_blank" class="inline-link">Vijay Balasubramanian</a> was supported in part by the Eastman Professorship at Balliol College, Oxford.
+        <br><br>
+        We are also grateful to
+        <a href="https://pratikac.github.io/" target="_blank" class="inline-link">Pratik Chaudhari</a>
+        for his insightful suggestions on designing the RAE and analyzing its dynamics.
     </div>
+</div>
 
-    <div class="section">
-        <div class="section-title">Setup</div>
-        <div class="section-content">
-            We frame the encoding of space as the task of auto-associating sensory signals (potentially from different modalities) collected during an agent's random spatial traversal. In biological systems, this kind of mechanism may improve the reliability of <span class="inline-highlight">localization and mapping</span>, especially in dynamic environments where subsets of sensory inputs can vary over time—making any single input insufficient on its own.
-            <br><br>
-            To model this process, we use a <span class="inline-highlight">masked autoencoding</span> objective: a recurrent neural network (RNN) is trained to reconstruct missing parts of the sensory input as the agent explores a 2D environment.
-            <br><br>
-            <img src="../images/TMS/setup.png" alt="Setup" class="section-image" style="width: 80%;">
-        </div>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">Results</div>
-        <div class="section-content">
-            The RNN is trained on short sequences of sensory inputs collected along the agent’s random trajectories. After training, we find that the RNN also learns to encode spatial structure in its internal activity—showing patterns similar to place-like responses.
-            <br>
-            <h3>Spatial Maps</h3>
-            <img src="../images/TMS/place_cells.png" alt="RNN Encoding" class="section-image" style="width: 80%;"><br><br>
-            The left plot shows a sample unit’s spatial activity map in a 2D square room (averaging its responses at each location), and the right shows a unit’s spatial activity in a 3D room. These patterns are automatically learned and reflect sparse, spatially localized responses.
-
-            <h3>Continual Learning of Multiple Rooms</h3>
-            Place-like units in the hippocampus are known to form distinct spatial maps for different environments. In neuroscience, a “map” refers to the average activity pattern of units at different locations within a space. When the same group of units changes its pattern between environments, this is called remapping.
-            <br><br>
-            These units can form many such maps without forgetting the old ones, and can quickly return to previously learned maps when revisiting familiar environments. This reflects a form of <span class="inline-highlight">continuous learning</span>. We suggest that this ability does not require a specialized network architecture, but instead emerges naturally from the structure of the task.
-            <br><br>
-            <img src="../images/TMS/remap_theory.png" alt="Remap-Theory" class="section-image" style="width: 50%;"><br>
-            That is, the autoencoding objective implicitly guides the network to switch between "learning" and "recall" depending on how familiar the current sensory experience is. Sensory inputs from each room form a \(n\)-D (where \(n\) is the navigable dimension) manifold in the network's latent space. When the agent is in a location shared by two rooms (i.e., the manifolds intersect), the network tends to recall. In unfamiliar regions, it learns. We also show that the structure of these sensory manifolds defines preferred directions in weight space, allowing learning updates to be naturally reversible—supporting recovery of old maps (see paper for details).
-            <br><br>
-            <img src="../images/TMS/remapping.png" alt="Remapping" class="section-image" style="width: 80%;"><br><br>
-            The above plots show how the network can recover previously learned spatial maps, even after training on a new environment. <b>T\(i\)R\(j\)</b> means trial \(i\) in room \(j\).
-            <br>
-            <h3>Stability of Spatial Maps Over Time</h3>
-            Finally, we show that even after the network is continuously trained while the agent explores 20 different rooms over 30 cycles, the learned spatial representations remain stable—only drifting slowly over time. This gradual change reflects a shift in memory, rather than catastrophic forgetting.
-            <br><br>
-            The plot below shows the activity of sample units across repeated visits to the same room. Between each plot, the agent has explored (and the network has been trained on) all 20 rooms. We visualize the unit's response only when the agent re-enters the same environment, showing how the place-like patterns are preserved over time with minor drift.
-            <br><br>
-            <img src="../images/TMS/drifting_place_cells.png" alt="Forget" class="section-image">
-        </div>
-    </div>
-    
-
-    <div class="section">
-        <div class="section-title">Acknowledgements</div>
-        <div class="section-content">
-            We thank 
-            <a href="https://md.technion.ac.il/dori-derdikman/" target="_blank" class="inline-link">Dori Derdikman</a>, 
-            Genela Morris, and Shai Abramson for many illuminating discussions in the course of this work, which was supported by <b style="color: #606d8e;">NIH CRCNS grant 1R01MH125544-01</b> and in part by the <b style="color: #606d8e;">NSF and DoD OUSD (R&E) under Agreement PHY-2229929</b> (The <a href="https://arni-institute.org/" target="_blank" class="inline-link">NSF AI Institute for Artificial and Natural Intelligence</a>).
-            <br><br>
-            <a href="https://www.sas.upenn.edu/~vbalasub/public-html/Home.html" target="_blank" class="inline-link">Vijay Balasubramanian</a> was supported in part by the Eastman Professorship at Balliol College, Oxford.
-            <br><br>
-            We are also grateful to 
-            <a href="https://pratikac.github.io/" target="_blank" class="inline-link">Pratik Chaudhari</a> 
-            for his insightful suggestions on designing the RAE and analyzing its dynamics.
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Cite this Paper</div>
-        <div class="citation-container">
-            <div class="citation-box" id="citation-text">
-                <p>
+<div class="section">
+    <div class="section-title">Cite this Paper</div>
+    <div class="citation-container">
+        <div class="citation-box" id="citation-text">
+            <p>
 @inproceedings{wang2024time,<br>
 &nbsp;&nbsp;title={Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences},<br>
 &nbsp;&nbsp;author={Zhaoze Wang and Ronald W. Di. Tullio and Spencer Rooke and Vijay Balasubramanian},<br>
 &nbsp;&nbsp;booktitle={Proceedings of the 2024 Conference on Neural Information Processing Systems (NeurIPS)},<br>
 &nbsp;&nbsp;year={2024}<br>
 }
-                </p>
-            </div>
-            <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
+            </p>
         </div>
+        <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
     </div>
-
-    <script>
-        function copyToClipboard() {
-            // Get the citation text without HTML tags
-            const citationText = `@inproceedings{wang2024time,
-  title={Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences},
-  author={Zhaoze Wang and Ronald W. Di. Tullio and Spencer Rooke and Vijay Balasubramanian},
-  booktitle={Proceedings of the 2024 Conference on Neural Information Processing Systems (NeurIPS)},
-  year={2024}
-}`;
-
-            // Copy to clipboard
-            navigator.clipboard.writeText(citationText).then(function() {
-                // Change button text to "Copied!"
-                const button = document.getElementById('copy-button');
-                button.textContent = 'copied';
-            }).catch(function(err) {
-                console.error('Failed to copy text: ', err);
-            });
-        }
-
-        function resetCopyButton() {
-            const button = document.getElementById('copy-button');
-            button.textContent = 'copy';
-        }
-    </script>
-</body>
-</html> 
+</div>

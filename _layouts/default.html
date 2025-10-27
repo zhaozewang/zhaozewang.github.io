@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{{ page.title }}</title>
+    <meta name="author" content="Zhaoze Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ page.favicon_path | default: 'images/favicon/favicon.png' }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ page.stylesheet_path | default: '/stylesheet.css' }}">
+    <link rel="stylesheet" type="text/css" href="{{ page.mode_toggle_css | default: '/mode-toggle.css' }}">
+    <script src="{{ page.mode_toggle_js | default: '/mode-toggle.js' }}"></script>
+
+    {% if page.use_mathjax %}
+    <!-- Add MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% endif %}
+  </head>
+
+  <body>
+    {{ content }}
+  </body>
+</html>

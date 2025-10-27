@@ -1,0 +1,13 @@
+# Jekyll configuration for GitHub Pages
+title: Zhaoze Wang
+author: Zhaoze Wang
+description: Personal academic website
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

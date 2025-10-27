@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ page.paper_template_css | default: '../paper-template.css' }}">
+    <link rel="stylesheet" href="{{ page.mode_toggle_css | default: '../mode-toggle.css' }}">
+    <script src="{{ page.mode_toggle_js | default: '../mode-toggle.js' }}"></script>
+
+    <!-- Add MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    {{ content }}
+
+    <script>
+        function copyToClipboard() {
+            // Get the citation text without HTML tags
+            const citationText = `{{ page.citation }}`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(citationText).then(function() {
+                // Change button text to "Copied!"
+                const button = document.getElementById('copy-button');
+                button.textContent = 'copied';
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        function resetCopyButton() {
+            const button = document.getElementById('copy-button');
+            button.textContent = 'copy';
+        }
+    </script>
+</body>
+</html>
