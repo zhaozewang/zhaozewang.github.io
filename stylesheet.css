@@ -125,6 +125,19 @@ h2 {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
+/* REMI hover effect: static image -> animated video */
+#remi-animated {
+  opacity: 0;
+}
+
+.one:hover #remi-static {
+  opacity: 0;
+}
+
+.one:hover #remi-animated {
+  opacity: 1;
+}
+
 .fade {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
