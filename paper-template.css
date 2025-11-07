@@ -248,18 +248,121 @@ body {
     font-weight: 700;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    body {
+        padding: 20px 40px;
+    }
+
     .title {
-        font-size: 1.8em;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .authors {
+        font-size: 0.85em;
+    }
+
+    .author-emails {
+        font-size: 0.75em;
+    }
+
+    .equal-contribution {
+        font-size: 0.65em;
+        margin-top: 10px;
+    }
+
+    .affiliations {
+        font-size: 0.65em;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+
+    .conference {
+        font-size: 1em;
+        margin-bottom: 20px;
     }
 
     .buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
 
     .button {
-        width: 120px;
+        flex: 0 0 auto;
+        width: auto;
+        min-width: auto;
+        max-width: none;
         text-align: center;
+        padding: 0 18px;
+        font-size: 0.75em;
+        white-space: nowrap;
+    }
+
+    .section {
+        margin-bottom: 25px;
+    }
+
+    .section-title {
+        font-size: 1.1em;
+        margin-bottom: 12px;
+    }
+
+    .section-content {
+        font-size: 0.95rem;
+        line-height: 1.55rem;
+        text-align: left;
+    }
+
+    .section-content ul {
+        padding-left: 20px;
+    }
+
+    .section-content li {
+        margin-bottom: 8px;
+    }
+
+    /* Make side-by-side images stack on mobile */
+    .section-content > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .section-content > div[style*="display: flex"] img,
+    .section-content > div[style*="display: flex"] video {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .section-image {
+        border-radius: 6px;
+    }
+
+    .mode-toggle {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    .mode-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .citation-box {
+        margin-top: 20px;
+        padding: 12px;
+        font-size: 0.8em;
+    }
+
+    .citation-box p {
+        font-size: 0.8em;
+    }
+
+    .copy-button {
+        opacity: 1;
+        font-size: 0.8em;
     }
 }

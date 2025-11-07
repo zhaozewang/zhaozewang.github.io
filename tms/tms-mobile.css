@@ -1,0 +1,53 @@
+/* TMS-specific mobile styles */
+
+@media (max-width: 768px) {
+    /* TMS author layout */
+    /* Add custom author styling if needed */
+
+    /* TMS-specific image handling */
+
+    /* Setup image */
+    .section-content img[src*="setup.png"] {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+
+    /* Place cells image */
+    .section-content img[src*="place_cells.png"]:not([src*="drifting_place_cells"]) {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+
+    /* Remap theory image */
+    .section-content img[src*="remap_theory.png"] {
+        width: 60% !important;
+        max-width: 60% !important;
+    }
+
+    /* Remapping image */
+    .section-content img[src*="remapping.png"] {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+
+    /* Drifting place cells image - allow horizontal overflow */
+    .drifting-cells-container {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    .drifting-cells-container img {
+        width: 200% !important;
+        max-width: none !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    /* Prevent body overflow */
+    body {
+        overflow-x: hidden !important;
+    }
+}

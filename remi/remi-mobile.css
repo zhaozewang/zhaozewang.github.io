@@ -1,0 +1,75 @@
+/* REMI-specific mobile styles */
+
+@media (max-width: 768px) {
+    /* REMI author layout with two rows */
+    .authors-wrapper {
+        text-align: center;
+    }
+
+    .authors {
+        font-size: 0.8em;
+        gap: 8px !important;
+        row-gap: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .authors > div {
+        margin-bottom: 5px;
+    }
+
+    /* REMI-specific image handling */
+    /* Keep connectivity matrices side-by-side on mobile */
+    .section-content > div[style*="display: flex"] img[src*="W_hcmec"] {
+        width: 48% !important;
+        max-width: 48% !important;
+    }
+
+    .section-content > div[style*="display: flex"]:has(img[src*="W_hcmec"]) {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+
+    /* Keep grid cells and place cells side-by-side on mobile */
+    .section-content div[style*="margin-right: 100px"] {
+        margin-right: 10px !important;
+        width: 48% !important;
+    }
+
+    .section-content div[style*="flex-direction: column"]:has(img[src*="grid_cells"]),
+    .section-content div[style*="flex-direction: column"]:has(img[src*="palce_cells"]) {
+        width: 48% !important;
+        margin: 0 !important;
+    }
+
+    .section-content div[style*="flex-direction: column"] img[src*="grid_cells"],
+    .section-content div[style*="flex-direction: column"] img[src*="palce_cells"] {
+        width: 100% !important;
+    }
+    
+    .section-content > div[style*="display: flex"] img[src*="btnk"] {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+    .section-content > div[style*="display: flex"] img[src*="btnk"]:last-child {
+        margin-top: 20px !important;
+    }
+
+    .section-content img[src*="question.png"]:not([src*="hcmec.png"]),
+    .section-content img[src*="plan_traj"], 
+    .section-content img[src*="query_definition"] {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+
+    .section-content img[src*="hcmec.png"]:not([src*="W_hcmec"]),
+    .section-content > div[style*="display: flex"] img[src*="recall_decode"] {
+        width: 70% !important;
+        max-width: 70% !important;
+    }
+
+    /* Keep trajectory videos visible and stacked on mobile */
+    .section-content video {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+}
