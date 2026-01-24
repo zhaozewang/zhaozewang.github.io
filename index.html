@@ -19,6 +19,8 @@ use_mathjax: true
               <br><br>
               Before this, I completed my B.S. in Computer Engineering at Boston University and my
               M.S.E. in Computer and Information Science at the University of Pennsylvania.
+              <br><br>
+              <strong style="color: #e7931e;">I'm actively seeking Summer 2026 internships in embodied AI, spatial perception and reasoning, and world models.</strong>
             </p>
             <p style="text-align:center">
               <a href="mailto:zhaoze@seas.upenn.edu" target="_blank">Email</a> &nbsp;/&nbsp;
@@ -38,20 +40,45 @@ use_mathjax: true
           <tr>
           <td style="padding:16px;width:100%;vertical-align:middle">
             <h2>Research Interests</h2>
-            <p>
-              My research explores how artificial and natural neural networks integrate multiple sensory modalities to form predictive models of the world's dynamics, supporting decision-making and adaptive behavior in both animals and robots.
-              <br><br>
-              Conceptually, I build biologically inspired <strong><em>world models</em></strong>. My work focuses on building 
-              world models with <strong><em>spatial cognition</em></strong>. My recent works study 
-              how the brain represents space through place and grid cells 
-              [<a href="#tms">1</a>, <a href="#trading_place_for_space">2</a>, <a href="#remi">3</a>], 
-              and explore how artificial agents can form similar representations from multi-modality sensory inputs.
-              <br><br>
-              My most recent work investigating how such models can support cue-triggered goal retrieval 
-              while visulizing expected experiences along planned routes 
-              [<a href="#remi">3</a>], 
-              the work is accepted to <span style="color: #e7931e;">NeurIPS 2025</span>.
-            </p>
+            <!-- AI Researcher version -->
+            <div class="mode-cs">
+              <p>
+                I build <strong><em>spatial world models</em></strong> for embodied AI.
+                My research focuses on how agents can learn compact spatial representations
+                from multi-sensory inputs to support navigation, planning, and manipulation.
+              </p>
+              <p>
+                My recent work develops RNN-based world models that enable
+                <strong>goal-directed path planning</strong> in visually realistic environments
+                (Habitat-Sim), with applications to robot navigation and embodied agents
+                [<a href="#remi">REMI @ NeurIPS 2025</a>].
+              </p>
+              <p>
+                I also build tools for the community:
+                <a href="#btnk_mae">BtnkMAE</a> (compact vision encoder),
+                <a href="https://ratatougym.github.io">RatatouGym</a> (navigation simulation),
+                and <a href="https://github.com/zhaozewang/OctoVLA">OctoVLA</a> (vision-language-action models for manipulation).
+              </p>
+            </div>
+            <!-- Comp. Neuroscientist version -->
+            <div class="mode-ns">
+              <p>
+                My research explores how the brain builds <strong><em>spatial representations</em></strong>
+                to support memory, navigation, and planning.
+              </p>
+              <p>
+                I study how hippocampal place cells and grid cells emerge from
+                learning temporally continuous sensory experiences
+                [<a href="#tms">Time Makes Space</a>, <a href="#trading_place_for_space">Trading Place for Space</a>],
+                and how these representations support cue-triggered goal retrieval
+                and mental simulation of planned routes
+                [<a href="#remi">REMI</a>].
+              </p>
+              <p>
+                My most recent work proposes a unified, system-level theory of the
+                hippocampus-MEC loop, accepted to <span style="color: #e7931e;">NeurIPS 2025</span>.
+              </p>
+            </div>
           </td>
         </tr>
       </tbody></table>
@@ -68,30 +95,26 @@ use_mathjax: true
           <span style="font-size: 0.9rem; font-weight: 600;">Research keywords:</span>
         </div>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 800px; margin: 0 auto;">
-          <!-- Common keywords -->
-          <div class="keyword-tag">multi-sensory integration</div>
-          <!-- NS keywords -->
-          <div class="keyword-tag mode-ns">grid cells</div>
-          <div class="keyword-tag mode-ns">place cells</div>
-          <div class="keyword-tag mode-ns">spatial memory</div>
-          <div class="keyword-tag mode-ns">associative memory</div>
-          <div class="keyword-tag mode-ns">hippocampus</div>
-          <div class="keyword-tag mode-ns">medial entorhinal cortex (MEC)</div>
-          <div class="keyword-tag mode-ns">path-integration</div>
-          <div class="keyword-tag mode-ns">rnn</div>
+          <!-- Common -->
+          <div class="keyword-tag">multi-sensor fusion</div>
           <!-- CS keywords -->
           <div class="keyword-tag mode-cs">world models</div>
-          <div class="keyword-tag mode-cs">
-            <a href="#btnk_mae">
-              vision foundation model
-            </a>
-          </div>
+          <div class="keyword-tag mode-cs">embodied AI</div>
+          <div class="keyword-tag mode-cs">Reinforcement Learning</div>
+          <div class="keyword-tag mode-cs">VLA</div>
+          <div class="keyword-tag mode-cs">visual navigation</div>
+          <div class="keyword-tag mode-cs">spatial reasoning</div>
+          <div class="keyword-tag mode-cs">robot learning</div>
           <div class="keyword-tag mode-cs">Vision Transformer</div>
-          <div class="keyword-tag mode-cs">Masked AutoEncoder</div>
-          <div class="keyword-tag mode-cs">model-based RL</div>
-          <div class="keyword-tag mode-cs">Habitat Sim</div>
+          <!-- NS keywords -->
+          <div class="keyword-tag mode-ns">place cells</div>
+          <div class="keyword-tag mode-ns">grid cells</div>
+          <div class="keyword-tag mode-ns">hippocampus</div>
+          <div class="keyword-tag mode-ns">spatial memory</div>
+          <div class="keyword-tag mode-ns">path-integration</div>
         </div>
       </div>
+
 
       <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr>
@@ -102,7 +125,7 @@ use_mathjax: true
 
       <tr id="remi">
         <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/REMI/cover.gif" width="160"">
+          <img src="images/REMI/cover.gif" width="160">
         </td>
         <td style="padding:8px;width:80%;vertical-align:middle">
           <span class="papertitle">REMI: Reconstructing Episodic Memory During Internally Driven Path Planning</span>
@@ -131,10 +154,10 @@ use_mathjax: true
             sensory experiences along planned routes.
           </p>
           <p class="mode-cs" style="margin-top: 6px;">
-            We introduce a neuroscience-inspired framework that unifies goal-directed memory retrieval 
-            and model-based planning in a compact single-layer RNN (&lt;3K units) coupled with a modified 
-            vision foundation model (BtnkMAE). Trained on random exploration in Habitat-Sim, the 
-            framework can internally plan trajectories and reconstruct expected views along imagined routes.
+            An RNN-based spatial world model enabling cue-triggered path planning in visually realistic
+            environments (Habitat-Sim). Integrates a ViT-based vision encoder (BtnkMAE) with a compact
+            recurrent planning module for goal-directed navigation from visual inputs. Trained with
+            multi-GPU DDP and mixed precision for scalable simulation experiments.
           </p>
         </td>
       </tr>
@@ -169,10 +192,10 @@ use_mathjax: true
             and stability during continual learning. See also <a href="#trading_place_for_space">Trading Place for Space</a>. 
           </p>
           <p class="mode-cs" style="margin-top: 6px;">
-            We present a computational model of place cells (SLAM in the brain). An RNN trained to 
-            autoencode sensory signals from random traversal develops spatially localized representations 
-            in its hidden layer that reorganize across environments and recover with relearning, 
-            forming a scaffold for continual and multimodal sensory integration. 
+            Demonstrates emergence of localization-relevant spatial representations from unsupervised
+            learning on continuous sensory streams. An RNN trained to autoencode sensory signals develops
+            spatially localized representations that reorganize across environments and recover with
+            relearning, forming a scaffold for continual multimodal sensory integration.
             See also <a href="#trading_place_for_space">Trading Place for Space</a>.
           </p>
         </td>
@@ -205,49 +228,10 @@ use_mathjax: true
             See also <a href="#tms">Time Makes Space</a>.
           </p>
           <p class="mode-cs" style="margin-top: 6px;">
-            We present a geometric model of hippocampal place coding that describes how a self-localizing 
-            system balances spatial precision and contextual capacity. Modeling population activity 
-            as high-dimensional manifolds, we show that separable contexts scale exponentially with 
-            network size but trade off with spatial resolution. See also <a href="#tms">Time Makes Space</a>.
-          </p>
-        </td>
-      </tr>
-
-      <tr id="digital-biopsy">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src='images/digital-biopsy/cover.png' width="160">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <span class="papertitle">
-            Digital pathology assessment of kidney glomerular filtration barrier 
-            ultrastructure in an animal model of podocytopathy
-          </span>
-          <br>
-          <div style="margin-top: 5px;"></div>
-          Aksel Laudon,
-          <strong>Zhaoze Wang</strong>,
-          Anqi Zou,
-          Richa Sharma,
-          Jiayi Ji,
-          Winston Tan,
-          Connor Kim,
-          Yingzhe Qian,
-          Qin Ye,
-          Hui Chen,
-          Joel M. Henderson,
-          Chao Zhang,
-          Vijaya B. Kolachalama,
-          Weining Lu
-          <br>
-          <em>Biology Methods and Protocols</em>, Vol. 10, Issue 1, 2024
-          <br>
-          <div style="margin-top: 5px;"></div>
-          <a href="https://academic.oup.com/biomethods/article/10/1/bpaf024/8099441" target="_blank">Publisher's Page</a>
-          &nbsp;/&nbsp;
-          <a href="https://pubmed.ncbi.nlm.nih.gov/38948787/" target="_blank">pubMed</a>
-          <p> 
-            We developed a segmentation and measurement pipeline for Transmission Electron Microscopy 
-            (TEM) images using U-Net to automate the diagnosis of proteinuria-related kidney disease. 
+            A geometric framework quantifying trade-offs between spatial resolution and contextual
+            capacity in self-localizing systems. Modeling population activity as high-dimensional
+            manifolds, we show that separable contexts scale exponentially with network size but
+            trade off with spatial resolution. See also <a href="#tms">Time Makes Space</a>.
           </p>
         </td>
       </tr>
@@ -264,11 +248,72 @@ use_mathjax: true
         </tr>
         <tr>
           <td style="padding:16px;width:20%;vertical-align:middle">
-            <img src="images/nn4n/cover.gif" width="160"">
+            <img src="images/octo_vla/cover.gif" width="160">
+          </td>
+          <td style="padding:8px;width:80%;vertical-align:middle">
+            <a href="https://github.com/zhaozewang/OctoVLA" target="_blank">
+              <span class="papertitle">OctoVLA: Vision-Language-Action Model for Manipulation</span>
+            </a>
+            <br>
+            <div style="margin-top: 8px;"></div>
+            <a href="https://github.com/zhaozewang/OctoVLA" target="_blank">Source Code</a>
+            <div style="margin-top: 4px;"></div>
+            <p>
+              Deployed Octo, a generalist VLA model, on the LIBERO manipulation benchmark with language-conditioned control.
+              Evaluated model performance across 10 manipulation tasks with varying language instructions.
+              Integrating BtnkMAE as a compact vision encoder to compare sample efficiency with the default ViT encoder.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:16px;width:20%;vertical-align:middle">
+            <a href="images/btnk_mae/btnk_results.png" target="_blank">
+              <img src="images/btnk_mae/btnk_results.png" width="160" style="cursor: magnify;">
+            </a>
+          </td>
+          <td style="padding:8px;width:80%;vertical-align:middle">
+            <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank" id="btnk_mae">
+              <span class="papertitle">BtnkMAE: Compact Vision Encoder for Embodied AI</span>
+            </a>
+            <br>
+            <div style="margin-top: 8px;"></div>
+            <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank">Source Code</a>
+            <div style="margin-top: 4px;"></div>
+            <p>
+              Compact vision encoder compressing images to 1024-D decodable embeddings, 196× more compact than standard ViT.
+              Pretrained ViT-B/L on ImageNet-1K using DDP across 6×RTX 4090 GPUs.
+              Designed for embodied AI applications where memory and bandwidth are constrained.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:16px;width:20%;vertical-align:middle">
+            <img src="images/ratatou_gym/trajectory.gif" width="160">
+          </td>
+          <td style="padding:8px;width:80%;vertical-align:middle">
+            <a href="https://ratatougym.github.io/" target="_blank">
+              <span class="papertitle">RatatouGym: Navigation Simulation Framework</span>
+            </a>
+            <br>
+            <div style="margin-top: 8px;"></div>
+            <a href="https://ratatougym.github.io/" target="_blank">Documentation</a>
+            &nbsp;/&nbsp;
+            <a href="https://github.com/ratatougym/ratatougym" target="_blank">Source Code</a>
+            <div style="margin-top: 4px;"></div>
+            <p>
+              Open-source navigation framework that directly simulates sensory inputs during navigation.
+              Engineered modular backends (FAISS, K-d tree, PyTorch) for scalable multi-agent experiments.
+              Used in REMI (NeurIPS 2025) for training spatial world models.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:16px;width:20%;vertical-align:middle">
+            <img src="images/nn4n/cover.gif" width="160">
           </td>
           <td style="padding:8px;width:80%;vertical-align:middle">
             <a href="https://www.nn4n.org/" target="_blank">
-              <span class="papertitle">NN4N: Neural Networks for Neurosimulation</span>
+              <span class="papertitle">NN4N: Modular RNN Framework</span>
             </a>
             <br>
             <div style="margin-top: 12px;">
@@ -283,51 +328,9 @@ use_mathjax: true
             <a href="https://github.com/NN4Neurosim/nn4n" target="_blank">Source Code</a>
             <div style="margin-top: 4px;"></div>
             <p>
-              A PyTorch library for building complex RNNs (CTRNN, GRU, etc.) with controllable sparsity 
-              and positivity in their connections. It uses custom initialization and backpropagation 
-              hooks to automatically handle these constraints, making it easier to build biologically-realistic 
-              and efficient recurrent models.
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px;width:20%;vertical-align:middle">
-            <a href="images/btnk_mae/btnk_results.png" target="_blank">
-              <img src="images/btnk_mae/btnk_results.png" width="160" style="cursor: magnify;">
-            </a>
-          </td>
-          <td style="padding:8px;width:80%;vertical-align:middle">
-            <a href="https://www.nn4n.org/" target="_blank" id="btnk_mae">
-              <span class="papertitle">BtnkMAE:&nbsp;&nbsp;\(\text{Image} \to \mathbb{R}^{1024} \to \hat{\text{Image}}\)</span>
-            </a>
-            <br>
-            <div style="margin-top: 8px;"></div>
-            <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank">Source Code</a>
-            <div style="margin-top: 4px;"></div>
-            <p>
-              A modified Masked Autoencoder (MAE) that encodes each image into a single 1024-dimensional 
-              feature vector and reconstructs it back. Designed as a general vision foundation model 
-              for compact and interpretable representations.
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px;width:20%;vertical-align:middle">
-            <img src="images/ratatou_gym/trajectory.gif" width="160"">
-          </td>
-          <td style="padding:8px;width:80%;vertical-align:middle">
-            <a href="https://www.nn4n.org/" target="_blank">
-              <span class="papertitle">RatatouGym: OpenAI Gym-Style Simulation Suite for Spatial Cognition</span>
-            </a>
-            <br>
-            <div style="margin-top: 8px;"></div>
-            <a href="https://ratatougym.github.io/" target="_blank">Documentation</a>
-            &nbsp;/&nbsp;
-            <a href="https://github.com/ratatougym/ratatougym" target="_blank">Source Code</a>
-            <div style="margin-top: 4px;"></div>
-            <p>
-              An OpenAI Gym-style simulation suite for simulating spatial navigation and neural responses (grid, place, and sensory cells). 
-              It provides an integrated interface to define environments, sensory tunings, and movement behaviors to study spatial coding and train world models of spatial cognition.
+              PyTorch framework for hierarchical RNNs with custom autograd, connectivity constraints, and optimizers.
+              Supports biologically plausible architectures with sparse, structured connectivity.
+              Published on PyPI with 6K+ downloads.
             </p>
           </td>
         </tr>
@@ -345,27 +348,17 @@ use_mathjax: true
         <tr>
           <td align="center" style="padding:16px;width:20%;vertical-align:middle">
             <div class="colored-box">
-              Academic Service
+              Service
             </div>
           </td>
           <td style="padding:8px;width:80%;vertical-align:center">
-            <a href="https://neurips.cc/" target="_blank">Reviewer, NeurIPS 2025</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-            <div class="colored-box">
-              Teaching
-            </div>
-          </td>
-          <td style="padding:8px;width:80%;vertical-align:center">
+            <p><a href="https://neurips.cc/" target="_blank">Reviewer, NeurIPS 2025</a></p>
             <p>
               <a href="https://online.seas.upenn.edu/courses/ese-5460-deep-learning/" target="_blank">
                 Teaching Assistant, ESE 5460: Principles of Deep Learning, Fall 2025
               </a>
             </p>
-            <p>(Incoming) Teaching Assistant, PHYS 5585: Comp. and Theoretical Neurosci., Spring 2026</p>
+            <p>Teaching Assistant, PHYS 5585: Comp. and Theoretical Neurosci., Spring 2026</p>
           </td>
         </tr>
 
