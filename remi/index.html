@@ -1,11 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://upenn.zoom.us/j/96033547099?pwd=OaMrjeiGYIsuDoM50tqLFwnnH0NamA.1">
-    <title>Redirecting...</title>
-</head>
-<body>
-    <p>Redirecting to Zoom meeting... <a href="https://upenn.zoom.us/j/96033547099?pwd=OaMrjeiGYIsuDoM50tqLFwnnH0NamA.1">Click here</a> if not redirected.</p>
-</body>
-</html>
+---
+layout: project
+title: REMI - Zhaoze Wang
+citation: |
+  @inproceedings{wang2025remi,
+    title={REMI: Reconstructing Episodic Memory During Internally Driven Path Planning},
+    author={Zhaoze Wang and Genela Morris and Dori Derdikman and Pratik Chaudhari and Vijay Balasubramanian},
+    booktitle={Proceedings of the 2025 Conference on Neural Information Processing Systems (NeurIPS)},
+    year={2025}
+  }
+---
+
+<link rel="stylesheet" href="remi-mobile.css">
+
+<h1 class="title">
+    REMI: Reconstructing Episodic Memory During Internally Driven Path Planning
+</h1>
+<div class="conference">
+    NeurIPS 2025
+</div>
+
+<div class="authors-wrapper">
+    <div class="authors authors-row-1" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; row-gap: 10px; margin-bottom: 0px;">
+        <div style="text-align: center;">
+            <a class="link" href="https://zhaozewang.github.io/" target="_blank">Zhaoze Wang</a><sup>1</sup>
+            <br>
+            <span style="font-size: 0.8em; color: #666;">
+                <a href="mailto:zhaoze@seas.upenn.edu" style="color: #666; text-decoration: none;">zhaoze@seas.upenn.edu</a>
+            </span>
+        </div>
+        <div style="text-align: center;">
+            Genela Morris<sup>2,3†</sup>
+            <br>
+            <span style="font-size: 0.8em; color: #666;">
+                <a href="mailto:genelam@tlvmc.gov.il" style="color: #666; text-decoration: none;">genelam@tlvmc.gov.il</a>
+            </span>
+        </div>
+        <div style="text-align: center;">
+            <a class="link" href="https://md.technion.ac.il/dori-derdikman/" target="_blank">Dori Derdikman</a><sup>4†</sup>
+            <br>
+            <span style="font-size: 0.8em; color: #666;">
+                <a href="mailto:derdik@technion.ac.il" style="color: #666; text-decoration: none;">derdik@technion.ac.il</a>
+            </span>
+        </div>
+    </div>
+    <div class="authors authors-row-2" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; row-gap: 10px; margin-bottom: 10px;">
+        <div style="text-align: center;">
+            <a class="link" href="https://pratikac.github.io/" target="_blank">Pratik Chaudhari</a><sup>1†</sup>
+            <br>
+            <span style="font-size: 0.8em; color: #666;">
+                <a href="mailto:pratikac@seas.upenn.edu" style="color: #666; text-decoration: none;">pratikac@seas.upenn.edu</a>
+            </span>
+        </div>
+        <div style="text-align: center;">
+            <a class="link" href="https://www.physics.upenn.edu/~vbalasub/Home.html" target="_blank">Vijay Balasubramanian</a><sup>5,6,7†</sup>
+            <br>
+            <span style="font-size: 0.8em; color: #666;">
+                <a href="mailto:vijay@physics.upenn.edu" style="color: #666; text-decoration: none;">vijay@physics.upenn.edu</a>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="affiliations">
+    <sup>1</sup> Dept. of Electrical and Systems Eng., Univ. of Pennsylvania
+    &nbsp;&nbsp;<sup>2</sup> Tel Aviv Sourasky Medical Center<br>
+    <sup>3</sup> Gray Faculty of Medical and Health Sciences, Tel Aviv University
+    &nbsp;&nbsp;<sup>4</sup> Rappaport Faculty of Medicine, Technion - Israel Institute of Technology<br>
+    <sup>5</sup> Dept. of Physics, Univ. of Pennsylvania
+    &nbsp;&nbsp;<sup>6</sup> Santa Fe Institute
+    &nbsp;&nbsp;<sup>7</sup> Rudolf Peierls Centre for Theoretical Physics, University of Oxford
+</div>
+<div class="equal-contribution">
+    <sup>†</sup> Equal contribution
+</div>
+
+<div class="buttons">
+    <a href="https://arxiv.org/abs/2507.02064" target="_blank" class="button">📄 Paper</a>
+    <a href="https://github.com/zhaozewang/place_cells_episodic_rnn" target="_blank" class="button disabled">💻 Code (Coming Soon)</a>
+    <a href="https://ratatougym.github.io" target="_blank" class="button">🏠 Simulation Suite</a>
+    <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank" class="button">👁️ Vision Encoder</a>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">TL;DR</div>
+    <div class="section-content">
+        REMI is a unified, system-level theory of how the brain uses multiple spatial representations to achieve <span class="inline-highlight">cue-triggered goal retrieval</span>.
+        We tested our framework in both idealized simulations and realistic settings using <span class="inline-highlight">Habitat Sim</span>.
+    </div>
+</div>
+<div class="section">
+    <div class="section-title">Background</div>
+    <div class="section-content">
+        Decades of research have revealed multiple types of cells that support animals' navigation and localization.
+        For example, <span class="inline-highlight">grid cells</span> in the MEC fire in hexagonal patterns, while <span class="inline-highlight">place cells</span> in the hippocampus fire at specific locations.
+        <br>
+        <img src="../images/REMI/assets/question.png" alt="Research Question" class="section-image" style="width: 50%; margin-top: 20px;">
+        <br>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-end;">
+                <div style="display: flex; flex-direction: column; align-items: center; width: 30%; margin-right: 100px;">
+                    <img src="../images/REMI/assets/grid_cells.png" alt="Grid Cells" style="width: 100%;">
+                    <div style="margin-top: 8px; font-size: 0.95em; color: #888;">Example of grid cells</div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; width: 30%;">
+                    <img src="../images/REMI/assets/palce_cells.png" alt="Place Cells" style="width: 100%;">
+                    <div style="margin-top: 8px; font-size: 0.95em; color: #888;">Example of place cells</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">A Connectivity model of HC-MEC Loop</div>
+    <div class="section-content">
+        To approach this problem, we first revisit known theories about spatial navigation cell types.
+        <ul style="margin-top: 10px;">
+            <li>Grid cells may emerge through <span class="inline-highlight">path integration</span> of displacement vectors.</li>
+            <li>Spatially modulated cells in the MEC encode sensory stimuli.</li>
+            <li>Place cells can <span class="inline-highlight">auto-associate</span> sensory inputs, potentially reflected by spatially modulated cells.</li>
+            <li>Meanwhile, grid cell population manifolds form efficient bases for <span class="inline-highlight">spatial planning</span> because of their context-independent nature.</li>
+        </ul>
+        <img src="../images/REMI/assets/hcmec.png" alt="HC-MEC Circuit" class="section-image" style="width: 30%;">
+        <br>
+        <b>We propose that a simple extension of the place cell auto-association theory can connect all these ideas and generate several testable predictions.</b>
+        <br>
+        <ul>
+            <li><b>Place cells may associate</b> not only sensory signals reflected by spatially modulated cells, but also sensory signals <b>with grid cells</b>.</li>
+            <li>Given a partial sensory cue, a place cell can <span class="inline-highlight">reconstruct the goal grid cell pattern</span>.</li>
+            <li>With this recalled pattern, an animal can <span class="inline-highlight">plan along the grid cell manifold</span>.</li>
+            <li>Planning then produces sequences of intermediate grid states, which place cells could use to <span class="inline-highlight">reconstruct sensory experiences</span> along the planned path.</li>
+        </ul>
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">RNN Implementation</div>
+    <div class="section-content">
+        To test this hypothesis, we trained a unified RNN that incorporates all five cell types within a single recurrent layer.
+        <br><br>
+        SMC units learn to autoencode sensory inputs, while grid cells learn to path-integrate based on speed and head direction signals, both with added masking and noise.
+        The <span class="inline-highlight">hippocampal module</span> receives no direct input or output; instead, it learns to denoise activity from the MEC through recurrence.
+        After training, we observed the spontaneous emergence of <b>place cells</b> in this region.
+        <br><br>
+        <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px; margin: 15px 0;">
+            <img src="../images/REMI/assets/rnn_equation.png" alt="RNN Equation" style="width: 45%;">
+            <img src="../images/REMI/assets/rnn_loss.png" alt="RNN Loss" style="width: 45%;">
+        </div>
+        <br>
+        We call this the <b>HC-MEC model</b>.
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">Testing Cue-Triggered Querying</div>
+    <div class="section-content">
+        After training, we sampled sensory cues at fixed locations to query the network.
+        <br><br>
+        <img src="../images/REMI/assets/query_definition.png" alt="Query Definition" class="section-image" style="width: 50%;"><br>
+        The left plot shows how subregion responses evolve toward the goal response.
+        The surface represents the population manifold; the green dot marks the goal, and the trajectory shows the evolution of responses, visualized in 3D.
+        The right plot shows how these responses decode into 2D locations using nearest neighbor search.
+        <br><br>
+        <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
+            <img src="../images/REMI/assets/recall_manifold.png" alt="Recall Manifold" style="width: 55%;">
+            <img src="../images/REMI/assets/recall_decode.png" alt="Recall Decode" style="width: 35%;">
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">Extending HC-MEC for Planning</div>
+    <div class="section-content">
+        The previous experiment shows how cues can trigger retrieval of goal grid cell patterns.
+        Once the goal pattern is retrieved, prior studies suggest that planning can be more efficiently performed on the grid cell manifold.
+        To test this, we expanded the trained HC-MEC network's recurrent matrix to include an additional <span class="inline-highlight">planner subnetwork</span>.
+        <br><br>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 120px;">
+            <img src="../images/REMI/assets/W_hcmec.png" alt="HC-MEC Weight" style="width: 24%;">
+            <img src="../images/REMI/assets/W_hcmec_plan.png" alt="HC-MEC Planning Weight" style="width: 30%;">
+        </div>
+        <br><br>
+        During planning, the planner receives the goal grid state, and the HC-MEC network is initialized with the current sensory and grid cell states.
+        The planner projects only to the speed and head-direction regions to control HC-MEC dynamics.
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">Reconstructing Memory During Planning on the Grid Cell Manifold</div>
+    <div class="section-content">
+        We collected the responses of the sensory and grid cell subregions over all planning timesteps.
+        Each latent state was decoded into locations using nearest neighbor search.
+        We found that not only did grid cell responses decode into trajectories connecting the two locations, but the <span class="inline-highlight">sensory region also decoded into trajectories</span>. 
+        This decoded trajectory indicates that sensory experiences were reconstructed from intermediate grid states.
+        <br><br>
+        <img src="../images/REMI/assets/plan_traj.png" alt="Planning Trajectories" class="section-image" style="width: 70%;">
+    </div>
+</div>
+
+<br><br>
+<div class="section">
+    <div class="section-title">Navigation with Realistic Visual Inputs and a Decodable Vision Encoder (BtnkMAE)</div>
+    <div class="section-content">
+        Finally, we asked whether the framework could extend to realistic navigation tasks.
+        <br><br>
+        To test this, we replaced simulated sensory responses with visual feature embeddings extracted from Habitat Sim.
+        We captured panoramic images at each spatial location with a fixed direction and passed them through a general-purpose vision encoder that maps each image to a 1024-dimensional embedding vector.
+        <br><br>
+        <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
+            <img src="../images/REMI/assets/btnk_ratemap.png" alt="Bottleneck Ratemap" style="width: 45%;">
+            <img src="../images/REMI/assets/btnk_mae.png" alt="Bottleneck MAE" style="width: 45%;">
+        </div>
+        <br>
+        For this purpose, we trained a modified masked autoencoder (MAE) on ImageNet-1k.
+        We added a <span class="inline-highlight">bottleneck layer</span> so that each image maps to a 1024-dimensional vector while remaining reconstructable back to images.
+        <br><br>
+        Using this visual feature map, we repeated the experiments and recorded the sensory subregion responses during training.
+        When decoding these intermediate states with BtnkMAE's decoder, all states could be reconstructed into realistic images.
+        <br><br>
+        <div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
+            <video autoplay loop muted playsinline class="section-image" style="width: 48%; margin-bottom: 0;">
+                <source src="../images/REMI/assets/traj_video_0_trimmed.mp4" type="video/mp4">
+            </video>
+            <video autoplay loop muted playsinline class="section-image" style="width: 48%; margin-bottom: 0;">
+                <source src="../images/REMI/assets/traj_video_14_trimmed.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">Acknowledgments and Funding</div>
+    <div class="section-content">
+        This work was supported by <b style="color: #606d8e;">NIH CRCNS grant 1R01MH125544-01</b> and partially by the <b style="color: #606d8e;">NSF and DoD OUSD (R&E) under Agreement PHY-2229929</b> (The <a href="https://arni-institute.org/" target="_blank" class="inline-link">NSF AI Institute for Artificial and Natural Intelligence</a>).
+        Additional support came from the <b style="color: #606d8e;">United States-Israel Binational Science Foundation (BSF)</b>.
+        PC was supported by the <b style="color: #606d8e;">National Science Foundation (IIS-2145164, CCF-2212519)</b> and the <b style="color: #606d8e;">Office of Naval Research (N00014-22-1-2255)</b>.
+        <a href="https://www.sas.upenn.edu/~vbalasub/public-html/Home.html" target="_blank" class="inline-link">Vijay Balasubramanian</a> was supported in part by the Eastman Professorship at Balliol College, Oxford.
+    </div>
+</div>
+
+<br>
+<div class="section">
+    <div class="section-title">Cite this Paper</div>
+    <div class="citation-container">
+        <div class="citation-box" id="citation-text">
+            <p>
+@inproceedings{wang2025remi,<br>
+&nbsp;&nbsp;title={REMI: Reconstructing Episodic Memory During Internally Driven Path Planning},<br>
+&nbsp;&nbsp;author={Zhaoze Wang and Genela Morris and Dori Derdikman and Pratik Chaudhari and Vijay Balasubramanian},<br>
+&nbsp;&nbsp;booktitle={Proceedings of the 2025 Conference on Neural Information Processing Systems (NeurIPS)},<br>
+&nbsp;&nbsp;year={2025}<br>
+}
+            </p>
+        </div>
+        <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
+    </div>
+</div>
