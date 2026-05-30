@@ -3,54 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Private Docs</title>
+  <title>Codex Docs</title>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
-    body {
-      max-width: 880px;
-      margin: 44px auto;
-      padding: 0 18px 70px;
-      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
-      color: #111;
-      background: #fff;
+
+body{max-width:900px;margin:44px auto;padding:0 18px 70px;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;color:#111;background:#fff}h1{font-size:30px;line-height:1.2;margin:0 0 8px}h2{font-size:20px;margin:34px 0 12px}a{color:#0645ad;text-underline-offset:3px}.muted{color:#555;font-size:14px}table{width:100%;border-collapse:collapse;margin-top:18px}th,td{border-bottom:1px solid #ddd;padding:11px 8px;text-align:left;vertical-align:top}th{font-size:14px;background:#f7f7f7}.tag{display:inline-block;padding:1px 6px;border:1px solid #ccc;border-radius:999px;font-size:12px;color:#333;white-space:nowrap}@media(max-width:720px){table,thead,tbody,tr,th,td{display:block}thead{display:none}tr{border-bottom:1px solid #ddd;padding:10px 0}td{border:0;padding:4px 0}}
+    .unlock {
+      max-width: 460px;
+      margin: 90px auto;
+      padding: 0;
     }
-    h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
-    h2 { font-size: 20px; margin: 34px 0 12px; }
-    p { margin: 8px 0; }
-    a { color: #0645ad; text-underline-offset: 3px; }
-    .muted { color: #555; font-size: 14px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 18px; }
-    th, td { border-bottom: 1px solid #ddd; padding: 11px 8px; text-align: left; vertical-align: top; }
-    th { background: #f7f7f7; font-size: 14px; }
-    td { font-size: 15px; }
-    @media (max-width: 720px) {
-      table, thead, tbody, tr, th, td { display: block; }
-      thead { display: none; }
-      tr { border-bottom: 1px solid #ddd; padding: 10px 0; }
-      td { border: 0; padding: 4px 0; }
+    .unlock label {
+      display: block;
+      margin: 16px 0 6px;
+      font-weight: 600;
+    }
+    .unlock input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 11px;
+      border: 1px solid #bbb;
+      font: inherit;
+    }
+    .unlock button {
+      margin-top: 14px;
+      padding: 8px 13px;
+      border: 1px solid #222;
+      background: #fff;
+      color: #111;
+      font: inherit;
+      cursor: pointer;
+    }
+    .unlock .error {
+      min-height: 1.5em;
+      color: #9b1c1c;
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
-  <h1>Private Docs</h1>
-  <p class="muted">Encrypted paper explanations. Each doc is rewritten as a zero-background, step-by-step derivation note.</p>
+  <main class="unlock" id="unlock">
+    <h1>Private Document</h1>
+    <p class="meta">Enter the document passphrase to decrypt this page locally in your browser.</p>
+    <label for="passphrase">Passphrase</label>
+    <input id="passphrase" type="password" autocomplete="current-password" autofocus>
+    <button id="openDoc" type="button">Open</button>
+    <p class="error" id="error"></p>
+  </main>
+  <script>
+    const encryptedPayload = "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";
+    const saltB64 = "mTEEMc6pLdfX/OL/mKRy2w==";
+    const ivB64 = "yBkV+rgXtScvfZT4";
+    const iterations = 350000;
 
-  <h2>List of Docs</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Doc</th>
-        <th>Topic</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><a href="doobs-lagrangian.html">Doob's Lagrangian</a></td><td>Transition path sampling, Doob transform, variational control.</td></tr>
-      <tr><td><a href="flow-matching.html">Flow Matching</a></td><td>Continuous normalizing flows, probability paths, vector fields.</td></tr>
-      <tr><td><a href="ddpm.html">DDPM</a></td><td>Forward noising, reverse denoising, diffusion objective.</td></tr>
-      <tr><td><a href="score-sde.html">Score SDE</a></td><td>Score functions, SDEs, reverse-time generation.</td></tr>
-      <tr><td><a href="latent-diffusion.html">Latent Diffusion Models</a></td><td>Autoencoder latents, cross-attention, U-Net implementation.</td></tr>
-      <tr><td><a href="dit.html">DiT</a></td><td>Diffusion Transformers, patch tokens, adaLN-Zero.</td></tr>
-      <tr><td><a href="diffusion-forcing.html">Diffusion Forcing</a></td><td>Independent per-token noise, causal generation, planning.</td></tr>
-    </tbody>
-  </table>
+    const b64ToBytes = (value) => Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+
+    async function deriveKey(passphrase) {
+      const encoded = new TextEncoder().encode(passphrase);
+      const keyMaterial = await crypto.subtle.importKey("raw", encoded, "PBKDF2", false, ["deriveKey"]);
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(saltB64), iterations, hash: "SHA-256" },
+        keyMaterial,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock() {
+      const input = document.getElementById("passphrase");
+      const error = document.getElementById("error");
+      error.textContent = "";
+      try {
+        const key = await deriveKey(input.value);
+        const encrypted = b64ToBytes(encryptedPayload);
+        const decrypted = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(ivB64), tagLength: 128 },
+          key,
+          encrypted
+        );
+        document.body.innerHTML = new TextDecoder().decode(decrypted);
+        if (window.MathJax?.typesetPromise) {
+          await window.MathJax.typesetPromise();
+        }
+      } catch (err) {
+        error.textContent = "Could not decrypt. Check the passphrase.";
+      }
+    }
+
+    document.getElementById("openDoc").addEventListener("click", unlock);
+    document.getElementById("passphrase").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") unlock();
+    });
+  </script>
 </body>
 </html>
