@@ -1,0 +1,147 @@
+---
+layout: project
+title: A Simple Model of Co-Emergence of Grid and Place Fields - Zhaoze Wang
+citation: |
+  @misc{wang2026coemergence,
+    title={A simple model of co-emergence of grid and place fields},
+    author={Zhaoze Wang and Genela Morris and Dori Derdikman and Pratik Chaudhari and Vijay Balasubramanian},
+    year={2026},
+    eprint={2605.21356},
+    archivePrefix={arXiv},
+    primaryClass={q-bio.NC},
+    url={https://arxiv.org/abs/2605.21356}
+  }
+---
+
+<link rel="stylesheet" href="project.css">
+
+<h1 class="title">A Simple Model of Co-Emergence of Grid and Place Fields</h1>
+<div class="conference">arXiv preprint, 2026</div>
+
+<div class="authors-wrapper">
+  <div class="authors authors-row">
+    <div>
+      <a class="link" href="https://zhaozewang.github.io/">Zhaoze Wang</a><sup>1</sup>
+      <br><a class="author-email" href="mailto:zhaoze@seas.upenn.edu">zhaoze@seas.upenn.edu</a>
+    </div>
+    <div>
+      Genela Morris<sup>2,3</sup>
+      <br><a class="author-email" href="mailto:genelam@tlvmc.gov.il">genelam@tlvmc.gov.il</a>
+    </div>
+    <div>
+      <a class="link" href="https://md.technion.ac.il/dori-derdikman/" target="_blank" rel="noopener">Dori Derdikman</a><sup>4</sup>
+      <br><a class="author-email" href="mailto:derdik@technion.ac.il">derdik@technion.ac.il</a>
+    </div>
+  </div>
+  <div class="authors authors-row">
+    <div>
+      <a class="link" href="https://pratikac.github.io/" target="_blank" rel="noopener">Pratik Chaudhari</a><sup>1</sup>
+      <br><a class="author-email" href="mailto:pratikac@seas.upenn.edu">pratikac@seas.upenn.edu</a>
+    </div>
+    <div>
+      <a class="link" href="https://www.physics.upenn.edu/~vbalasub/Home.html" target="_blank" rel="noopener">Vijay Balasubramanian</a><sup>5,6</sup>
+      <br><a class="author-email" href="mailto:vijay@physics.upenn.edu">vijay@physics.upenn.edu</a>
+    </div>
+  </div>
+</div>
+<div class="affiliations">
+  <sup>1</sup> Dept. of Electrical and Systems Engineering, University of Pennsylvania<br>
+  <sup>2</sup> Tel Aviv Sourasky Medical Center
+  &nbsp;&nbsp;<sup>3</sup> Gray Faculty of Medical and Health Sciences, Tel Aviv University<br>
+  <sup>4</sup> Rappaport Faculty of Medicine, Technion - Israel Institute of Technology<br>
+  <sup>5</sup> Dept. of Physics, University of Pennsylvania
+  &nbsp;&nbsp;<sup>6</sup> Santa Fe Institute
+</div>
+
+<nav class="buttons" aria-label="Research resources">
+  <a href="https://arxiv.org/abs/2605.21356" target="_blank" rel="noopener" class="button">Paper</a>
+  <a href="https://github.com/grasp-lyrl/grid_and_place" target="_blank" rel="noopener" class="button">GitHub</a>
+  <a href="https://nbviewer.org/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button">Results Notebook</a>
+  <a href="https://colab.research.google.com/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button">Colab</a>
+</nav>
+
+<section class="section" aria-labelledby="overview">
+  <h2 class="section-title" id="overview">TL;DR</h2>
+  <div class="section-content">
+    <p>A recurrent network trained on a single task, <span class="inline-highlight">predicting the next sensory observation</span>,
+      develops both grid-like and place-like spatial representations. Neither code is supplied as a target or assumed to exist beforehand.</p>
+    <figure>
+      <a href="../images/grid-place-results.png" target="_blank" rel="noopener">
+        <img src="../images/grid-place-results.png" class="section-image"
+          alt="Recurrent network architecture, Dale-constrained connectivity, spatial autocorrelation, grid spacing and orientation, and examples of emergent grid and place fields">
+      </a>
+      <figcaption>One predictive network, two complementary spatial codes.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="background">
+  <h2 class="section-title" id="background">How Can Two Spatial Codes Emerge Together?</h2>
+  <div class="section-content">
+    <p>Many models explain grid cells by assuming place cells already exist, or vice versa.
+      We ask whether both can emerge together from <span class="inline-highlight">predicting sensory experience during navigation</span>.</p>
+    <figure>
+      <a href="../images/grid-place/previous_frameworks.png" target="_blank" rel="noopener">
+        <img src="../images/grid-place/previous_frameworks.png" class="section-image" width="6205" height="1906" loading="lazy" alt="Single-cell-type models and their direct composition, with the resulting spatial response maps">
+      </a>
+      <figcaption>Simply combining single-cell-type models does not yield robust co-emergence.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="model">
+  <h2 class="section-title" id="model">One Recurrent Network, One Predictive Objective</h2>
+  <div class="section-content">
+    <p>Of 2,048 recurrent units, half receive sensory and motion input; the rest receive only recurrent input.
+      All learn through the same next-observation prediction objective.</p>
+    <ul>
+      <li><b>Structured recurrence:</b> Dale-constrained connections and homeostatic synaptic scaling.</li>
+      <li><b>Incomplete observations:</b> sensory masking and firing-rate-dependent noise.</li>
+      <li><b>Continuous experience:</b> recurrent state carried across training segments.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="results">
+  <h2 class="section-title" id="results">Co-Emergent Grid and Place Fields</h2>
+  <div class="section-content">
+    <p>Repeated grid-like fields and localized place-like fields emerge in the same network,
+      supporting complementary demands: <span class="inline-highlight">recovering sensory state</span>
+      and <span class="inline-highlight">updating it during movement</span>.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="environments">
+  <h2 class="section-title" id="environments">Spatial Representations Across Environments</h2>
+  <div class="section-content">
+    <ul>
+      <li><b>Development:</b> place-like fields emerge before grid-like fields.</li>
+      <li><b>Changing environments:</b> grid patterns fragment in hairpin mazes and reorganize across connected rooms.</li>
+      <li><b>3D traversal:</b> localized place-like fields and locally ordered volumetric grid-like fields.</li>
+    </ul>
+    <figure>
+      <a href="../images/grid-place/multi_compartment.png" target="_blank" rel="noopener">
+        <img src="../images/grid-place/multi_compartment.png" class="section-image" width="8676" height="8409" loading="lazy" alt="Developmental order, hairpin mazes, wall removal, connected rooms, and original three-dimensional place-like and grid-like firing fields">
+      </a>
+      <figcaption>Spatial codes develop and reorganize across navigation conditions, including volumetric 3D traversal.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="code">
+  <h2 class="section-title" id="code">Code and Released Results</h2>
+  <div class="section-content">
+    <p><a class="inline-link" href="https://github.com/grasp-lyrl/grid_and_place" target="_blank" rel="noopener">GitHub</a>
+      includes the model, simulator, training configurations, and saved rate maps.
+      Explore the results in the <a class="inline-link" href="https://nbviewer.org/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener">notebook</a>.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="citation">
+  <h2 class="section-title" id="citation">Cite this Paper</h2>
+  <div class="citation-container">
+    <div class="citation-box" id="citation-text"><pre>{{ page.citation | escape }}</pre></div>
+    <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()" aria-label="Copy BibTeX citation">Copy</button>
+  </div>
+</section>
+<p class="back-link"><a class="inline-link" href="../">Zhaoze Wang / All research</a></p>

@@ -1,0 +1,20 @@
+/* Scoped additions to the same project template used by REMI. */
+.authors-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 30px; margin-bottom: 12px; }
+.author-email { color: #666; font-size: .8em; text-decoration: none; }
+.section-content { line-height: 1.55; }
+.section-content p { margin: 0 0 14px; }
+.section-content li { margin-bottom: 8px; }
+figure { margin: 22px 0 0; }
+figcaption { color: #737373; font-size: .8rem; line-height: 1.5; margin-top: 12px; text-align: center; }
+.section-image { border-radius: 0; }
+.command { background: #f5f5f5; padding: 14px; overflow-x: auto; font-size: .8rem; line-height: 1.6; }
+.citation-box { margin-top: 16px; }
+.citation-box pre { margin: 0; padding-right: 35px; font: .8rem/1.6 'Courier New', monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: #444; }
+.copy-button { opacity: 1; cursor: pointer; }
+.back-link { margin: 35px 0 0; text-align: center; font-size: .8rem; }
+a:focus-visible, button:focus-visible { outline: 2px solid #209cee; outline-offset: 4px; }
+@media (max-width: 768px) {
+  body { padding: 24px 20px; }
+  .authors-row { gap: 12px 22px; }
+  .section-content { line-height: 1.6; }
+}

@@ -4,7 +4,7 @@ Personal website built with Jekyll and GitHub Pages.
 
 ## About
 
-This site uses Jekyll for templating and content management, eliminating code duplication while supporting dual viewing modes (AI Researcher vs. Computational Neuroscientist).
+This site uses Jekyll for templating and content management. The homepage presents a single research narrative around predictive world models, neuroscience-inspired planning, and robotic systems.
 
 Design and original source code from [Jon Barron's website](https://github.com/jonbarron/jonbarron_website).
 
@@ -17,18 +17,8 @@ Design and original source code from [Jon Barron's website](https://github.com/j
 ├── index.html          # Home page
 ├── tms/
 │   └── index.html      # Project page
-├── mode-toggle.js      # Handles mode switching via localStorage
 └── _config.yml         # Jekyll configuration
 ```
-
-## Mode Toggle System
-
-The site uses a simple JavaScript-based mode toggle:
-
-1. User preference stored in `localStorage` (key: `content-mode`)
-2. Clicking toggle buttons switches between `cs` and `ns` modes
-3. Mode-specific content uses `.mode-cs` or `.mode-ns` classes
-4. JavaScript shows/hides content based on active mode
 
 ## Development
 
@@ -91,30 +81,6 @@ git push
 
 Your site will be live at: `https://zhaozewang.github.io/` within 1-2 minutes.
 
-## Customizing Content for Each Mode
+## Updating Content
 
-To add mode-specific content, use HTML with CSS classes:
-
-```html
-<!-- CS Mode Content -->
-<div class="mode-cs">
-  <p>Content for AI researchers...</p>
-</div>
-
-<!-- NS Mode Content -->
-<div class="mode-ns">
-  <p>Content for neuroscientists...</p>
-</div>
-```
-
-The JavaScript in `mode-toggle.js` will automatically show/hide these based on the selected mode.
-
-**For content that appears in both modes (doesn't switch):**
-Just don't add any mode-specific class and it will show in both modes:
-
-```html
-<!-- This content shows in BOTH modes -->
-<div>
-  <p>This text appears regardless of which mode is selected.</p>
-</div>
-```
+Edit `index.html` for the biography, research interests, selected publications, and open-source projects. Paper titles and project-page scientific descriptions retain their original scope. Homepage descriptions follow the world-model CV framing.

@@ -6,20 +6,24 @@ title: Zhaoze Wang
 <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr style="padding:0px">
     <td style="padding:0px">
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <table class="profile-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr style="padding:0px">
           <td style="padding:2.5%;width:63%;vertical-align:middle">
             <p class="name" style="text-align: center;">
               Zhaoze Wang
             </p>
             <p>
-              I'm a PhD student at the <a href="https://www.grasp.upenn.edu/" target="_blank">GRASP (General Robotics, Automation, Sensing & Perception)
-              Lab</a> and the <a href="https://cni.upenn.edu/" target="_blank">Computational Neuroscience Initiative (CNI)</a> at the University of Pennsylvania.
-              <br><br>
-              Before this, I completed my B.S. in Computer Engineering at Boston University and my
-              M.S.E. in Computer and Information Science at the University of Pennsylvania.
-              <br><br>
-              <strong style="color: #e7931e;">I'm actively seeking Summer 2026 internships in embodied AI, spatial perception and reasoning, and world models.</strong>
+              I am a Ph.D. student at the <a href="https://www.grasp.upenn.edu/" target="_blank">UPenn GRASP Lab</a>.
+              I study predictive world models and compact latent representations for multimodal sequence learning,
+              long-horizon prediction, and planning, drawing inspiration from biological memory and navigation.
+            </p>
+            <p>
+              I previously interned at <strong>Adobe Research</strong>, where I worked on video world models,
+              with a focus on efficient generation and long-horizon prediction.
+            </p>
+            <p>
+              I am seeking research internships from <strong>Summer through Fall 2027</strong>,
+              with availability for a continuous internship across both seasons.
             </p>
             <p style="text-align:center">
               <a href="mailto:zhaoze@seas.upenn.edu" target="_blank">Email</a> &nbsp;/&nbsp;
@@ -39,54 +43,27 @@ title: Zhaoze Wang
           <tr>
           <td style="padding:16px;width:100%;vertical-align:middle">
             <h2>Research Interests</h2>
-            <!-- AI Researcher version -->
-            <div class="mode-cs">
               <p>
-                I build <strong><em>spatial world models</em></strong> for embodied AI.
-                My research focuses on how agents can learn compact spatial representations
-                from multi-sensory inputs to support navigation, planning, and manipulation.
+                The brain's ability to build internal predictive models is a key inspiration behind
+                <a href="https://worldmodels.github.io/">world models</a>. My research asks how such representations
+                can support not just prediction, but <strong>fast updating and replanning</strong> as observations
+                and goals change.
               </p>
               <p>
-                My recent work develops RNN-based world models that enable
-                <strong>goal-directed path planning</strong> in visually realistic environments
-                (Habitat-Sim), with applications to robot navigation and embodied agents
-                [<a href="#remi">REMI @ NeurIPS 2025</a>].
+                I study compact predictive representations, recurrent memory, and learned dynamics, drawing on
+                how the brain integrates sensory experience to guide action. My goal is to translate these
+                principles into <strong>fast, adaptive robotic systems</strong>.
               </p>
-              <p>
-                I also build tools for the community:
-                <a href="#btnk_mae">BtnkMAE</a> (compact vision encoder),
-                <a href="https://ratatougym.github.io">RatatouGym</a> (navigation simulation),
-                and <a href="https://github.com/zhaozewang/OctoVLA">OctoVLA</a> (vision-language-action models for manipulation).
+              <p class="research-summary">
+                I study how <a href="#tms">sensory sequences shape spatial representations</a> and
+                how <a href="#grid-place">structured predictive states emerge</a>.
+                I also work on <a href="#remi">memory-guided planning</a> and efficient video world models.
+                To support model training, I develop <a href="#btnk_mae">compact visual encoders</a> and
+                <a href="#ratatougym">parallel sensory simulation</a>.
               </p>
-            </div>
-            <!-- Comp. Neuroscientist version -->
-            <div class="mode-ns">
-              <p>
-                My research explores how the brain builds <strong><em>spatial representations</em></strong>
-                to support memory, navigation, and planning.
-              </p>
-              <p>
-                I study how hippocampal place cells and grid cells emerge from
-                learning temporally continuous sensory experiences
-                [<a href="#tms">Time Makes Space</a>, <a href="#trading_place_for_space">Trading Place for Space</a>],
-                and how these representations support cue-triggered goal retrieval
-                and mental simulation of planned routes
-                [<a href="#remi">REMI</a>].
-              </p>
-              <p>
-                My most recent work proposes a unified, system-level theory of the
-                hippocampus-MEC loop, accepted to <span style="color: #e7931e;">NeurIPS 2025</span>.
-              </p>
-            </div>
           </td>
         </tr>
       </tbody></table>
-
-      <div class="mode-toggle" style="padding-bottom: 0.5rem;">
-        <span style="color: #555; font-size: 1.2em;">If you are a: &nbsp;&nbsp;</span>
-        <button id="mode-cs" onclick="toggleMode()" class="mode-btn active">AI Researcher</button>
-        <button id="mode-ns" onclick="toggleMode()" class="mode-btn">Comp. Neuroscientist</button>
-      </div>
 
       <!-- Research Keywords Section -->
       <div style="text-align: center; padding: 16px; border-bottom: 0.07rem solid #e0e0e0; border-top: 0.07rem solid #e0e0e0; margin: 0 16px;">
@@ -94,31 +71,43 @@ title: Zhaoze Wang
           <span style="font-size: 0.9rem; font-weight: 600;">Research keywords:</span>
         </div>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 800px; margin: 0 auto;">
-          <!-- Common -->
-          <div class="keyword-tag">multi-sensor fusion</div>
-          <!-- CS keywords -->
-          <div class="keyword-tag mode-cs">world models</div>
-          <div class="keyword-tag mode-cs">embodied AI</div>
-          <div class="keyword-tag mode-cs">Reinforcement Learning</div>
-          <div class="keyword-tag mode-cs">VLA</div>
-          <div class="keyword-tag mode-cs">visual navigation</div>
-          <div class="keyword-tag mode-cs">spatial reasoning</div>
-          <div class="keyword-tag mode-cs">robot learning</div>
-          <div class="keyword-tag mode-cs">Vision Transformer</div>
-          <!-- NS keywords -->
-          <div class="keyword-tag mode-ns">place cells</div>
-          <div class="keyword-tag mode-ns">grid cells</div>
-          <div class="keyword-tag mode-ns">hippocampus</div>
-          <div class="keyword-tag mode-ns">spatial memory</div>
-          <div class="keyword-tag mode-ns">path-integration</div>
+          <div class="keyword-tag">predictive world models</div>
+          <div class="keyword-tag">multimodal sequence learning</div>
+          <div class="keyword-tag">latent representations</div>
+          <div class="keyword-tag">long-horizon planning</div>
+          <div class="keyword-tag">autoregressive video generation</div>
+          <div class="keyword-tag">linear attention</div>
+          <div class="keyword-tag">neuroscience-inspired AI</div>
         </div>
       </div>
 
 
-      <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <table class="research-list" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr>
-        <td style="padding:16px;">
-          <h2>Publications</h2>
+        <td colspan="2" style="padding:16px;">
+          <h2>Selected Publications</h2>
+        </td>
+      </tr>
+
+      <tr id="grid-place">
+        <td style="padding:16px;width:20%;vertical-align:middle">
+          <img src="images/grid-place-results.png" width="160" alt="Model architecture and emergent grid and place fields">
+        </td>
+        <td style="padding:8px;width:80%;vertical-align:middle">
+          <span class="papertitle">A Simple Model of Co-Emergence of Grid and Place Fields</span>
+          <p>arXiv preprint, 2026<br>
+            <strong>Zhaoze Wang</strong>, Genela Morris, Dori Derdikman,
+            <a href="https://pratikac.github.io/" target="_blank">Pratik Chaudhari</a>,
+            <a href="https://www.physics.upenn.edu/~vbalasub/Home.html" target="_blank">Vijay Balasubramanian</a>
+          </p>
+          <a href="https://arxiv.org/abs/2605.21356" target="_blank">Paper</a>
+          &nbsp;/&nbsp;
+          <a href="grid-and-place/">Project Page</a>
+          &nbsp;/&nbsp;
+          <a href="https://github.com/grasp-lyrl/grid_and_place" target="_blank">GitHub</a>
+          <p>Recurrent sensory-prediction models learn from masked multimodal histories and egocentric actions.
+            Across 5,000+ architecture, masking, and noise runs, we study how structured spatial representations
+            emerge, connecting biological navigation to learned predictive states.</p>
         </td>
       </tr>
 
@@ -130,7 +119,7 @@ title: Zhaoze Wang
           <span class="papertitle">REMI: Reconstructing Episodic Memory During Internally Driven Path Planning</span>
           <br>
           <div style="margin-top: 6px;"></div>
-          <em>NeurIPS</em>, 2025
+          <strong class="venue">NeurIPS 2025</strong>
           <br>
           <strong>Zhaoze Wang</strong>,
           Genela Morris<sup>†</sup>,
@@ -146,17 +135,11 @@ title: Zhaoze Wang
           <a href="https://ratatougym.github.io" target="_blank">Simulation Suite</a>
           &nbsp;/&nbsp;
           <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank">Vision Encoder</a>
-          <p class="mode-ns" style="margin-top: 6px;">
-            We propose REMI, a unified, system-level theory of the hippocampus-medial entorhinal cortex (MEC)
-            loop. The model explains how interactions between known spatial representation cell 
-            types could support cue-triggered goal retrieval, path planning, and reconstruction of 
-            sensory experiences along planned routes.
-          </p>
-          <p class="mode-cs" style="margin-top: 6px;">
-            An RNN-based spatial world model enabling cue-triggered path planning in visually realistic
-            environments (Habitat-Sim). Integrates a ViT-based vision encoder (BtnkMAE) with a compact
-            recurrent planning module for goal-directed navigation from visual inputs. Trained with
-            multi-GPU DDP and mixed precision for scalable simulation experiments.
+          <p style="margin-top: 6px;">
+            A neuroscience-inspired recurrent world model that binds visual observations to latent spatial states,
+            retrieves goals from partial cues, and rolls out long-range plans in Habitat-Sim.
+            Learned local transition dynamics generalize to shortcuts through unseen states and cue-conditioned planning.
+            ViT-B/L masked autoencoders provide compact visual embeddings, with multi-GPU DDP/AMP rollout and evaluation pipelines.
           </p>
         </td>
       </tr>
@@ -169,7 +152,7 @@ title: Zhaoze Wang
           <span class="papertitle">Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences</span>
           <br>
           <div style="margin-top: 6px;"></div>
-          <em>NeurIPS</em>, 2024
+          <strong class="venue">NeurIPS 2024</strong>
           <br>
           <strong>Zhaoze Wang<sup>†</sup></strong>,
           Ronald W. Di Tullio<sup>†</sup>,
@@ -184,17 +167,10 @@ title: Zhaoze Wang
           <a href="https://neurips.cc/virtual/2024/poster/93988" target="_blank">Video</a>
           &nbsp;/&nbsp;
           <a href="https://zhaozewang.github.io/projects/time_makes_space" target="_blank">Project Page</a>
-          <p class="mode-ns" style="margin-top: 6px;">
-            We model hippocampal CA3 as an autoencoder trained to recall temporally continuous sensory 
-            experiences during spatial traversal, where place cell like activity emerges in the hidden layer. 
-            The model reproduces key CA3 properties, including remapping, orthogonal representations, 
-            and stability during continual learning. See also <a href="#trading_place_for_space">Trading Place for Space</a>. 
-          </p>
-          <p class="mode-cs" style="margin-top: 6px;">
-            Demonstrates emergence of localization-relevant spatial representations from unsupervised
-            learning on continuous sensory streams. An RNN trained to autoencode sensory signals develops
-            spatially localized representations that reorganize across environments and recover with
-            relearning, forming a scaffold for continual multimodal sensory integration.
+          <p style="margin-top: 6px;">
+            Inspired by biological spatial memory, we show that temporal continuity enables recurrent models
+            to learn stable environment-specific latent representations and pattern-complete noisy or occluded
+            sensory trajectories.
             See also <a href="#trading_place_for_space">Trading Place for Space</a>.
           </p>
         </td>
@@ -208,7 +184,7 @@ title: Zhaoze Wang
           <span class="papertitle">Trading Place for Space: Increasing Location Resolution Reduces Contextual Capacity in Hippocampal Codes</span>
           <br>
           <div style="margin-top: 6px;"></div>
-          <em>NeurIPS</em> <span style="color: #e7931e;">&nbsp;🏆 Oral Presentation</span>, 2024
+          <strong class="venue">NeurIPS 2024 Oral</strong>
           <br>
           Spencer Rooke,
           <strong>Zhaoze Wang</strong>,
@@ -219,18 +195,10 @@ title: Zhaoze Wang
           <a href="https://neurips.cc/virtual/2024/poster/95187" target="_blank">Paper</a>
           &nbsp;/&nbsp;
           <a href="https://www.youtube.com/watch?v=qO7owsSloT8" target="_blank">Video</a>
-          <p class="mode-ns" style="margin-top: 6px;">
-            We showed that increasing the resolution of spatial encoding reduces the number of 
-            distinct contexts that can be stored by place cells, revealing a trade-off between 
-            position accuracy and contextual capacity. We derived theoretical bounds on this 
-            trade-off using manifold geometry and neural noise models. 
-            See also <a href="#tms">Time Makes Space</a>.
-          </p>
-          <p class="mode-cs" style="margin-top: 6px;">
-            A geometric framework quantifying trade-offs between spatial resolution and contextual
-            capacity in self-localizing systems. Modeling population activity as high-dimensional
-            manifolds, we show that separable contexts scale exponentially with network size but
-            trade off with spatial resolution. See also <a href="#tms">Time Makes Space</a>.
+          <p style="margin-top: 6px;">
+            Starting from biological spatial codes, we derive geometric bounds linking spatial resolution,
+            contextual capacity, and representation dimensionality, characterizing trade-offs in compact
+            spatial state representations. See also <a href="#tms">Time Makes Space</a>.
           </p>
         </td>
       </tr>
@@ -239,29 +207,10 @@ title: Zhaoze Wang
 
 
 
-      <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <table class="research-list" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
-          <td style="padding:16px;">
-            <h2>Opensource</h2>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px;width:20%;vertical-align:middle">
-            <img src="images/octo_vla/cover.gif" width="160">
-          </td>
-          <td style="padding:8px;width:80%;vertical-align:middle">
-            <a href="https://github.com/zhaozewang/OctoVLA" target="_blank">
-              <span class="papertitle">OctoVLA: Vision-Language-Action Model for Manipulation</span>
-            </a>
-            <br>
-            <div style="margin-top: 8px;"></div>
-            <a href="https://github.com/zhaozewang/OctoVLA" target="_blank">Source Code</a>
-            <div style="margin-top: 4px;"></div>
-            <p>
-              Deployed Octo, a generalist VLA model, on the LIBERO manipulation benchmark with language-conditioned control.
-              Evaluated model performance across 10 manipulation tasks with varying language instructions.
-              Integrating BtnkMAE as a compact vision encoder to compare sample efficiency with the default ViT encoder.
-            </p>
+          <td colspan="2" style="padding:16px;">
+            <h2>Open Source</h2>
           </td>
         </tr>
         <tr>
@@ -272,16 +221,17 @@ title: Zhaoze Wang
           </td>
           <td style="padding:8px;width:80%;vertical-align:middle">
             <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank" id="btnk_mae">
-              <span class="papertitle">BtnkMAE: Compact Vision Encoder for Embodied AI</span>
+              <span class="papertitle">BtnkMAE: Compact and Decodable Visual Representations</span>
             </a>
             <br>
             <div style="margin-top: 8px;"></div>
             <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank">Source Code</a>
             <div style="margin-top: 4px;"></div>
             <p>
-              Compact vision encoder compressing images to 1024-D decodable embeddings, 196× more compact than standard ViT.
-              Pretrained ViT-B/L on ImageNet-1K using DDP across 6×RTX 4090 GPUs.
-              Designed for embodied AI applications where memory and bandwidth are constrained.
+              A bottleneck MAE that reduces each ViT frame from a patch-token sequence to a single compact embedding,
+              then reconstructs images with learned patch queries and cross-attention.
+              Released ViT-B/L ImageNet-1K checkpoints with configurable DDP/Hydra training and support for
+              variable-resolution and panorama inputs.
             </p>
           </td>
         </tr>
@@ -290,8 +240,8 @@ title: Zhaoze Wang
             <img src="images/ratatou_gym/trajectory.gif" width="160">
           </td>
           <td style="padding:8px;width:80%;vertical-align:middle">
-            <a href="https://ratatougym.github.io/" target="_blank">
-              <span class="papertitle">RatatouGym: Navigation Simulation Framework</span>
+            <a href="https://ratatougym.github.io/" target="_blank" id="ratatougym">
+              <span class="papertitle">RatatouGym: GPU-Parallel Multimodal Navigation Simulation</span>
             </a>
             <br>
             <div style="margin-top: 8px;"></div>
@@ -300,9 +250,10 @@ title: Zhaoze Wang
             <a href="https://github.com/ratatougym/ratatougym" target="_blank">Source Code</a>
             <div style="margin-top: 4px;"></div>
             <p>
-              Open-source navigation framework that directly simulates sensory inputs during navigation.
-              Engineered modular backends (FAISS, K-d tree, PyTorch) for scalable multi-agent experiments.
-              Used in REMI (NeurIPS 2025) for training spatial world models.
+              A PyTorch-native simulator that generates model-ready spatial and movement sensory streams from
+              thousands of concurrent navigation trajectories, tested at 4,096 parallel environments.
+              GPU-resident trajectory stepping and sensory encoding use batched tensor operations and
+              torch.compile kernels for recurrent-model training.
             </p>
           </td>
         </tr>
@@ -312,7 +263,7 @@ title: Zhaoze Wang
           </td>
           <td style="padding:8px;width:80%;vertical-align:middle">
             <a href="https://www.nn4n.org/" target="_blank">
-              <span class="papertitle">NN4N: Modular RNN Framework</span>
+              <span class="papertitle">NN4N: Neural Networks for Neurosimulations</span>
             </a>
             <br>
             <div style="margin-top: 12px;">
@@ -327,9 +278,10 @@ title: Zhaoze Wang
             <a href="https://github.com/NN4Neurosim/nn4n" target="_blank">Source Code</a>
             <div style="margin-top: 4px;"></div>
             <p>
-              PyTorch framework for hierarchical RNNs with custom autograd, connectivity constraints, and optimizers.
-              Supports biologically plausible architectures with sparse, structured connectivity.
-              Published on PyPI with 6K+ downloads.
+              A PyTorch package for configurable continuous-time RNNs, including E/I-constrained and multi-area
+              architectures with direct access to hidden dynamics. Implements sparsity, sign, and per-connection
+              plasticity masks to enforce structured connectivity and scale gradients during training;
+              shipped with documentation, tests, and CI.
             </p>
           </td>
         </tr>
