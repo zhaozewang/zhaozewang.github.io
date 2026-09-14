@@ -1,0 +1,35 @@
+{
+  "cell": 1174,
+  "checkpoint_steps": 800000,
+  "evaluation_trajectories": 2560,
+  "source": "Partitioned-room adaptation; not an archived original-paper experiment",
+  "ratemap": "Occupancy-normalized cumulative hidden activity; not spike counts or Hz",
+  "rotation_period_seconds": 16,
+  "frames": 480,
+  "fps": 30,
+  "tile_size": 640,
+  "atlas_size": [
+    1920,
+    1280
+  ],
+  "replay_samples_per_second": 2250,
+  "replay_start_sample": 0,
+  "trajectory_decay_seconds": 0.4,
+  "dots_decay_seconds": null,
+  "replay_coverage": "All 36,000 samples per full orbit, synchronized trajectory and activity views",
+  "interpolation": "Linear inter-slice activity interpolation and bilinear display",
+  "colormap": "Jet",
+  "background": "#ffffff",
+  "room_edge_width_pixels": 3.2,
+  "trajectory_point_diameter_pixels": 5.037037037037037,
+  "isosurface_opacity_range": [
+    0.22,
+    0.5
+  ],
+  "slice_traversal_seconds": 8,
+  "slice_motion": "Forward-only full-volume scan per half orbit",
+  "trajectory_color": "Muted blue",
+  "activity_color_gain": 0.9,
+  "activity_display": "Cumulative point cloud without temporal fading",
+  "validation": "All six camera matrices and trajectory/dots positions matched on every frame"
+}

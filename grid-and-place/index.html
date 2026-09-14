@@ -56,30 +56,45 @@ citation: |
 <nav class="buttons" aria-label="Research resources">
   <a href="https://arxiv.org/abs/2605.21356" target="_blank" rel="noopener" class="button">Paper</a>
   <a href="https://github.com/grasp-lyrl/grid_and_place" target="_blank" rel="noopener" class="button">GitHub</a>
-  <a href="https://nbviewer.org/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button">Results Notebook</a>
-  <a href="https://colab.research.google.com/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button">Colab</a>
+  <a href="https://colab.research.google.com/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button">Demo</a>
 </nav>
 
-<section class="section" aria-labelledby="overview">
-  <h2 class="section-title" id="overview">TL;DR</h2>
+<figure class="spatial-gallery" aria-label="Synchronized 3D spatial activity visualization">
+  <video width="1920" height="1280" autoplay muted loop playsinline preload="auto" src="media/spatial-activity-atlas-v6.mp4" poster="media/spatial-activity-poster-v6.jpg" aria-label="Six synchronized views of room boundaries, trajectory, spatial activity, and ratemap slices">
+    <img src="media/spatial-activity-poster-v6.jpg" width="1920" height="1280" alt="Six views of a room, navigation trajectory, and single-unit spatial activity">
+  </video>
+</figure>
+<script src="../project-preview.js" defer></script>
+
+<section class="section" id="overview" aria-labelledby="about">
+  <h2 class="section-title" id="about">About</h2>
   <div class="section-content">
-    <p>A recurrent network trained on a single task, <span class="inline-highlight">predicting the next sensory observation</span>,
-      develops both grid-like and place-like spatial representations. Neither code is supplied as a target or assumed to exist beforehand.</p>
+    <p>The brain uses <strong>place cells</strong> to link sensory experience to locations, and <strong>grid cells</strong>
+      to track position through movement. Most models explain one by assuming the other already exists.</p>
+    <p>Our model develops both representations through a single objective: <strong>predicting the next sensory observation</strong>,
+      without predefined spatial codes. It also reproduces grid fragmentation in hairpin mazes and develops locally ordered
+      grid-like fields alongside localized place-like fields in 3D.</p>
+    <p>We systematically swept over <strong>1,000 training configurations</strong>, varying sensory masking, recurrent noise,
+      activity timescales, and random seeds. We also tested how the learned representations change across open arenas,
+      hairpin mazes, separate and connected rooms, and 3D environments.</p>
     <figure>
       <a href="../images/grid-place-results.png" target="_blank" rel="noopener">
         <img src="../images/grid-place-results.png" class="section-image"
           alt="Recurrent network architecture, Dale-constrained connectivity, spatial autocorrelation, grid spacing and orientation, and examples of emergent grid and place fields">
       </a>
-      <figcaption>One predictive network, two complementary spatial codes.</figcaption>
+      <figcaption>Network architecture, emergent grid and place fields, and the parameter sweep.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section" aria-labelledby="background">
-  <h2 class="section-title" id="background">How Can Two Spatial Codes Emerge Together?</h2>
+<section class="section" aria-labelledby="model">
+  <h2 class="section-title" id="model">Model</h2>
   <div class="section-content">
-    <p>Many models explain grid cells by assuming place cells already exist, or vice versa.
-      We ask whether both can emerge together from <span class="inline-highlight">predicting sensory experience during navigation</span>.</p>
+    <p>The network receives noisy, partially masked sensory observations and body-centered motion signals, then predicts
+      the next observation. Each recurrent neuron has either excitatory or inhibitory outgoing connections, following
+      Dale's law. Neither position labels nor predefined grid or place fields are used as training targets.</p>
+    <p>Simply connecting models that develop each cell type separately does not produce both codes together.
+      In our model, they emerge within a shared recurrent network trained on the same prediction task.</p>
     <figure>
       <a href="../images/grid-place/previous_frameworks.png" target="_blank" rel="noopener">
         <img src="../images/grid-place/previous_frameworks.png" class="section-image" width="6205" height="1906" loading="lazy" alt="Single-cell-type models and their direct composition, with the resulting spatial response maps">
@@ -89,36 +104,30 @@ citation: |
   </div>
 </section>
 
-<section class="section" aria-labelledby="model">
-  <h2 class="section-title" id="model">One Recurrent Network, One Predictive Objective</h2>
-  <div class="section-content">
-    <p>Of 2,048 recurrent units, half receive sensory and motion input; the rest receive only recurrent input.
-      All learn through the same next-observation prediction objective.</p>
-    <ul>
-      <li><b>Structured recurrence:</b> Dale-constrained connections and homeostatic synaptic scaling.</li>
-      <li><b>Incomplete observations:</b> sensory masking and firing-rate-dependent noise.</li>
-      <li><b>Continuous experience:</b> recurrent state carried across training segments.</li>
-    </ul>
-  </div>
-</section>
-
 <section class="section" aria-labelledby="results">
-  <h2 class="section-title" id="results">Co-Emergent Grid and Place Fields</h2>
+  <h2 class="section-title" id="results">Interpretation</h2>
   <div class="section-content">
-    <p>Repeated grid-like fields and localized place-like fields emerge in the same network,
-      supporting complementary demands: <span class="inline-highlight">recovering sensory state</span>
-      and <span class="inline-highlight">updating it during movement</span>.</p>
+    <p>Our interpretation is that sensory experiences within a room form a low-dimensional manifold. The network learns
+      to recover a consistent location from noisy or incomplete sensory cues, producing place-like representations.
+      It also learns how movement changes the expected sensory input, producing grid-like representations.
+      These two processes connect associating sensory cues with a place and tracking position as the agent moves.</p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="environments">
-  <h2 class="section-title" id="environments">Spatial Representations Across Environments</h2>
+  <h2 class="section-title" id="environments">Experiments</h2>
   <div class="section-content">
-    <ul>
-      <li><b>Development:</b> place-like fields emerge before grid-like fields.</li>
-      <li><b>Changing environments:</b> grid patterns fragment in hairpin mazes and reorganize across connected rooms.</li>
-      <li><b>3D traversal:</b> localized place-like fields and locally ordered volumetric grid-like fields.</li>
-    </ul>
+    <p><strong>Place-like fields emerge before grid-like fields.</strong> The network develops these representations in the
+      same order reported in developing rodents.</p>
+    <p><strong>Hexagonal grid patterns fragment in hairpin mazes.</strong> Constrained movement breaks the grid into
+      corridor-specific patterns. Regular grids recover with further training in the open arena, while place-field
+      locations stay stable.</p>
+    <p><strong>Separate grids merge after wall removal.</strong> When two rooms become one, their grid patterns reorganize
+      into a shared lattice. Place fields remain anchored to the same locations.</p>
+    <p><strong>Grid patterns align across connected rooms.</strong> With further exploration and training, some cells develop
+      patterns that extend across both rooms and the connecting corridor.</p>
+    <p><strong>Grid-like and place-like representations extend to 3D.</strong> Place fields remain localized, while grid-like
+      fields show local spatial order without forming a perfect global lattice.</p>
     <figure>
       <a href="../images/grid-place/multi_compartment.png" target="_blank" rel="noopener">
         <img src="../images/grid-place/multi_compartment.png" class="section-image" width="8676" height="8409" loading="lazy" alt="Developmental order, hairpin mazes, wall removal, connected rooms, and original three-dimensional place-like and grid-like firing fields">

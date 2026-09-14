@@ -1,4 +1,8 @@
 /* Scoped additions to the same project template used by REMI. */
+.spatial-gallery { margin: 0 0 32px; }
+.spatial-gallery video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; background: #fff; object-fit: contain; }
+.spatial-gallery img { display: block; max-width: 100%; height: auto; }
+.spatial-gallery figcaption { margin-top: 10px; }
 .authors-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 30px; margin-bottom: 12px; }
 .author-email { color: #666; font-size: .8em; text-decoration: none; }
 .section-content { line-height: 1.55; }

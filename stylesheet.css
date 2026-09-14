@@ -171,33 +171,130 @@ span.highlight {
 }
 
 .venue {
-  color: #006699;
+  color: #e7931e;
   font-weight: 900;
 }
 
-.research-summary a {
-  color: #2875c7;
-  text-decoration-line: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  text-decoration-skip-ink: auto;
+.paper-meta {
+  display: grid;
+  gap: 6px;
+  line-height: 1.4;
 }
 
-.research-summary a:hover,
-.research-summary a:focus-visible {
-  color: #185494;
+.paper-meta sup {
+  line-height: 0;
 }
 
-.research-list img {
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+
+.resource-separator {
+  color: #555;
+  font-size: 9px;
+  align-self: center;
+}
+
+.resource-link {
+  white-space: nowrap;
+}
+
+.link-arrow {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  vertical-align: -1px;
+  background-color: currentColor;
+  -webkit-mask: url('images/icons/external-link.svg') center / contain no-repeat;
+  mask: url('images/icons/external-link.svg') center / contain no-repeat;
+}
+
+.profile-summary,
+.research-interests p {
+  line-height: 1.5;
+}
+
+.research-summary .research-ref {
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.research-summary .research-ref:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.research-summary .research-ref:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+.research-list,
+.research-list > thead,
+.research-list > thead > tr,
+.research-list > thead > tr > td {
+  display: block;
+}
+
+.research-list > tbody {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+.research-list > tbody > tr {
+  display: grid;
+  grid-template-columns: 22% minmax(0, 1fr);
+  align-items: center;
+  min-height: 160px;
+}
+
+.research-list > tbody > tr > td {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0;
+}
+
+.research-list > tbody > tr > td:first-child {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.research-list img,
+.research-list .project-preview {
+  display: block;
+  width: 180px;
   max-width: 100%;
   height: auto;
 }
 
+.research-list .project-preview { display: block; aspect-ratio: 1; object-fit: cover; }
+.research-list .project-preview-wide { aspect-ratio: 16 / 9; object-fit: contain; }
+
+#btnk_mae img,
+#trading_place_for_space img {
+  transform: scale(0.85);
+  transform-origin: center;
+}
+
 @media (max-width: 600px) {
-  .profile-table > tbody > tr,
-  .research-list > tbody > tr {
+  .profile-table > tbody > tr {
     display: flex;
     flex-direction: column;
+  }
+
+  .research-list > tbody > tr {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 196px auto;
+    align-items: start;
+  }
+
+  .research-list > tbody > tr > td:first-child {
+    display: flex;
+    align-items: center;
+    height: 196px;
   }
 
   .profile-table > tbody > tr > td,
@@ -210,6 +307,6 @@ span.highlight {
 
   .profile-table > tbody > tr > td:last-child {
     align-self: center;
-    max-width: 240px !important;
+    max-width: 260px !important;
   }
 }
