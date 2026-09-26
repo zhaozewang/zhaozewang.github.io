@@ -81,6 +81,13 @@ git push
 
 Your site will be live at: `https://zhaozewang.github.io/` within 1-2 minutes.
 
+The Grid and Place project page is maintained here at `/grid-and-place/`.
+The separate `zhaozewang/grip_latex` paper repository previously published a
+duplicate page at `/grip_latex/` from its `gh-pages` branch. Keep that repository's
+**Settings → Pages → Branch** set to **None** so future pushes do not republish
+the duplicate. This is a separate Pages site; this repository's Jekyll exclusions
+do not control it.
+
 ## Updating Content
 
 Edit `index.html` for the biography, research interests, selected publications, and open-source projects. Paper titles and project-page scientific descriptions retain their original scope. Homepage descriptions follow the world-model CV framing.
