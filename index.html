@@ -3,7 +3,7 @@ layout: default
 title: Zhaoze Wang
 ---
 
-<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table class="homepage" style="width:100%;max-width:960px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr style="padding:0px">
     <td style="padding:0px">
       <table class="profile-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -64,15 +64,13 @@ title: Zhaoze Wang
           </td>
         </tr>
       </tbody></table>
-
-      <nav class="work-nav" aria-label="Research and projects"><a href="#selected-projects">Selected Projects</a><span aria-hidden="true">/</span><a href="#publications">Publications</a></nav>
       <table id="selected-projects" class="research-list" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><thead>
       <tr><td colspan="2" style="padding:16px;"><h2>Selected Projects</h2></td></tr>
       </thead><tbody>
       <tr id="tiny-wam">
         <td style="padding:16px;width:22%;vertical-align:middle">
-          <a href="tiny-wam/" aria-label="Tiny-WAM project page">
-            <video class="project-preview project-preview-wide" width="480" height="298" autoplay muted loop playsinline preload="metadata" poster="tiny-wam/media/preview.jpg" aria-label="Tiny-WAM simulated robot motion, compared with the recorded reference">
+          <a href="tiny-wam/" aria-label="TinyWAM project page">
+            <video class="project-preview project-preview-wide" width="480" height="298" autoplay muted loop playsinline preload="metadata" poster="tiny-wam/media/preview.jpg" aria-label="TinyWAM simulated robot motion, compared with the recorded reference">
               <source src="tiny-wam/media/preview.mp4" type="video/mp4">
               <img src="tiny-wam/media/preview.jpg" width="480" height="298" alt="Simulated robot rollout and recorded reference">
             </video>
@@ -80,10 +78,10 @@ title: Zhaoze Wang
         </td>
         <td style="padding:8px;width:78%;vertical-align:middle">
           <div class="paper-meta">
-            <a href="tiny-wam/" class="papertitle">Tiny-WAM — A Tiny World Action Model</a>
+            <a href="tiny-wam/" class="papertitle">TinyWAM: A Tiny World Action Model</a>
             <div class="project-state">Ongoing project · 2026</div>
-            <p class="project-description">A compact-token world-action model for goal-conditioned robot motion, with experiments in simulation and optimized inference on a single GPU.</p>
-            <div class="resource-links"><a class="resource-link" href="tiny-wam/">Project</a><span class="resource-separator" aria-hidden="true">•</span><a class="resource-link" href="tiny-wam/#video-supplement">Robot rollout</a></div>
+            <p class="paper-summary">A compact-token world-action model for goal-conditioned robot motion, with experiments in simulation and optimized inference on a single GPU.</p>
+            <div class="resource-links"><a class="resource-link" href="tiny-wam/">Project</a></div>
           </div>
         </td>
       </tr>
@@ -104,6 +102,8 @@ title: Zhaoze Wang
                   <span class="papertitle">RatatouGym: GPU-Parallel Multimodal Navigation Simulation</span>
                 </a>
               </div>
+              <div class="project-state">2023–Present</div>
+              <p class="paper-summary">GPU-parallel simulation combines multi-agent navigation and neural sensor models through Gym-style APIs.</p>
               <div class="resource-links">
                 <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://ratatougym.github.io/" target="_blank">Project Page <span class="link-arrow" aria-hidden="true"></span></a>
                 <span class="resource-separator" aria-hidden="true">•</span>
@@ -115,37 +115,6 @@ title: Zhaoze Wang
           </td>
         </tr>
 
-      <tr id="btnk_mae">
-        <td style="padding:16px;width:22%;vertical-align:middle">
-          <a href="images/btnk_mae/btnk_results.png" target="_blank" rel="noopener">
-            <img src="images/btnk_mae/btnk_results.png" width="180" alt="BtnkMAE image reconstruction results">
-          </a>
-        </td>
-        <td style="padding:8px;width:78%;vertical-align:middle">
-          <div class="paper-meta">
-            <div class="papertitle">BtnkMAE: Compact and Decodable Visual Representations</div>
-            <div class="resource-links">
-              <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://github.com/grasp-lyrl/btnk_mae" target="_blank">Source Code <span class="link-arrow" aria-hidden="true"></span></a>
-            </div>
-          </div>
-        </td>
-      </tr>
-
-      <tr id="nn4n">
-        <td style="padding:16px;width:22%;vertical-align:middle">
-          <img src="images/nn4n/cover.gif" width="180" alt="NN4N neural network simulation">
-        </td>
-        <td style="padding:8px;width:78%;vertical-align:middle">
-          <div class="paper-meta">
-            <div class="papertitle">NN4N: Neural Networks for Neurosimulations</div>
-            <div class="resource-links">
-              <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://www.nn4n.org/" target="_blank">Documentation <span class="link-arrow" aria-hidden="true"></span></a>
-              <span class="resource-separator" aria-hidden="true">•</span>
-              <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://github.com/NN4Neurosim/nn4n" target="_blank">Source Code <span class="link-arrow" aria-hidden="true"></span></a>
-            </div>
-          </div>
-        </td>
-      </tr>
       </tbody></table>
 
       <table id="publications" class="research-list" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><thead>
@@ -168,6 +137,7 @@ title: Zhaoze Wang
               Pratik Chaudhari<sup>†</sup>, Vijay Balasubramanian<sup>†</sup>
             </div>
             <div><strong class="venue">NeurIPS 2026</strong></div>
+            <p class="paper-summary">Self-supervised sensory prediction learns spatial representations from experience and motion.</p>
             <div class="resource-links">
               <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://arxiv.org/abs/2605.21356" target="_blank">Paper <span class="link-arrow" aria-hidden="true"></span></a>
               <span class="resource-separator" aria-hidden="true">•</span>
@@ -196,6 +166,7 @@ title: Zhaoze Wang
               Vijay Balasubramanian<sup>†</sup>
             </div>
             <div><strong class="venue">NeurIPS 2025</strong></div>
+            <p class="paper-summary">A recurrent model combines cue-triggered goal retrieval, route planning, and sensory reconstruction.</p>
             <div class="resource-links">
               <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://arxiv.org/abs/2507.02064" target="_blank">Paper <span class="link-arrow" aria-hidden="true"></span></a>
               <span class="resource-separator" aria-hidden="true">•</span>
@@ -225,6 +196,7 @@ title: Zhaoze Wang
               Vijay Balasubramanian
             </div>
             <div><strong class="venue">NeurIPS 2024</strong></div>
+            <p class="paper-summary">Reconstructing noisy or partially observed sensory sequences learns spatial representations.</p>
             <div class="resource-links">
               <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://proceedings.neurips.cc/paper_files/paper/2024/file/42aae0e655c77d93edad9171ad9f4717-Paper-Conference.pdf" target="_blank">Paper <span class="link-arrow" aria-hidden="true"></span></a>
               <span class="resource-separator" aria-hidden="true">•</span>
@@ -254,10 +226,51 @@ title: Zhaoze Wang
               Vijay Balasubramanian
             </div>
             <div><strong class="venue">NeurIPS 2024 Oral</strong></div>
+            <p class="paper-summary">Geometric analysis quantifies the trade-off between spatial precision and memory capacity.</p>
             <div class="resource-links">
               <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://neurips.cc/virtual/2024/poster/95187" target="_blank">Paper <span class="link-arrow" aria-hidden="true"></span></a>
               <span class="resource-separator" aria-hidden="true">•</span>
               <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://www.youtube.com/watch?v=qO7owsSloT8" target="_blank">Video <span class="link-arrow" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody></table>
+
+      <table id="other-projects" class="research-list" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><thead>
+      <tr><td colspan="2" style="padding:16px;"><h2>Projects</h2></td></tr>
+      </thead><tbody>
+      <tr id="btnk_mae">
+        <td style="padding:16px;width:22%;vertical-align:middle">
+          <a href="images/btnk_mae/btnk_results.png" target="_blank" rel="noopener">
+            <img src="images/btnk_mae/btnk_results.png" width="180" alt="BtnkMAE image reconstruction results">
+          </a>
+        </td>
+        <td style="padding:8px;width:78%;vertical-align:middle">
+          <div class="paper-meta">
+            <div class="papertitle">BtnkMAE: Compact and Decodable Visual Representations</div>
+            <div class="project-state">2023–Present</div>
+            <p class="paper-summary">A bottleneck masked autoencoder compresses images into compact embeddings that can be decoded back into images.</p>
+            <div class="resource-links">
+              <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://github.com/grasp-lyrl/btnk_mae" target="_blank">Source Code <span class="link-arrow" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="nn4n">
+        <td style="padding:16px;width:22%;vertical-align:middle">
+          <img src="images/nn4n/cover.gif" width="180" alt="NN4N neural network simulation">
+        </td>
+        <td style="padding:8px;width:78%;vertical-align:middle">
+          <div class="paper-meta">
+            <div class="papertitle">NN4N: Neural Networks for Neurosimulations</div>
+            <div class="project-state">2023–Present</div>
+            <p class="paper-summary">Modular recurrent networks with biologically inspired connectivity support flexible, multi-region neural simulations.</p>
+            <div class="resource-links">
+              <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://www.nn4n.org/" target="_blank">Documentation <span class="link-arrow" aria-hidden="true"></span></a>
+              <span class="resource-separator" aria-hidden="true">•</span>
+              <a class="resource-link" rel="noopener" title="Opens in a new tab" href="https://github.com/NN4Neurosim/nn4n" target="_blank">Source Code <span class="link-arrow" aria-hidden="true"></span></a>
             </div>
           </div>
         </td>
@@ -281,7 +294,7 @@ title: Zhaoze Wang
           </td>
           <td style="padding:8px;width:80%;vertical-align:center">
             <p>NeurIPS 2025 Reviewer</p>
-            <p>NeurIPS 2026 Reviewer</p>
+            <p>NeurIPS 2026 Reviewer (Top Reviewer)</p>
             <p>
               Teaching Assistant, ESE 5460: Principles of Deep Learning, Fall 2025
             </p>

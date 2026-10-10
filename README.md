@@ -97,7 +97,7 @@ Edit `index.html` for the biography, research interests, selected publications, 
 The homepage separates **Selected Projects** from **Publications**; original entry IDs
 remain stable for existing links. Tiny-WAM is listed first under Selected Projects.
 
-`tiny-wam/index.html` is an exact copy of the user-supplied `swam.html` export.
+`tiny-wam/index.html` preserves the user-supplied `swam.html` export, with the requested larger space above its title (100px desktop, 64px mobile).
 Preserve its original design, typography, title, byline, links, content, and embedded
 media. Do not redesign this standalone article or add navigation, status labels,
 summary copy, or release notes without an explicit request.
