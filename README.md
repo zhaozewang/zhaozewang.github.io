@@ -97,15 +97,10 @@ Edit `index.html` for the biography, research interests, selected publications, 
 The homepage separates **Selected Projects** from **Publications**; original entry IDs
 remain stable for existing links. Tiny-WAM is listed first under Selected Projects.
 
-`tiny-wam/index.html` contains the public article adapted from the supplied
-`swam.html` export. Its figures, videos, posters, and KaTeX fonts are stored alongside
-it under `media/` and `fonts/`. Videos use `preload="none"` on the article page;
-`media/preview.mp4` is a small, silent homepage preview of the supplied simulator
-rollout. The article retains the experiment's limitations and distinguishes model-side
-inference timing from end-to-end robot control.
+`tiny-wam/index.html` is an exact copy of the user-supplied `swam.html` export.
+Preserve its original design, typography, title, byline, links, content, and embedded
+media. Do not redesign this standalone article or add navigation, status labels,
+summary copy, or release notes without an explicit request.
 
-The export referred to three `/notes/assets/swam-report/` reports that were not supplied.
-Those references remain as text, with a release note, rather than broken links.
-The supplied `https://github.com/zhaozewang/Tiny-WAM` address returned HTTP 404 when
-checked on 2026-10-10, so the public page does not currently include a Code button.
-Restore the button and supporting report links when their public destinations are available.
+`tiny-wam/media/preview.mp4` and `preview.jpg` are used only by the homepage card.
+The article itself retains the original self-contained assets.
