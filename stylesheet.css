@@ -309,3 +309,19 @@ span.highlight {
     max-width: 260px !important;
   }
 }
+
+/* Separate ongoing systems work from publications without changing existing entries. */
+.work-nav { display:flex; flex-wrap:wrap; gap:10px; padding:16px 16px 0; }
+.work-nav span { color:#a0a0a0; }
+#selected-projects, #publications { scroll-margin-top:16px; }
+#selected-projects > tbody, #publications > tbody { grid-auto-rows:auto; }
+#publications { margin-top:28px; }
+.project-state { color:#747474; font-size:13px; }
+.project-description { margin:2px 0; color:#555; line-height:1.5; }
+#tiny-wam .project-preview { aspect-ratio:480 / 298; }
+@media (max-width:600px) {
+  #selected-projects > tbody { gap:28px; }
+  #selected-projects > tbody > tr { grid-template-rows:auto auto; gap:8px; }
+  #selected-projects > tbody > tr > td:first-child { height:auto; }
+  #selected-projects img, #selected-projects .project-preview { width:240px; }
+}

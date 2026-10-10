@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="921.6pt" height="244.8pt" viewBox="0 0 921.6 244.8" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 244.8  L 921.6 244.8  L 921.6 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="LineCollection_1">
+    <path d="M 13.824 12.04416  L 370.777949 12.04416  " clip-path="url(#p6caef3098e)" style="fill: none; stroke: #303030"/>
+    <path d="M 13.824 72.80352  L 370.777949 72.80352  " clip-path="url(#p6caef3098e)" style="fill: none; stroke: #303030; stroke-width: 0.6"/>
+    <path d="M 13.824 182.70648  L 370.777949 182.70648  " clip-path="url(#p6caef3098e)" style="fill: none; stroke: #303030"/>
+   </g>
+   <g id="LineCollection_2">
+    <path d="M 56.658474 42.42384  L 245.844067 42.42384  " clip-path="url(#p6caef3098e)" style="fill: none; stroke: #303030; stroke-width: 0.45"/>
+   </g>
+   <g id="LineCollection_3">
+    <path d="M 256.552685 42.42384  L 370.777949 42.42384  " clip-path="url(#p6caef3098e)" style="fill: none; stroke: #303030; stroke-width: 0.45"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #202020" x="192.300974" y="235.16133" transform="rotate(-0 192.300974 235.16133)">a</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="145.896961" y="30.679864" transform="rotate(-0 145.896961 30.679864)">Latency (ms) ↓</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="310.095778" y="30.690176" transform="rotate(-0 310.095778 30.690176)">Optimized</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="26.317388" y="60.836888" transform="rotate(-0 26.317388 60.836888)">Steps</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="86.99956" y="60.836888" transform="rotate(-0 86.99956 60.836888)">Reference</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="145.896961" y="60.836888" transform="rotate(-0 145.896961 60.836888)">KV cache</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="208.363902" y="60.836888" transform="rotate(-0 208.363902 60.836888)">+ Graph</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="277.969922" y="60.836888" transform="rotate(-0 277.969922 60.836888)">Hz ↑</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="342.221633" y="60.836888" transform="rotate(-0 342.221633 60.836888)">Speedup</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="26.317388" y="95.023616" transform="rotate(-0 26.317388 95.023616)">1</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="86.99956" y="95.023616" transform="rotate(-0 86.99956 95.023616)">55.6</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="145.896961" y="95.023616" transform="rotate(-0 145.896961 95.023616)">59.1</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="208.363902" y="95.051116" transform="rotate(-0 208.363902 95.051116)">20.8</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="277.969922" y="95.023616" transform="rotate(-0 277.969922 95.023616)">48.1</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="342.221633" y="95.023616" transform="rotate(-0 342.221633 95.023616)">2.7×</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="26.317388" y="120.042176" transform="rotate(-0 26.317388 120.042176)">2</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="86.99956" y="120.042176" transform="rotate(-0 86.99956 120.042176)">102.9</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="145.896961" y="120.042176" transform="rotate(-0 145.896961 120.042176)">84.7</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="208.363902" y="120.069676" transform="rotate(-0 208.363902 120.069676)">26.7</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="277.969922" y="120.042176" transform="rotate(-0 277.969922 120.042176)">37.5</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="342.221633" y="120.042176" transform="rotate(-0 342.221633 120.042176)">3.9×</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="26.317388" y="145.060736" transform="rotate(-0 26.317388 145.060736)">4</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="86.99956" y="145.060736" transform="rotate(-0 86.99956 145.060736)">197.8</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="145.896961" y="145.060736" transform="rotate(-0 145.896961 145.060736)">134.8</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="208.363902" y="145.088236" transform="rotate(-0 208.363902 145.088236)">38.8</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="277.969922" y="145.060736" transform="rotate(-0 277.969922 145.060736)">25.8</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="342.221633" y="145.060736" transform="rotate(-0 342.221633 145.060736)">5.1×</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="26.317388" y="170.079296" transform="rotate(-0 26.317388 170.079296)">8</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="86.99956" y="170.079296" transform="rotate(-0 86.99956 170.079296)">389.3</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="145.896961" y="170.079296" transform="rotate(-0 145.896961 170.079296)">232.5</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="208.363902" y="170.106796" transform="rotate(-0 208.363902 170.106796)">63.4</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="277.969922" y="170.079296" transform="rotate(-0 277.969922 170.079296)">15.8</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="342.221633" y="170.079296" transform="rotate(-0 342.221633 170.079296)">6.1×</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 450.015294 183.6  L 642.963374 183.6  L 642.963374 4.896  L 450.015294 4.896  z " style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m160a144db3" d="M 0 0  L 0 3  " style="stroke: #202020; stroke-width: 0.65"/>
+      </defs>
+      <g>
+       <use xlink:href="#m160a144db3" x="477.579305" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_34">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="477.579305" y="196.929688" transform="rotate(-0 477.579305 196.929688)">1</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m160a144db3" x="523.519325" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_35">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="523.519325" y="196.929688" transform="rotate(-0 523.519325 196.929688)">2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m160a144db3" x="569.459344" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_36">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="569.459344" y="196.929688" transform="rotate(-0 569.459344 196.929688)">4</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m160a144db3" x="615.399363" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_37">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="615.399363" y="196.929688" transform="rotate(-0 615.399363 196.929688)">8</text>
+     </g>
+    </g>
+    <g id="text_38">
+     <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="546.489334" y="210.612656" transform="rotate(-0 546.489334 210.612656)">Flow steps</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 450.015294 183.6  L 642.963374 183.6  " clip-path="url(#p2b3532b3e3)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <defs>
+       <path id="m0613278926" d="M 0 0  L -3 0  " style="stroke: #202020; stroke-width: 0.65"/>
+      </defs>
+      <g>
+       <use xlink:href="#m0613278926" x="450.015294" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_39">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="443.515294" y="187.014844" transform="rotate(-0 443.515294 187.014844)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 450.015294 142.985455  L 642.963374 142.985455  " clip-path="url(#p2b3532b3e3)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m0613278926" x="450.015294" y="142.985455" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_40">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="443.515294" y="146.400298" transform="rotate(-0 443.515294 146.400298)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 450.015294 102.370909  L 642.963374 102.370909  " clip-path="url(#p2b3532b3e3)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m0613278926" x="450.015294" y="102.370909" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_41">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="443.515294" y="105.785753" transform="rotate(-0 443.515294 105.785753)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 450.015294 61.756364  L 642.963374 61.756364  " clip-path="url(#p2b3532b3e3)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m0613278926" x="450.015294" y="61.756364" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_42">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="443.515294" y="65.171207" transform="rotate(-0 443.515294 65.171207)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <path d="M 450.015294 21.141818  L 642.963374 21.141818  " clip-path="url(#p2b3532b3e3)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m0613278926" x="450.015294" y="21.141818" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_43">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="443.515294" y="24.556662" transform="rotate(-0 443.515294 24.556662)">80</text>
+     </g>
+    </g>
+    <g id="text_44">
+     <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="426.117638" y="94.248" transform="rotate(-90 426.117638 94.248)">Optimized latency (ms)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 450.015294 183.6  L 450.015294 4.896  " style="fill: none; stroke: #454545; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 450.015294 183.6  L 642.963374 183.6  " style="fill: none; stroke: #454545; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #202020" x="546.489334" y="235.16133" transform="rotate(-0 546.489334 235.16133)">b</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 465.6349 183.6  L 489.52371 183.6  L 489.52371 167.261896  L 465.6349 167.261896  z " clip-path="url(#p2b3532b3e3)" style="fill: #d7dcdf; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 511.57492 183.6  L 535.46373 183.6  L 535.46373 167.172985  L 511.57492 167.172985  z " clip-path="url(#p2b3532b3e3)" style="fill: #d7dcdf; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 557.514939 183.6  L 581.403749 183.6  L 581.403749 167.425771  L 557.514939 167.425771  z " clip-path="url(#p2b3532b3e3)" style="fill: #d7dcdf; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 603.454958 183.6  L 627.343768 183.6  L 627.343768 167.153011  L 603.454958 167.153011  z " clip-path="url(#p2b3532b3e3)" style="fill: #d7dcdf; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 465.6349 167.261896  L 489.52371 167.261896  L 489.52371 154.314473  L 465.6349 154.314473  z " clip-path="url(#p2b3532b3e3)" style="fill: #83a8bb; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 511.57492 167.172985  L 535.46373 167.172985  L 535.46373 154.220788  L 511.57492 154.220788  z " clip-path="url(#p2b3532b3e3)" style="fill: #83a8bb; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 557.514939 167.425771  L 581.403749 167.425771  L 581.403749 154.505106  L 557.514939 154.505106  z " clip-path="url(#p2b3532b3e3)" style="fill: #83a8bb; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 603.454958 167.153011  L 627.343768 167.153011  L 627.343768 154.213279  L 603.454958 154.213279  z " clip-path="url(#p2b3532b3e3)" style="fill: #83a8bb; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 465.6349 154.314473  L 489.52371 154.314473  L 489.52371 141.524037  L 465.6349 141.524037  z " clip-path="url(#p2b3532b3e3)" style="fill: #326b8c; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 511.57492 154.220788  L 535.46373 154.220788  L 535.46373 129.051915  L 511.57492 129.051915  z " clip-path="url(#p2b3532b3e3)" style="fill: #326b8c; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 557.514939 154.505106  L 581.403749 154.505106  L 581.403749 104.668375  L 557.514939 104.668375  z " clip-path="url(#p2b3532b3e3)" style="fill: #326b8c; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 603.454958 154.213279  L 627.343768 154.213279  L 627.343768 54.919202  L 603.454958 54.919202  z " clip-path="url(#p2b3532b3e3)" style="fill: #326b8c; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_17">
+     <path d="M 455.240294 16.771  L 468.540294 16.771  L 468.540294 10.121  L 455.240294 10.121  z " style="fill: #d7dcdf; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_46">
+     <text style="font-size: 9.5px; font-family: 'STIXGeneral'; text-anchor: start; fill: #202020" x="476.140294" y="16.771" transform="rotate(-0 476.140294 16.771)">Encode / decode</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 455.240294 28.142797  L 468.540294 28.142797  L 468.540294 21.492797  L 455.240294 21.492797  z " style="fill: #83a8bb; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_47">
+     <text style="font-size: 9.5px; font-family: 'STIXGeneral'; text-anchor: start; fill: #202020" x="476.140294" y="28.142797" transform="rotate(-0 476.140294 28.142797)">Cache update</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 455.240294 39.514594  L 468.540294 39.514594  L 468.540294 32.864594  L 455.240294 32.864594  z " style="fill: #326b8c; stroke: #ffffff; stroke-width: 0.45; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_48">
+     <text style="font-size: 9.5px; font-family: 'STIXGeneral'; text-anchor: start; fill: #202020" x="476.140294" y="39.514594" transform="rotate(-0 476.140294 39.514594)">Flow integration</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_20">
+    <path d="M 722.20072 183.6  L 915.1488 183.6  L 915.1488 4.896  L 722.20072 4.896  z " style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m160a144db3" x="749.764731" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_49">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="749.764731" y="196.929688" transform="rotate(-0 749.764731 196.929688)">1</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m160a144db3" x="795.70475" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_50">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="795.70475" y="196.929688" transform="rotate(-0 795.70475 196.929688)">2</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m160a144db3" x="841.644769" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_51">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="841.644769" y="196.929688" transform="rotate(-0 841.644769 196.929688)">4</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m160a144db3" x="887.584789" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_52">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="887.584789" y="196.929688" transform="rotate(-0 887.584789 196.929688)">8</text>
+     </g>
+    </g>
+    <g id="text_53">
+     <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="818.67476" y="210.612656" transform="rotate(-0 818.67476 210.612656)">Flow steps</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_6">
+     <g id="line2d_19">
+      <path d="M 722.20072 183.6  L 915.1488 183.6  " clip-path="url(#p6eab500b7a)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m0613278926" x="722.20072" y="183.6" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_54">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="715.70072" y="187.014844" transform="rotate(-0 715.70072 187.014844)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_21">
+      <path d="M 722.20072 145.577872  L 915.1488 145.577872  " clip-path="url(#p6eab500b7a)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m0613278926" x="722.20072" y="145.577872" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_55">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="715.70072" y="148.992716" transform="rotate(-0 715.70072 148.992716)">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_23">
+      <path d="M 722.20072 107.555745  L 915.1488 107.555745  " clip-path="url(#p6eab500b7a)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m0613278926" x="722.20072" y="107.555745" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_56">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="715.70072" y="110.970588" transform="rotate(-0 715.70072 110.970588)">1.0</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_25">
+      <path d="M 722.20072 69.533617  L 915.1488 69.533617  " clip-path="url(#p6eab500b7a)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m0613278926" x="722.20072" y="69.533617" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_57">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="715.70072" y="72.948461" transform="rotate(-0 715.70072 72.948461)">1.5</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_27">
+      <path d="M 722.20072 31.511489  L 915.1488 31.511489  " clip-path="url(#p6eab500b7a)" style="fill: none; stroke: #e5e5e5; stroke-width: 0.45; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m0613278926" x="722.20072" y="31.511489" style="fill: #202020; stroke: #202020; stroke-width: 0.65"/>
+      </g>
+     </g>
+     <g id="text_58">
+      <text style="font-size: 10px; font-family: 'STIXGeneral'; text-anchor: end; fill: #202020" x="715.70072" y="34.926333" transform="rotate(-0 715.70072 34.926333)">2.0</text>
+     </g>
+    </g>
+    <g id="text_59">
+     <text style="font-size: 11px; font-family: 'STIXGeneral'; text-anchor: middle; fill: #202020" x="695.813376" y="94.248" transform="rotate(-90 695.813376 94.248)">Max. action deviation (mrad)</text>
+    </g>
+   </g>
+   <g id="patch_21">
+    <path d="M 722.20072 183.6  L 722.20072 4.896  " style="fill: none; stroke: #454545; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 722.20072 183.6  L 915.1488 183.6  " style="fill: none; stroke: #454545; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_60">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #202020" x="818.67476" y="235.16133" transform="rotate(-0 818.67476 235.16133)">c</text>
+   </g>
+   <g id="patch_23">
+    <path d="M 736.671826 183.6  L 749.075631 183.6  L 749.075631 71.690333  L 736.671826 71.690333  z " clip-path="url(#p6eab500b7a)" style="fill: #9b9b9b"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 782.611845 183.6  L 795.01565 183.6  L 795.01565 98.46208  L 782.611845 98.46208  z " clip-path="url(#p6eab500b7a)" style="fill: #9b9b9b"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 828.551864 183.6  L 840.955669 183.6  L 840.955669 96.490403  L 828.551864 96.490403  z " clip-path="url(#p6eab500b7a)" style="fill: #9b9b9b"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 874.491883 183.6  L 886.895688 183.6  L 886.895688 118.097264  L 874.491883 118.097264  z " clip-path="url(#p6eab500b7a)" style="fill: #9b9b9b"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 750.453831 183.6  L 762.857636 183.6  L 762.857636 42.357671  L 750.453831 42.357671  z " clip-path="url(#p6eab500b7a)" style="fill: #326b8c"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 796.39385 183.6  L 808.797656 183.6  L 808.797656 126.654795  L 796.39385 126.654795  z " clip-path="url(#p6eab500b7a)" style="fill: #326b8c"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 842.33387 183.6  L 854.737675 183.6  L 854.737675 117.616809  L 842.33387 117.616809  z " clip-path="url(#p6eab500b7a)" style="fill: #326b8c"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 888.273889 183.6  L 900.677694 183.6  L 900.677694 123.919377  L 888.273889 123.919377  z " clip-path="url(#p6eab500b7a)" style="fill: #326b8c"/>
+   </g>
+   <g id="legend_2">
+    <g id="patch_31">
+     <path d="M 801.738097 16.771  L 813.138097 16.771  L 813.138097 10.121  L 801.738097 10.121  z " style="fill: #9b9b9b"/>
+    </g>
+    <g id="text_61">
+     <text style="font-size: 9.5px; font-family: 'STIXGeneral'; text-anchor: start; fill: #202020" x="820.738097" y="16.771" transform="rotate(-0 820.738097 16.771)">Train</text>
+    </g>
+    <g id="patch_32">
+     <path d="M 850.814503 16.771  L 862.214503 16.771  L 862.214503 10.121  L 850.814503 10.121  z " style="fill: #326b8c"/>
+    </g>
+    <g id="text_62">
+     <text style="font-size: 9.5px; font-family: 'STIXGeneral'; text-anchor: start; fill: #202020" x="869.814503" y="16.771" transform="rotate(-0 869.814503 16.771)">Validation</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6caef3098e">
+   <rect x="13.824" y="4.896" width="356.953949" height="178.704"/>
+  </clipPath>
+  <clipPath id="p2b3532b3e3">
+   <rect x="450.015294" y="4.896" width="192.94808" height="178.704"/>
+  </clipPath>
+  <clipPath id="p6eab500b7a">
+   <rect x="722.20072" y="4.896" width="192.94808" height="178.704"/>
+  </clipPath>
+ </defs>
+</svg>
