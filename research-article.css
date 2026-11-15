@@ -1,0 +1,12 @@
+/* Article typography and BibTeX controls for project pages. */
+.project-body { color: #292d27; font: 18px/1.75 Arial, Helvetica, sans-serif; }
+.project-body, .project-body * { box-sizing: border-box; }
+.project-body .section-content { font: inherit; color: inherit; text-align: left; }
+.project-body a { color: #1683ac; text-decoration: none; text-underline-offset: 3px; }
+.project-body a:hover { text-decoration: underline; }
+.project-body .section-title { color: inherit; font-size: 24px; font-weight: 600; margin: 48px 0 16px; }
+.section-content p { margin: 0 0 20px; }
+.paper-references ol { list-style: none; counter-reset: reference; padding: 0; font-size: 16px; line-height: 1.7; }
+.paper-references li { counter-increment: reference; position: relative; padding-left: 2.4em; margin-bottom: 14px; scroll-margin-top: 24px; overflow-wrap: anywhere; }
+.paper-references li::before { content: "[" counter(reference) "]"; position: absolute; left: 0; }
+.paper-references li:target { background: #f2f4f5; }

@@ -1,24 +1,61 @@
-/* Scoped additions to the same project template used by REMI. */
-.spatial-gallery { margin: 0 0 32px; }
-.spatial-gallery video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; background: #fff; object-fit: contain; }
-.spatial-gallery img { display: block; max-width: 100%; height: auto; }
-.spatial-gallery figcaption { margin-top: 10px; }
 .authors-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 30px; margin-bottom: 12px; }
 .author-email { color: #666; font-size: .8em; text-decoration: none; }
-.section-content { line-height: 1.55; }
-.section-content p { margin: 0 0 14px; }
-.section-content li { margin-bottom: 8px; }
-figure { margin: 22px 0 0; }
-figcaption { color: #737373; font-size: .8rem; line-height: 1.5; margin-top: 12px; text-align: center; }
-.section-image { border-radius: 0; }
-.command { background: #f5f5f5; padding: 14px; overflow-x: auto; font-size: .8rem; line-height: 1.6; }
-.citation-box { margin-top: 16px; }
-.citation-box pre { margin: 0; padding-right: 35px; font: .8rem/1.6 'Courier New', monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: #444; }
-.copy-button { opacity: 1; cursor: pointer; }
-.back-link { margin: 35px 0 0; text-align: center; font-size: .8rem; }
-a:focus-visible, button:focus-visible { outline: 2px solid #209cee; outline-offset: 4px; }
 @media (max-width: 768px) {
   body { padding: 24px 20px; }
   .authors-row { gap: 12px 22px; }
-  .section-content { line-height: 1.6; }
+}
+
+.spatial-gallery { max-width: 48rem; margin: 0 auto 24px; }
+.spatial-gallery img, .result-media { display: block; width: 100%; height: auto; }
+.result-figure { margin: 18px 0 24px; }
+.trajectory-figure { margin-top: clamp(32px, 4vw, 48px); }
+.sweep-figure { margin-block: clamp(32px, 4vw, 48px); }
+figcaption { font-size: 15px; color: #61686c; }
+.back-link { margin: 36px 0 0; font-size: 15px; }
+.flight-gallery { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 20px clamp(36px, 6vw, 80px); align-items: center; }
+.flight-gallery figcaption, .field-labels { font-size: .86rem; color: #364958; text-align: center; margin: 0 0 8px; }
+.field-labels { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 600px) {
+  .flight-gallery { grid-template-columns: 1fr; }
+  .flight-gallery > :first-child { width: 52%; margin: 0 auto; }
+}
+
+.model-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+.model-layout .circuit { width: 100%; max-width: 18rem; margin: 0 auto; }
+.model-equations { display: grid; justify-items: center; gap: 1rem; min-width: 0; }
+.equation-pair { display: grid; justify-items: center; gap: 1rem; width: min(100%, 21rem); }
+.equation-pair img { display: block; width: 100%; height: auto; }
+/* Preserve the relative widths of the original TeX boxes so both use the same type size. */
+.equation-pair img:nth-child(2) { width: calc(100% * 128.534627 / 184.148244); }
+.model-description { margin-top: 1rem; }
+.corridor-figure { margin-block: .5rem .75rem; }
+.corridor-figure a { display: block; }
+/* Exclude the slide canvas margins while retaining the heading and step labels. */
+.corridor-figure img { aspect-ratio: 1746 / 575; object-fit: cover; object-position: center 37%; }
+@media (max-width: 620px) {
+  .model-layout { grid-template-columns: 1fr; gap: 1rem; }
+  .model-layout .circuit { max-width: 15rem; }
+}
+
+.comparison-scroll { overflow-x: auto; margin: 18px 0; }
+.model-comparison { width: 100%; min-width: 40rem; table-layout: fixed; border-collapse: collapse; border-block: 2px solid #4a5054; font-size: 16px; line-height: 1.3; }
+.model-comparison caption { text-align: left; font-size: 15px; padding-bottom: 8px; }
+.model-comparison th, .model-comparison td { padding: 5px 10px; text-align: left; vertical-align: middle; }
+.model-comparison th { padding-block: 6px; border-bottom: 1px solid #92999d; font-weight: 600; }
+.model-comparison th:first-child { width: 31%; }
+.model-comparison th:nth-child(2), .model-comparison th:nth-child(3) { width: 17%; }
+.reference-callout { white-space: nowrap; }
+@media (max-width: 700px) {
+  .model-comparison { font-size: 14px; }
+  .model-comparison th, .model-comparison td { padding: 5px 6px; }
+}
+@media print {
+  main { max-width: none; margin: 0; padding: 0; }
+  figure, tr { break-inside: avoid; }
+  .copy-button { display: none; }
 }

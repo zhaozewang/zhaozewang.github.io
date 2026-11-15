@@ -10,7 +10,9 @@ citation: |
   }
 ---
 
-<link rel="stylesheet" href="remi-mobile.css">
+<link rel="stylesheet" href="remi-mobile.css?v=12">
+
+<link rel="stylesheet" href="../research-article.css">
 
 <h1 class="title">
     REMI: Reconstructing Episodic Memory During Internally Driven Path Planning
@@ -74,191 +76,158 @@ citation: |
 </div>
 
 <div class="buttons">
-    <a href="https://arxiv.org/abs/2507.02064" target="_blank" class="button">📄 Paper</a>
-    <a href="https://github.com/zhaozewang/place_cells_episodic_rnn" target="_blank" class="button disabled">💻 Code (Coming Soon)</a>
-    <a href="https://ratatougym.github.io" target="_blank" class="button">🏠 Simulation Suite</a>
-    <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank" class="button">👁️ Vision Encoder</a>
+    <a href="https://arxiv.org/abs/2507.02064" target="_blank" class="button"><img class="brand-icon" src="../images/icons/arxiv.png" alt="" width="16" height="16">Paper</a>
+    <a href="https://github.com/zhaozewang/remi" target="_blank" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg?v=2#github"></use></svg>Code</a>
+    <a href="https://ratatougym.github.io" target="_blank" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg#suite"></use></svg>Simulation Suite</a>
+    <a href="https://github.com/grasp-lyrl/btnk_mae" target="_blank" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg?v=2#github"></use></svg>Vision Encoder</a>
 </div>
 
-<br>
-<div class="section">
-    <div class="section-title">TL;DR</div>
-    <div class="section-content">
-        REMI is a unified, system-level theory of how the brain uses multiple spatial representations to achieve <span class="inline-highlight">cue-triggered goal retrieval</span>.
-        We tested our framework in both idealized simulations and realistic settings using <span class="inline-highlight">Habitat Sim</span>.
-    </div>
-</div>
-<div class="section">
-    <div class="section-title">Background</div>
-    <div class="section-content">
-        Decades of research have revealed multiple types of cells that support animals' navigation and localization.
-        For example, <span class="inline-highlight">grid cells</span> in the MEC fire in hexagonal patterns, while <span class="inline-highlight">place cells</span> in the hippocampus fire at specific locations.
-        <br>
-        <img src="../images/REMI/assets/question.png" alt="Research Question" class="section-image" style="width: 50%; margin-top: 20px;">
-        <br>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-end;">
-                <div style="display: flex; flex-direction: column; align-items: center; width: 30%; margin-right: 100px;">
-                    <img src="../images/REMI/assets/grid_cells.png" alt="Grid Cells" style="width: 100%;">
-                    <div style="margin-top: 8px; font-size: 0.95em; color: #888;">Example of grid cells</div>
-                </div>
-                <div style="display: flex; flex-direction: column; align-items: center; width: 30%;">
-                    <img src="../images/REMI/assets/palce_cells.png" alt="Place Cells" style="width: 100%;">
-                    <div style="margin-top: 8px; font-size: 0.95em; color: #888;">Example of place cells</div>
-                </div>
-            </div>
+<main class="project-body remi-story">
+<section aria-labelledby="memory-and-navigation">
+  <h2 class="section-title" id="memory-and-navigation">From a sensory cue to a destination</h2>
+  <div class="section-content">
+    <p>Suppose you are asked to meet a friend at the café with the red awning. The awning tells you which café they mean. To get there, you still have to recall where it is, work out how to reach it from here, and anticipate what you might see along the way. A cue can identify a destination without telling you the direction of a single step.</p>
+    <p>Place cells in the hippocampus and grid cells in the medial entorhinal cortex offer two ways of representing the same location. A place cell fires in a localized region and can change its response when the context changes. A grid cell fires at many locations arranged on a triangular lattice. As an animal moves, a population of grid cells can update its activity by integrating the animal’s motion <a class="inline-citation" href="#remi-ref-1" aria-label="Reference 1">[1]</a>.</p>
+    <p class="research-question">How do these interacting systems support not only spatial encoding but also internally driven path planning, such as navigating to locations recalled from cues and reconstructing memory along the planned routes?</p>
+    <figure id="field-examples" class="field-examples">
+      <div class="field-pair">
+        <div><h3>Grid cells</h3>
+          <div class="cell-examples">
+            <img src="grid-1-views.webp" width="901" height="399" alt="Grid cell 1, shown as a firing surface and a view from above." loading="lazy">
+            <img src="grid-2-views.webp" width="901" height="399" alt="Grid cell 2, shown as a firing surface and a view from above." loading="lazy">
+            <img src="grid-3-views.webp" width="901" height="399" alt="Grid cell 3, shown as a firing surface and a view from above." loading="lazy">
+            <img src="grid-4-views.webp" width="901" height="399" alt="Grid cell 4, shown as a firing surface and a view from above." loading="lazy">
+          </div>
         </div>
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">A Connectivity model of HC-MEC Loop</div>
-    <div class="section-content">
-        To approach this problem, we first revisit known theories about spatial navigation cell types.
-        <ul style="margin-top: 10px;">
-            <li>Grid cells may emerge through <span class="inline-highlight">path integration</span> of displacement vectors.</li>
-            <li>Spatially modulated cells in the MEC encode sensory stimuli.</li>
-            <li>Place cells can <span class="inline-highlight">auto-associate</span> sensory inputs, potentially reflected by spatially modulated cells.</li>
-            <li>Meanwhile, grid cell population manifolds form efficient bases for <span class="inline-highlight">spatial planning</span> because of their context-independent nature.</li>
-        </ul>
-        <img src="../images/REMI/assets/hcmec.png" alt="HC-MEC Circuit" class="section-image" style="width: 30%;">
-        <br>
-        <b>We propose that a simple extension of the place cell auto-association theory can connect all these ideas and generate several testable predictions.</b>
-        <br>
-        <ul>
-            <li><b>Place cells may associate</b> not only sensory signals reflected by spatially modulated cells, but also sensory signals <b>with grid cells</b>.</li>
-            <li>Given a partial sensory cue, a place cell can <span class="inline-highlight">reconstruct the goal grid cell pattern</span>.</li>
-            <li>With this recalled pattern, an animal can <span class="inline-highlight">plan along the grid cell manifold</span>.</li>
-            <li>Planning then produces sequences of intermediate grid states, which place cells could use to <span class="inline-highlight">reconstruct sensory experiences</span> along the planned path.</li>
-        </ul>
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">RNN Implementation</div>
-    <div class="section-content">
-        To test this hypothesis, we trained a unified RNN that incorporates all five cell types within a single recurrent layer.
-        <br><br>
-        SMC units learn to autoencode sensory inputs, while grid cells learn to path-integrate based on speed and head direction signals, both with added masking and noise.
-        The <span class="inline-highlight">hippocampal module</span> receives no direct input or output; instead, it learns to denoise activity from the MEC through recurrence.
-        After training, we observed the spontaneous emergence of <b>place cells</b> in this region.
-        <br><br>
-        <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px; margin: 15px 0;">
-            <img src="../images/REMI/assets/rnn_equation.png" alt="RNN Equation" style="width: 45%;">
-            <img src="../images/REMI/assets/rnn_loss.png" alt="RNN Loss" style="width: 45%;">
+        <div><h3>Place cells</h3>
+          <div class="cell-examples">
+            <img src="place-1-views.webp" width="901" height="399" alt="Place cell 1, shown as a firing surface and a view from above." loading="lazy">
+            <img src="place-2-views.webp" width="901" height="399" alt="Place cell 2, shown as a firing surface and a view from above." loading="lazy">
+            <img src="place-3-views.webp" width="901" height="399" alt="Place cell 3, shown as a firing surface and a view from above." loading="lazy">
+            <img src="place-4-views.webp" width="901" height="399" alt="Place cell 4, shown as a firing surface and a view from above." loading="lazy">
+          </div>
         </div>
-        <br>
-        We call this the <b>HC-MEC model</b>.
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">Testing Cue-Triggered Querying</div>
-    <div class="section-content">
-        After training, we sampled sensory cues at fixed locations to query the network.
-        <br><br>
-        <img src="../images/REMI/assets/query_definition.png" alt="Query Definition" class="section-image" style="width: 50%;"><br>
-        The left plot shows how subregion responses evolve toward the goal response.
-        The surface represents the population manifold; the green dot marks the goal, and the trajectory shows the evolution of responses, visualized in 3D.
-        The right plot shows how these responses decode into 2D locations using nearest neighbor search.
-        <br><br>
-        <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
-            <img src="../images/REMI/assets/recall_manifold.png" alt="Recall Manifold" style="width: 55%;">
-            <img src="../images/REMI/assets/recall_decode.png" alt="Recall Decode" style="width: 35%;">
+      </div>
+      <figcaption>Each pair shows one REMI cell. Surface height represents the relative activity shown in the adjacent firing map.</figcaption>
+    </figure>
+  </div>
+</section>
+<section aria-labelledby="circuit">
+  <h2 class="section-title" id="circuit">Learning what a place looks like and where it is</h2>
+  <div class="section-content">
+    <p>During exploration, sensory and movement signals reach the circuit together. Each time an animal visits the café, the view of the awning accompanies a particular grid population pattern. We propose that hippocampal neurons can associate these two patterns. The association can then be used in either direction. Part of the view could recover the grid pattern for the café; activating that grid pattern internally could recover the view.</p>
+    <p>We test this idea in a recurrent network that models the loop between the hippocampus and medial entorhinal cortex. During simulated exploration, one group of units learns to reconstruct sensory observations from noisy, partially masked inputs. A second group learns grid responses from speed and head direction. The hippocampal units receive information through recurrent connections. We supervise the grid responses during training, while localized place fields emerge in the hippocampal population without place-field targets.</p>
+    <figure id="hc-mec-model">
+      <div class="hc-mec-layout">
+        <img src="../images/REMI/assets/hcmec.png" alt="Recurrent connections between the hippocampal and entorhinal populations." loading="lazy">
+        <div class="hc-mec-equations">
+          <img src="../images/REMI/assets/rnn_equation.png" alt="Recurrent state update for the five cell populations." loading="lazy">
+          <img src="../images/REMI/assets/rnn_loss.png" alt="Training loss summed over time for grid and spatially modulated cells." loading="lazy">
         </div>
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">Extending HC-MEC for Planning</div>
-    <div class="section-content">
-        The previous experiment shows how cues can trigger retrieval of goal grid cell patterns.
-        Once the goal pattern is retrieved, prior studies suggest that planning can be more efficiently performed on the grid cell manifold.
-        To test this, we expanded the trained HC-MEC network's recurrent matrix to include an additional <span class="inline-highlight">planner subnetwork</span>.
-        <br><br>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 120px;">
-            <img src="../images/REMI/assets/W_hcmec.png" alt="HC-MEC Weight" style="width: 24%;">
-            <img src="../images/REMI/assets/W_hcmec_plan.png" alt="HC-MEC Planning Weight" style="width: 30%;">
-        </div>
-        <br><br>
-        During planning, the planner receives the goal grid state, and the HC-MEC network is initialized with the current sensory and grid cell states.
-        The planner projects only to the speed and head-direction regions to control HC-MEC dynamics.
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">Reconstructing Memory During Planning on the Grid Cell Manifold</div>
-    <div class="section-content">
-        We collected the responses of the sensory and grid cell subregions over all planning timesteps.
-        Each latent state was decoded into locations using nearest neighbor search.
-        We found that not only did grid cell responses decode into trajectories connecting the two locations, but the <span class="inline-highlight">sensory region also decoded into trajectories</span>. 
-        This decoded trajectory indicates that sensory experiences were reconstructed from intermediate grid states.
-        <br><br>
-        <img src="../images/REMI/assets/plan_traj.png" alt="Planning Trajectories" class="section-image" style="width: 70%;">
-    </div>
-</div>
-
-<br><br>
-<div class="section">
-    <div class="section-title">Navigation with Realistic Visual Inputs and a Decodable Vision Encoder (BtnkMAE)</div>
-    <div class="section-content">
-        Finally, we asked whether the framework could extend to realistic navigation tasks.
-        <br><br>
-        To test this, we replaced simulated sensory responses with visual feature embeddings extracted from Habitat Sim.
-        We captured panoramic images at each spatial location with a fixed direction and passed them through a general-purpose vision encoder that maps each image to a 1024-dimensional embedding vector.
-        <br><br>
-        <div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
-            <img src="../images/REMI/assets/btnk_ratemap.png" alt="Bottleneck Ratemap" style="width: 45%;">
-            <img src="../images/REMI/assets/btnk_mae.png" alt="Bottleneck MAE" style="width: 45%;">
-        </div>
-        <br>
-        For this purpose, we trained a modified masked autoencoder (MAE) on ImageNet-1k.
-        We added a <span class="inline-highlight">bottleneck layer</span> so that each image maps to a 1024-dimensional vector while remaining reconstructable back to images.
-        <br><br>
-        Using this visual feature map, we repeated the experiments and recorded the sensory subregion responses during training.
-        When decoding these intermediate states with BtnkMAE's decoder, all states could be reconstructed into realistic images.
-        <br><br>
-        <div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px;">
-            <video autoplay loop muted playsinline class="section-image" style="width: 48%; margin-bottom: 0;">
-                <source src="../images/REMI/assets/traj_video_0_trimmed.mp4" type="video/mp4">
-            </video>
-            <video autoplay loop muted playsinline class="section-image" style="width: 48%; margin-bottom: 0;">
-                <source src="../images/REMI/assets/traj_video_14_trimmed.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">Acknowledgments and Funding</div>
-    <div class="section-content">
-        This work was supported by <b style="color: #606d8e;">NIH CRCNS grant 1R01MH125544-01</b> and partially by the <b style="color: #606d8e;">NSF and DoD OUSD (R&E) under Agreement PHY-2229929</b> (The <a href="https://arni-institute.org/" target="_blank" class="inline-link">NSF AI Institute for Artificial and Natural Intelligence</a>).
-        Additional support came from the <b style="color: #606d8e;">United States-Israel Binational Science Foundation (BSF)</b>.
-        PC was supported by the <b style="color: #606d8e;">National Science Foundation (IIS-2145164, CCF-2212519)</b> and the <b style="color: #606d8e;">Office of Naval Research (N00014-22-1-2255)</b>.
-        <a href="https://www.sas.upenn.edu/~vbalasub/public-html/Home.html" target="_blank" class="inline-link">Vijay Balasubramanian</a> was supported in part by the Eastman Professorship at Balliol College, Oxford.
-    </div>
-</div>
-
-<br>
-<div class="section">
-    <div class="section-title">Cite this Paper</div>
-    <div class="citation-container">
-        <div class="citation-box" id="citation-text">
-            <p>
-@inproceedings{wang2025remi,<br>
-&nbsp;&nbsp;title={REMI: Reconstructing Episodic Memory During Internally Driven Path Planning},<br>
-&nbsp;&nbsp;author={Zhaoze Wang and Genela Morris and Dori Derdikman and Pratik Chaudhari and Vijay Balasubramanian},<br>
-&nbsp;&nbsp;booktitle={Proceedings of the 2025 Conference on Neural Information Processing Systems (NeurIPS)},<br>
-&nbsp;&nbsp;year={2025}<br>
-}
-            </p>
-        </div>
-        <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
-    </div>
-</div>
+      </div>
+      <figcaption>The HC–MEC circuit, its recurrent update, and the training objective for the spatial populations.</figcaption>
+    </figure>
+  </div>
+</section>
+<section aria-labelledby="recall">
+  <h2 class="section-title" id="recall">Can a sensory cue recover a distant location?</h2>
+  <div class="section-content">
+    <p>A network that tracks an animal accurately during exploration could simply carry its estimate of position forward from one step to the next. To test recall itself, we clear the network’s hidden state and present a fixed sensory cue from a known location. Only the sensory population receives the cue. The grid population has to recover the corresponding activity pattern through the circuit.</p>
+    <figure>
+      <div class="remi-panels query">
+        <img src="../images/REMI/assets/query_definition.png" alt="" loading="lazy">
+      </div>
+      <figcaption>The query supplies sensory activity associated with the target location.</figcaption>
+    </figure>
+    <p>For each population, we compare its activity with responses recorded when the agent explored the arena. The closest match gives a location estimate at each time step. Over a five-second query, activity converges near the target pattern. The green point in the figure marks that target in population activity space. The accompanying map shows where those successive activity patterns would place the animal in the room.</p>
+    <figure>
+      <div class="remi-panels recall">
+        <img src="../images/REMI/assets/recall_manifold.png" alt="" loading="lazy">
+        <img src="../images/REMI/assets/recall_decode.png" alt="" loading="lazy">
+      </div>
+      <figcaption>Recall viewed in population activity space (left) and decoded into arena coordinates (right).</figcaption>
+    </figure>
+    <p>Varying the amount of masking during training reveals a trade-off. Stronger masking produces more hippocampal units that meet our place-cell criterion and improves location decoding, even as the network becomes less accurate at reconstructing the sensory observation itself. Remembering where an observation belongs and recovering its sensory detail can therefore differ in accuracy within the same network.</p>
+  </div>
+</section>
+<section aria-labelledby="planning">
+  <h2 class="section-title" id="planning">Planning a path from the current grid state to the goal</h2>
+  <div class="section-content">
+    <p>Once a destination has a grid representation, what movement would bring the current pattern closer to it? Within a grid module, moving a given distance in a given direction shifts the population pattern in a similar way at different starting points. A movement learned in one part of the arena can therefore be useful elsewhere. Periodicity also creates an ambiguity: one module can repeat its pattern at several locations. Modules with different grid spacings help distinguish these possibilities.</p>
+    <p>How can a module plan a sequence of steps? During exploration, nearby grid phases follow one another as the animal moves. In a simple model, we record these local transitions in a matrix. We then mark the current and target phases and repeatedly apply the matrix, spreading activity to neighboring phases. The strongest response settles between the two endpoints. Selecting the strongest phase at each step and renormalizing the activity produces a sequence that approaches the target.</p>
+    <figure id="phase-geometry" class="phase-planning">
+      <a href="phase-planning.png"><img src="phase-planning.png" width="1740" height="920" alt="Grid phases on a torus and its unwrapped lattice, with one- and two-dimensional examples of planning from start to target." loading="lazy"></a>
+      <figcaption><b>Figure 3. Planning with grid-cell phases.</b> (a) The blue and red points mark the current and target phases on the torus of a single grid module. (b) Unwrapping the torus exposes periodic copies of the target. The blue arrow selects the copy within half a period of the current phase along each axis. (c) Each column shows the weight of each phase at one iteration. As weight spreads to neighboring phases, the maximum (red dot) settles between start and target. (d) Selecting the strongest phase and renormalizing at each step moves the peak to the target. (e) Four snapshots show the same update in two dimensions, with brighter colors indicating greater weight.</figcaption>
+    </figure>
+    <p>To test planning separately from recall accuracy, we give a planner the target grid pattern directly. It also receives the current grid state, and can influence the navigation circuit through its speed and head-direction units. These internally generated movements update the grid pattern one step at a time. We decode the resulting sequence to see which route the planner chose.</p>
+    <figure>
+      <div class="remi-panels weights">
+        <img src="../images/REMI/assets/W_hcmec.png" alt="" loading="lazy">
+        <img src="../images/REMI/assets/W_hcmec_plan.png" alt="" loading="lazy">
+      </div>
+      <figcaption>Connectivity of the navigation circuit before and after the planning population is added.</figcaption>
+    </figure>
+    <p>During training, start and goal locations are sampled from one-second walks. The planner receives the endpoints, and the intervening walk is withheld. At test time we choose endpoints from ten- and twenty-second walks. The decoded paths can connect these more distant locations and take shortcuts across bends in the original walk. This is a test of generalizing local movement updates in an open arena. Planning a detour around a wall would require an additional mechanism for representing boundaries.</p>
+  </div>
+</section>
+<section aria-labelledby="reconstruction">
+  <h2 class="section-title" id="reconstruction">Reconstructing the experience along a planned route</h2>
+  <div class="section-content">
+    <p>Planning supplies a second test of the association learned during exploration. At each intermediate step the grid population represents a new location. If that grid pattern reinstates a corresponding sensory memory, the sensory population should trace the same route, even though the planner has no direct connection to it.</p>
+    <p>We initialize the sensory and grid states at the starting location and let the planner act through the movement units. We then decode position independently from the grid population and the sensory population. Their paths closely follow one another. Agreement at the intermediate locations matters here: recovering the final sensory cue alone would tell us little about what the network recalled along the way.</p>
+    <figure>
+      <div class="remi-panels plans">
+        <img src="../images/REMI/assets/plan_traj.png" alt="Three planned routes, each decoded from grid cell activity (GC) and spatially modulated cell activity (SMC)." loading="lazy">
+      </div>
+      <figcaption>Positions decoded independently from grid and sensory activity during internally generated planning.</figcaption>
+    </figure>
+  </div>
+</section>
+<section aria-labelledby="habitat">
+  <h2 class="section-title" id="habitat">What would the agent see along the way?</h2>
+  <div class="section-content">
+    <p>In the simulated arena, we can tell whether a recovered sensory vector belongs to the right location. In a rendered room we can ask a more concrete question. As a planned path passes a doorway, does the recovered view show the doorway from the expected part of the room?</p>
+    <p>We collect panoramic images at a fixed viewing orientation in Habitat-Sim. A modified masked autoencoder, BtnkMAE, encodes each panorama in a 1,024-dimensional vector from which its decoder can reconstruct an image. We pretrain it on ImageNet-1k, fine-tune it on the navigation scenes, and freeze it. The location-specific vectors then take the place of the simulated sensory responses during training.</p>
+    <figure>
+      <div class="remi-panels bottleneck">
+        <img src="../images/REMI/assets/btnk_ratemap.png" alt="" loading="lazy">
+        <img src="../images/REMI/assets/btnk_mae.png" alt="" loading="lazy">
+      </div>
+      <figcaption>Spatial responses of visual features and the encoder–decoder used to reconstruct panoramas.</figcaption>
+    </figure>
+    <p>During planning, we pass the intermediate sensory states through the frozen decoder. The reconstructed views resemble the panoramas at corresponding points along the planned route. The two examples below show what is recovered from the network’s own activity as its internal position changes.</p>
+    <figure>
+      <div class="remi-panels routes">
+        <img src="planned-route-0.gif" alt="" loading="lazy">
+        <img src="planned-route-14.gif" alt="" loading="lazy">
+      </div>
+      <figcaption>Two planned routes in Habitat-Sim with their visual reconstructions.</figcaption>
+    </figure>
+  </div>
+</section>
+<section aria-labelledby="predictions">
+  <h2 class="section-title" id="predictions">What the circuit predicts</h2>
+  <div class="section-content">
+    <p>The two directions of recall suggest different experimental tests. A familiar sensory cue presented away from its usual location should reactivate a grid pattern associated with that location. During subsequent planning, entorhinal activity should sweep through positions ahead of the animal, accompanied by reinstatement of the sensory patterns associated with those positions. Recording these populations together would distinguish recall of the destination from recall of the route.</p>
+    <p>The model assumes grid scales suited to the size of the arena and uses supervision to establish the grid code. How those fields emerge is a separate question that we investigate in our <a href="../grid-and-place/">work on the co-emergence of grid and place fields</a>. The full REMI paper gives the analytical displacement model, training procedures, and additional tests with noisy and distorted grid representations <a class="inline-citation" href="#remi-ref-2" aria-label="Reference 2">[2]</a>.</p>
+  </div>
+</section>
+<section aria-labelledby="funding">
+  <h2 class="section-title" id="funding">Acknowledgments and funding</h2>
+  <div class="section-content"><p>This work was supported by NIH CRCNS grant 1R01MH125544-01 and partially by the NSF and DoD OUSD (R&E) under Agreement PHY-2229929 (The NSF AI Institute for Artificial and Natural Intelligence).
+        Additional support came from the United States-Israel Binational Science Foundation (BSF).
+        PC was supported by the National Science Foundation (IIS-2145164, CCF-2212519) and the Office of Naval Research (N00014-22-1-2255).
+        Vijay Balasubramanian was supported in part by the Eastman Professorship at Balliol College, Oxford.</p></div>
+</section>
+<section aria-labelledby="citation">
+  <h2 class="section-title" id="citation">Cite this Paper</h2>
+  {% include project-citation.html %}
+</section>
+<section class="paper-references" aria-labelledby="references">
+  <h2 class="section-title" id="references">References</h2>
+  <ol>
+    <li id="remi-ref-1">Edvard I. Moser, Emilio Kropff, and May-Britt Moser. Place cells, grid cells, and the brain’s spatial representation system. <em>Annual Review of Neuroscience</em>, 31:69–89, 2008. <a href="https://doi.org/10.1146/annurev.neuro.31.061307.090723">doi: 10.1146/annurev.neuro.31.061307.090723</a>.</li>
+    <li id="remi-ref-2">Zhaoze Wang, Genela Morris, Dori Derdikman, Pratik Chaudhari, and Vijay Balasubramanian. REMI: Reconstructing Episodic Memory During Internally Driven Path Planning. <em>NeurIPS</em>, 2025. <a href="https://arxiv.org/html/2507.02064v2">Full paper and supplementary material</a>.</li>
+  </ol>
+</section>
+</main>

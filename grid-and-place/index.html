@@ -11,7 +11,8 @@ citation: |
   }
 ---
 
-<link rel="stylesheet" href="project.css">
+<link rel="stylesheet" href="../research-article.css">
+<link rel="stylesheet" href="project.css?v=9">
 
 <h1 class="title">A Simple Model of Co-Emergence of Grid and Place Fields</h1>
 <div class="conference">NeurIPS 2026</div>
@@ -55,103 +56,156 @@ citation: |
 </div>
 
 <nav class="buttons" aria-label="Research resources">
-  <a href="https://arxiv.org/abs/2605.21356" target="_blank" rel="noopener" class="button">Paper</a>
-  <a href="https://github.com/grasp-lyrl/grid_and_place" target="_blank" rel="noopener" class="button">GitHub</a>
-  <a href="https://colab.research.google.com/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button">Demo</a>
+  <a href="https://arxiv.org/abs/2605.21356" target="_blank" rel="noopener" class="button"><img class="brand-icon" src="../images/icons/arxiv.png" alt="" width="16" height="16">Paper</a>
+  <a href="https://github.com/grasp-lyrl/grid_and_place" target="_blank" rel="noopener" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg?v=2#github"></use></svg>GitHub</a>
+  <a href="https://colab.research.google.com/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg?v=2#notebook"></use></svg>Demo</a>
+  <a href="https://youtu.be/Wpeis7M0CZM" target="_blank" rel="noopener" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg#youtube"></use></svg>YouTube</a>
 </nav>
 
-<figure class="spatial-gallery" aria-label="Synchronized 3D spatial activity visualization">
-  <video width="1920" height="1280" autoplay muted loop playsinline preload="auto" src="media/spatial-activity-atlas-v6.mp4" poster="media/spatial-activity-poster-v6.jpg" aria-label="Six synchronized views of room boundaries, trajectory, spatial activity, and ratemap slices">
-    <img src="media/spatial-activity-poster-v6.jpg" width="1920" height="1280" alt="Six views of a room, navigation trajectory, and single-unit spatial activity">
-  </video>
+<figure id="teaser" class="spatial-gallery">
+  <img alt="Six synchronized views of the simulated room, flight trajectory, spatial activity and firing rate map slices." height="672" src="media/spatial-activity-atlas-v6.gif?v=2" width="1008">
 </figure>
-<script src="../project-preview.js" defer></script>
 
-<section class="section" id="overview" aria-labelledby="about">
-  <h2 class="section-title" id="about">About</h2>
+<main class="project-body">
+<article class="project-story" aria-label="How grid and place fields emerge">
+<section class="section" aria-labelledby="about">
+  <h2 class="section-title" id="about">How is location represented during navigation?</h2>
   <div class="section-content">
-    <p>The brain uses <strong>place cells</strong> to link sensory experience to locations, and <strong>grid cells</strong>
-      to track position through movement. Most models explain one by assuming the other already exists.</p>
-    <p>Our model develops both representations through a single objective: <strong>predicting the next sensory observation</strong>,
-      without predefined spatial codes. It also reproduces grid fragmentation in hairpin mazes and develops locally ordered
-      grid-like fields alongside localized place-like fields in 3D.</p>
-    <p>We systematically swept over <strong>1,000 training configurations</strong>, varying sensory masking, recurrent noise,
-      activity timescales, and random seeds. We also tested how the learned representations change across open arenas,
-      hairpin mazes, separate and connected rooms, and 3D environments.</p>
-    <figure>
-      <a href="../images/grid-place-results.png" target="_blank" rel="noopener">
-        <img src="../images/grid-place-results.png" class="section-image"
-          alt="Recurrent network architecture, Dale-constrained connectivity, spatial autocorrelation, grid spacing and orientation, and examples of emergent grid and place fields">
-      </a>
-      <figcaption>Network architecture, emergent grid and place fields, and the parameter sweep.</figcaption>
-    </figure>
+    <p>Grid cells in the medial entorhinal cortex fire periodically across space, forming a triangular lattice that tiles the environment. Hippocampal place cells fire at specific locations and remap rapidly between learned environments.</p>
+    <p>Grid cells and place cells together support spatial navigation. While grid cells are thought to emerge from path integration, it has been suggested that place cells emerge from encoding sensory experience during navigation.</p>
+    <figure class="result-figure trajectory-figure"><img alt="A shared simulated trajectory, accumulated spike locations and firing rate maps for a grid field and a place field." class="result-media" height="894" loading="lazy" src="media/talk/trajectory.gif?v=2" width="2048"/></figure>
   </div>
 </section>
-
+<section class="section" aria-labelledby="chicken-and-egg">
+  <h2 class="section-title" id="chicken-and-egg">The chicken-and-egg problem of place and grid fields</h2>
+  <div class="section-content">
+    <p>In the brain, grid and place cells coexist within a single bidirectionally connected hippocampal-entorhinal circuit. Many theories of one cell type rely on the existence of the other. From the developmental perspective, these potential dependencies create a chicken-and-egg problem. If each cell type depends on the other, which arises first?</p>
+    <div class="comparison-scroll" role="region" aria-label="Model comparison" tabindex="0">
+      <table class="model-comparison" aria-label="Comparison with existing theories of grid and place field emergence"><caption>Table 1. Comparison with existing theories of grid and place field emergence.</caption><thead><tr><th scope="col"><strong>Model class</strong></th><th scope="col"><strong>Grid fields</strong></th><th scope="col"><strong>Place fields</strong></th><th scope="col"><strong>Spatial representation assumed</strong></th></tr>
+</thead><tbody><tr><td>Circuit and geometric models of grid fields <span class="reference-callout">[<a href="#model-ref-1">1</a>, <a href="#model-ref-2">2</a>, <a href="#model-ref-3">3</a>, <a href="#model-ref-4">4</a>, <a href="#model-ref-5">5</a>, <a href="#model-ref-6">6</a>, <a href="#model-ref-7">7</a>]</span></td><td>Mechanistic / <strong>emergent</strong></td><td>Not modeled</td><td>Grid-specific circuit or geometric prior</td></tr>
+<tr><td>Path-integration and place-target RNN models <span class="reference-callout">[<a href="#model-ref-8">8</a>, <a href="#model-ref-9">9</a>, <a href="#model-ref-10">10</a>, <a href="#model-ref-11">11</a>]</span></td><td><strong>Emergent</strong></td><td>Predefined input / target</td><td>Allocentric coordinates or predefined place-field targets</td></tr>
+<tr><td>Models of place-field emergence <span class="reference-callout">[<a href="#model-ref-12">12</a>, <a href="#model-ref-13">13</a>]</span></td><td>Not modeled</td><td><strong>Emergent</strong></td><td>No grid-field prior</td></tr>
+<tr><td>Successor-representation and predictive-map theories <span class="reference-callout">[<a href="#model-ref-14">14</a>]</span></td><td>Derived / spectral</td><td>Derived / predictive</td><td>Explicit state graph or transition structure</td></tr>
+<tr><td>Grid-place interaction and dependency models <span class="reference-callout">[<a href="#model-ref-15">15</a>, <a href="#model-ref-16">16</a>, <a href="#model-ref-17">17</a>, <a href="#model-ref-18">18</a>]</span></td><td>Predefined</td><td>Predefined / mechanistic</td><td>Pre-existing grid or place fields</td></tr>
+<tr><td>System-level grid-place models <span class="reference-callout">[<a href="#model-ref-6">6</a>, <a href="#model-ref-19">19</a>]</span></td><td>Predefined</td><td>Predefined / constructed</td><td>Pre-existing spatial representations</td></tr>
+</tbody></table>
+    </div>
+    <p>An alternative possibility is that the two types co-emerge. Simply adding bidirectional interactions to combine recurrent networks in which grid cells and place cells emerge individually does not lead to co-emergence, perhaps because each type requires distinct recurrent dynamics.</p>
+  </div>
+</section>
 <section class="section" aria-labelledby="model">
-  <h2 class="section-title" id="model">Model</h2>
+  <h2 class="section-title" id="model">Predicting the next sensory observation</h2>
   <div class="section-content">
-    <p>The network receives noisy, partially masked sensory observations and body-centered motion signals, then predicts
-      the next observation. Each recurrent neuron has either excitatory or inhibitory outgoing connections, following
-      Dale's law. Neither position labels nor predefined grid or place fields are used as training targets.</p>
-    <p>Simply connecting models that develop each cell type separately does not produce both codes together.
-      In our model, they emerge within a shared recurrent network trained on the same prediction task.</p>
-    <figure>
-      <a href="../images/grid-place/previous_frameworks.png" target="_blank" rel="noopener">
-        <img src="../images/grid-place/previous_frameworks.png" class="section-image" width="6205" height="1906" loading="lazy" alt="Single-cell-type models and their direct composition, with the resulting spatial response maps">
-      </a>
-      <figcaption>Simply combining single-cell-type models does not yield robust co-emergence.</figcaption>
-    </figure>
+    <p>We introduce a recurrent network with 2,048 neurons that satisfies Dale’s law. Each neuron is constrained to be either excitatory or inhibitory. Half of the neurons receive direct external input, while the remaining half are only driven through recurrent connections. The network has no prior knowledge of spatial location or pre-existing spatial cell types.</p>
+  </div>
+  <div class="section-content model-layout">
+    <figure class="result-figure circuit"><img class="result-media" src="media/talk/circuit.webp" alt="Circuit diagram showing external signals entering one population and recurrent connections linking the two populations."></figure>
+    <div class="model-equations">
+      <div class="equation-pair">
+        <img src="media/talk/recurrent-update.svg" alt="The recurrent state updates from its previous state, the masked observation and the agent’s motion.">
+        <img src="media/talk/prediction-loss.svg" alt="The loss is the mean squared error between the predicted and actual next observation.">
+      </div>
+    </div>
+  </div>
+  <div class="section-content model-description">
+    <p>At each step, the network uses the masked sensory observation <math><msub><mover accent="true"><mi>o</mi><mo>~</mo></mover><mi>t</mi></msub></math> and the egocentric motion signal <math><msub><mi>m</mi><mi>t</mi></msub></math> to update its hidden state <math><msub><mi>h</mi><mi>t</mi></msub></math> and predict the next sensory observation.</p>
   </div>
 </section>
-
-<section class="section" aria-labelledby="results">
-  <h2 class="section-title" id="results">Interpretation</h2>
+<section class="section" aria-labelledby="development">
+  <h2 class="section-title" id="development">Place fields appear before grid fields</h2>
   <div class="section-content">
-    <p>Our interpretation is that sensory experiences within a room form a low-dimensional manifold. The network learns
-      to recover a consistent location from noisy or incomplete sensory cues, producing place-like representations.
-      It also learns how movement changes the expected sensory input, producing grid-like representations.
-      These two processes connect associating sensory cues with a place and tracking position as the agent moves.</p>
+    <p>Place cells emerge before grid cells during training, consistent with recordings during rodent development [<a href="#model-ref-20">20</a>, <a href="#model-ref-21">21</a>]. Place-cell counts rise earlier than grid-cell counts across ten random-seed replicates.</p>
+    <figure class="result-figure"><img alt="Nine examples of each field type and population counts over 100 training checkpoints." class="result-media" height="398" loading="lazy" src="media/talk/emergence.gif" width="1000"/></figure>
+    <p>In an example trained network, we identified 58 grid-like units using a grid-score threshold of &gt;0.3, predominantly among recurrently driven neurons, and 307 place-like units across both input-driven and recurrently driven neurons.</p>
   </div>
 </section>
-
+<section class="section" aria-labelledby="sweep">
+  <h2 class="section-title" id="sweep">Which training conditions support both fields?</h2>
+  <div class="section-content">
+    <p>We test 1,000 different training configurations by varying the level of recurrent firing-rate noise, the fraction of sensory input masked, and the neuron decay rate, with a different random seed for each configuration. For this sweep, we use the more permissive grid-score threshold of 0.1. Place cells emerge robustly across nearly all settings. Grid-like periodicity preferentially emerges at higher noise levels and is modulated more weakly by the decay rate.</p>
+    <figure class="result-figure sweep-figure"><a href="media/talk/parameter-sweep.png"><img alt="Grid-field and place-field counts across three training parameters." class="result-media" loading="lazy" src="media/talk/parameter-sweep.png"/></a></figure>
+    <p>We also test whether grid and place cells still emerge when we train the network to reconstruct the <em>current</em> sensory observation from masked input rather than predict the next sensory observation. Under this condition, we still find 42 grid cells with grid scores above 0.3 and 329 place cells. Grid- and place-like cells also emerge when motion input is removed completely and consecutive sensory observations contain smooth transition information along trajectories.</p>
+  </div>
+</section>
 <section class="section" aria-labelledby="environments">
-  <h2 class="section-title" id="environments">Experiments</h2>
+  <h2 class="section-title" id="environments">A grid fragments in a hairpin maze</h2>
   <div class="section-content">
-    <p><strong>Place-like fields emerge before grid-like fields.</strong> The network develops these representations in the
-      same order reported in developing rodents.</p>
-    <p><strong>Hexagonal grid patterns fragment in hairpin mazes.</strong> Constrained movement breaks the grid into
-      corridor-specific patterns. Regular grids recover with further training in the open arena, while place-field
-      locations stay stable.</p>
-    <p><strong>Separate grids merge after wall removal.</strong> When two rooms become one, their grid patterns reorganize
-      into a shared lattice. Place fields remain anchored to the same locations.</p>
-    <p><strong>Grid patterns align across connected rooms.</strong> With further exploration and training, some cells develop
-      patterns that extend across both rooms and the connecting corridor.</p>
-    <p><strong>Grid-like and place-like representations extend to 3D.</strong> Place fields remain localized, while grid-like
-      fields show local spatial order without forming a perfect global lattice.</p>
-    <figure>
-      <a href="../images/grid-place/multi_compartment.png" target="_blank" rel="noopener">
-        <img src="../images/grid-place/multi_compartment.png" class="section-image" width="8676" height="8409" loading="lazy" alt="Developmental order, hairpin mazes, wall removal, connected rooms, and original three-dimensional place-like and grid-like firing fields">
-      </a>
-      <figcaption>Spatial codes develop and reorganize across navigation conditions, including volumetric 3D traversal.</figcaption>
-    </figure>
+    <p>We replicate the experiment of Derdikman et al. [<a href="#model-ref-22">22</a>], in which grid cells were recorded as rodents first explored an open field, then traversed an imposed hairpin maze, and then returned to the open field. In the hairpin maze, where movement is constrained to narrow corridors, grid patterns fragment across corridors. Upon returning to the open field, triangular firing patterns gradually recover as training continues.</p>
+    <figure class="result-figure"><a href="media/talk/hairpin.png"><img alt="Four phases of the hairpin maze experiment with grid and place fields for the same example units across phases." class="result-media" loading="lazy" src="media/talk/hairpin.png"/></a></figure>
+    <p>In our model, place cells fire at corresponding locations in the open arena and hairpin maze, without the repetition across alternating arms reported by Derdikman et al. We predict that, when distinct visual landmarks or olfactory cues allow the animal to distinguish individual arms, individual place cells would fire selectively in a single arm.</p>
   </div>
 </section>
-
-<section class="section" aria-labelledby="code">
-  <h2 class="section-title" id="code">Code and Released Results</h2>
+<section class="section" aria-labelledby="wall-removal">
+  <h2 class="section-title" id="wall-removal">Two grid maps merge after wall removal</h2>
   <div class="section-content">
-    <p><a class="inline-link" href="https://github.com/grasp-lyrl/grid_and_place" target="_blank" rel="noopener">GitHub</a>
-      includes the model, simulator, training configurations, and saved rate maps.
-      Explore the results in the <a class="inline-link" href="https://nbviewer.org/github/grasp-lyrl/grid_and_place/blob/main/notebooks/co_emergence.ipynb" target="_blank" rel="noopener">notebook</a>.</p>
+    <p>We train the network for 60,000 steps in room 1 and 60,000 steps in room 2 while the rooms are separated by a wall, followed by 80,000 steps in the combined arena after wall removal. This tests whether the learned spatial code treats the two rooms as separate environments or as one continuous space.</p>
+    <figure class="result-figure"><a href="media/talk/wall-removal.png"><img alt="Five examples across the left room, right room and joined arena." class="result-media" loading="lazy" src="media/talk/wall-removal.png"/></a></figure>
+    <p>After wall removal, grid patterns merge into a unified lattice spanning both rooms. The integration of grid maps is consistent with Wernle et al. [<a href="#model-ref-23">23</a>], who observed local reorganization near the former partition while grid fields near distal walls remained largely stable. Our model further predicts that place-cell firing centers remain stable after wall removal when sensory cues at corresponding locations remain similar.</p>
   </div>
 </section>
+<section class="section" aria-labelledby="connected-rooms">
+  <h2 class="section-title" id="connected-rooms">Grid fields align through a connecting corridor</h2>
+  <div class="section-content">
+    <p>Following Carpenter et al. [<a href="#model-ref-24">24</a>], we connect two rooms by a corridor that the animal can freely traverse. The original experiment tested whether grid cells form local maps within each room or a global map across connected spaces. We therefore compare grid-cell responses early and late in training.</p>
+    <figure class="result-figure corridor-figure"><a href="media/talk/connected-rooms.png"><img alt="Grid fields in connected rooms at 300,000 and 800,000 training steps." class="result-media" loading="lazy" src="media/talk/connected-rooms.png"/></a></figure>
+    <p>Early in training, grid cells show fragmented, locally triangular lattice patterns within each room. Later in training, some cells develop global patterns, with grid fields and periodicity becoming ordered across the connected environment despite the intervening walls.</p>
+  </div>
+</section>
+<section class="section" aria-labelledby="flight">
+  <h2 class="section-title" id="flight">Spatial fields during three-dimensional flight</h2>
+  <div class="section-content">
+    <p>We train the network in a 3D environment in which the agent moves freely through the full volume. The trajectory is generated by the same smoothed random-walk procedure with boundary avoidance used in 2D environments.</p>
+    <p>We find that place cells develop clear localized 3D firing fields. Grid cells also develop structured volumetric firing fields, but these fields are locally ordered rather than organized as a perfect global lattice, resembling locally ordered grid-like responses observed in freely flying bats [<a href="#model-ref-25">25</a>].</p>
+    <figure class="result-figure flight-gallery">
+<div><figcaption>Simulated flight trajectory</figcaption><img alt="A simulated bat trajectory through a three-dimensional room." class="result-media" loading="lazy" src="media/talk/flight-path.png"/></div>
+<div><div class="field-labels"><span>Grid-like fields</span><span>Place fields</span></div><img alt="Nine grid-like fields and nine place fields shown in synchronized three-dimensional views." class="result-media" height="422" loading="lazy" src="media/talk/flight.gif" width="810"/></div>
+</figure>
+  </div>
+</section>
+<section class="section" aria-labelledby="interpretation">
+  <h2 class="section-title" id="interpretation">Off-manifold contraction and on-manifold transition</h2>
+  <div class="section-content">
+    <p>The animal’s sensory experience traces a continuous trajectory on a manifold within high-dimensional sensory space, which is constrained to have the same low dimension as the physical space being explored. Masking observations perturbs them away from the manifold of valid sensory states. The network pulls the perturbed state back to the manifold.</p>
+    <p>This suggests that place cells can provide coordinates on the manifold of valid sensory experiences. To predict the next observation, the circuit should use the current motion to determine the next location on the sensory manifold. If the spatial location were represented in some local chart, it could be updated using the current velocity by a recurrent circuit. Grid cells can be interpreted as maintaining such a local chart.</p>
+    <figure class="result-figure"><img class="result-media" loading="lazy" src="media/talk/manifold.png" alt="A masked observation returns to the sensory manifold at the current location, then follows the manifold as the agent moves."></figure>
+    <p>Grid cells in the medial entorhinal cortex are known to be organized in a hierarchy of discrete modules. Our network only produced a single module in which the grid cells have similar periods.</p>
+  </div>
+</section>
+</article>
 
 <section class="section" aria-labelledby="citation">
   <h2 class="section-title" id="citation">Cite this Paper</h2>
-  <div class="citation-container">
-    <div class="citation-box" id="citation-text"><pre>{{ page.citation | escape }}</pre></div>
-    <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()" aria-label="Copy BibTeX citation">Copy</button>
-  </div>
+  {% include project-citation.html %}
+</section>
+<section class="paper-references" aria-labelledby="references">
+  <h2 class="section-title" id="references">References</h2>
+  <ol>
+      <li id="model-ref-1">Yoram Burak and Ila R. Fiete. Accurate Path Integration in Continuous Attractor Network Models of Grid Cells. <em>PLoS Comput Biol</em>, 5(2):e1000291, February 2009. ISSN 1553-7358. <a href="https://doi.org/10.1371/journal.pcbi.1000291">doi: 10.1371/journal.pcbi.1000291</a>.</li>
+      <li id="model-ref-2">Dehong Xu, Ruiqi Gao, Wen-Hao Zhang, Xue-Xin Wei, and Ying Nian Wu. On Conformal Isometry of Grid Cells: Learning Distance-Preserving Position Embedding, February 2025.</li>
+      <li id="model-ref-3">Neil Burgess, Caswell Barry, and John O’Keefe. An oscillatory interference model of grid cell firing. <em>Hippocampus</em>, 17(9):801–812, September 2007. ISSN 1050-9631, 1098-1063. <a href="https://doi.org/10.1002/hipo.20327">doi: 10.1002/hipo.20327</a>.</li>
+      <li id="model-ref-4">Louis Kang and Vijay Balasubramanian. A geometric attractor mechanism for self-organization of entorhinal grid modules. <em>eLife</em>, 8, August 2019. <a href="https://doi.org/10.7554/eLife.46687">doi: 10.7554/eLife.46687</a>.</li>
+      <li id="model-ref-5">Rylan Schaeffer, Tzuhsuan Ma, Sanmi Koyejo, Mikail Khona, Cristóbal Eyzaguirre, and Ila Rani Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. In <em>NeurIPS</em>, September 2023.</li>
+      <li id="model-ref-6">Sarthak Chandra, Sugandha Sharma, Rishidev Chaudhuri, and Ila Fiete. Episodic and associative memory from spatial scaffolds in the hippocampus. <em>Nature</em>, 638(8051):739–751, February 2025. ISSN 0028-0836, 1476-4687. <a href="https://doi.org/10.1038/s41586-024-08392-y">doi: 10.1038/s41586-024-08392-y</a>.</li>
+      <li id="model-ref-7">Mikail Khona, Sarthak Chandra, and Ila Fiete. Global modules robustly emerge from local interactions and smooth gradients. <em>Nature</em>, 640(8057):155–164, April 2025. ISSN 0028-0836, 1476-4687. <a href="https://doi.org/10.1038/s41586-024-08541-3">doi: 10.1038/s41586-024-08541-3</a>.</li>
+      <li id="model-ref-8">Ben Sorscher, Gabriel C. Mel, Samuel A. Ocko, Lisa M. Giocomo, and Surya Ganguli. A unified theory for the computational and mechanistic origins of grid cells. <em>Neuron</em>, 111(1):121–137.e13, January 2023. ISSN 08966273. <a href="https://doi.org/10.1016/j.neuron.2022.10.003">doi: 10.1016/j.neuron.2022.10.003</a>.</li>
+      <li id="model-ref-9">Andrea Banino, Caswell Barry, Benigno Uria, Charles Blundell, Timothy Lillicrap, Piotr Mirowski, Alexander Pritzel, Martin J. Chadwick, Thomas Degris, Joseph Modayil, Greg Wayne, Hubert Soyer, Fabio Viola, Brian Zhang, Ross Goroshin, Neil Rabinowitz, Razvan Pascanu, Charlie Beattie, Stig Petersen, Amir Sadik, Stephen Gaffney, Helen King, Koray Kavukcuoglu, Demis Hassabis, Raia Hadsell, and Dharshan Kumaran. Vector-based navigation using grid-like representations in artificial agents. <em>Nature</em>, 557(7705):429–433, May 2018. ISSN 0028-0836, 1476-4687. <a href="https://doi.org/10.1038/s41586-018-0102-6">doi: 10.1038/s41586-018-0102-6</a>.</li>
+      <li id="model-ref-10">Christopher J. Cueva and Xue-Xin Wei. Emergence of grid-like representations by training recurrent neural networks to perform spatial localization, March 2018.</li>
+      <li id="model-ref-11">Mufeng Tang, Helen Barron, and Rafal Bogacz. Learning grid cells by predictive coding. <em>arXiv preprint arXiv:2410.01022</em>, 2024. <a href="https://doi.org/10.48550/arXiv.2410.01022">doi: 10.48550/arXiv.2410.01022</a>.</li>
+      <li id="model-ref-12">Marcus K. Benna and Stefano Fusi. Place cells may simply be memory cells: Memory compression leads to spatial tuning and history dependence. <em>Proc. Natl. Acad. Sci. U.S.A.</em>, 118(51): e2018422118, December 2021. ISSN 0027-8424, 1091-6490. <a href="https://doi.org/10.1073/pnas.2018422118">doi: 10.1073/pnas.2018422118</a>.</li>
+      <li id="model-ref-13">Zhaoze Wang, Ronald W. Di Tullio, Spencer Rooke, and Vijay Balasubramanian. Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences. In <em>NeurIPS</em>, 2024. <a href="https://doi.org/10.1101/2024.08.11.607484">doi: 10.1101/2024.08.11.607484</a>.</li>
+      <li id="model-ref-14">Kimberly L Stachenfeld, Matthew M Botvinick, and Samuel J Gershman. The hippocampus as a predictive map. <em>Nat Neurosci</em>, 20(11):1643–1653, November 2017. ISSN 1097-6256, 1546-1726. <a href="https://doi.org/10.1038/nn.4650">doi: 10.1038/nn.4650</a>.</li>
+      <li id="model-ref-15">Trygve Solstad, Edvard I. Moser, and Gaute T. Einevoll. From grid cells to place cells: A mathematical model. <em>Hippocampus</em>, 16(12):1026–1031, December 2006. ISSN 1050-9631, 1098-1063. <a href="https://doi.org/10.1002/hipo.20244">doi: 10.1002/hipo.20244</a>.</li>
+      <li id="model-ref-16">Edmund T. Rolls, Simon M. Stringer, and Thomas Elliot. Entorhinal cortex grid cells can map to hippocampal place cells by competitive learning. <em>Network: Computation in Neural Systems</em>, 17 (4):447–465, January 2006. ISSN 0954-898X, 1361-6536. <a href="https://doi.org/10.1080/09548980601064846">doi: 10.1080/09548980601064846</a>.</li>
+      <li id="model-ref-17">Tora Bonnevie, Benjamin Dunn, Marianne Fyhn, Torkel Hafting, Dori Derdikman, John L Kubie, Yasser Roudi, Edvard I Moser, and May-Britt Moser. Grid cells require excitatory drive from the hippocampus. <em>Nat Neurosci</em>, 16(3):309–317, March 2013. ISSN 1097-6256, 1546-1726. <a href="https://doi.org/10.1038/nn.3311">doi: 10.1038/nn.3311</a>.</li>
+      <li id="model-ref-18">César Rennó-Costa and Adriano B.L. Tort. Place and Grid Cells in a Loop: Implications for Memory Function and Spatial Coding. <em>J. Neurosci.</em>, 37(34):8062–8076, August 2017. ISSN 0270-6474, 1529-2401. <a href="https://doi.org/10.1523/JNEUROSCI.3490-16.2017">doi: 10.1523/JNEUROSCI.3490-16.2017</a>.</li>
+      <li id="model-ref-19">Zhaoze Wang, Genela Morris, Dori Derdikman, Pratik Chaudhari, and Vijay Balasubramanian. REMI: Reconstructing Episodic Memory During Internally Driven Path Planning. In <em>NeurIPS</em>, 2025.</li>
+      <li id="model-ref-20">Tom J. Wills, Francesca Cacucci, Neil Burgess, and John O’Keefe. Development of the Hippocampal Cognitive Map in Preweanling Rats. <em>Science</em>, 328(5985):1573–1576, June 2010. ISSN 0036-8075, 1095-9203. <a href="https://doi.org/10.1126/science.1188224">doi: 10.1126/science.1188224</a>.</li>
+      <li id="model-ref-21">Rosamund F. Langston, James A. Ainge, Jonathan J. Couey, Cathrin B. Canto, Tale L. Bjerknes, Menno P. Witter, Edvard I. Moser, and May-Britt Moser. Development of the Spatial Representation System in the Rat. <em>Science</em>, 328(5985):1576–1580, June 2010. ISSN 0036-8075, 1095-9203. <a href="https://doi.org/10.1126/science.1188210">doi: 10.1126/science.1188210</a>.</li>
+      <li id="model-ref-22">Dori Derdikman, Jonathan R Whitlock, Albert Tsao, Marianne Fyhn, Torkel Hafting, May-Britt Moser, and Edvard I Moser. Fragmentation of grid cell maps in a multicompartment environment. <em>Nat Neurosci</em>, 12(10):1325–1332, October 2009. ISSN 1097-6256, 1546-1726. <a href="https://doi.org/10.1038/nn.2396">doi: 10.1038/nn.2396</a>.</li>
+      <li id="model-ref-23">Tanja Wernle, Torgeir Waaga, Maria Mørreaunet, Alessandro Treves, May-Britt Moser, and Edvard I. Moser. Integration of grid maps in merged environments. <em>Nature Neuroscience</em>, 21(1):92–101, 2018. <a href="https://doi.org/10.1038/s41593-017-0036-6">doi: 10.1038/s41593-017-0036-6</a>. URL <a href="https://www.nature.com/articles/s41593-017-0036-6" class="uri">https://www.nature.com/articles/s41593-017-0036-6</a>.</li>
+      <li id="model-ref-24">Francis Carpenter, Daniel Manson, Kate Jeffery, Neil Burgess, and Caswell Barry. Grid Cells Form a Global Representation of Connected Environments. <em>Current Biology</em>, 25(9):1176–1182, May 2015. ISSN 09609822. <a href="https://doi.org/10.1016/j.cub.2015.02.037">doi: 10.1016/j.cub.2015.02.037</a>.</li>
+      <li id="model-ref-25">Gily Ginosar, Johnatan Aljadeff, Yoram Burak, Haim Sompolinsky, Liora Las, and Nachum Ulanovsky. Locally ordered representation of 3D space in the entorhinal cortex. <em>Nature</em>, 596(7872):404–409, August 2021. ISSN 0028-0836, 1476-4687. <a href="https://doi.org/10.1038/s41586-021-03783-x">doi: 10.1038/s41586-021-03783-x</a>.</li>
+  </ol>
 </section>
 <p class="back-link"><a class="inline-link" href="../">Zhaoze Wang / All research</a></p>
+</main>

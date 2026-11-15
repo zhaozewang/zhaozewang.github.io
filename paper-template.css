@@ -73,9 +73,33 @@ body {
     flex-wrap: wrap;
 }
 
+.button svg,
+.button .brand-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex: none;
+}
+
+.copy-button::before {
+    content: "";
+    display: inline-block;
+    width: .65em;
+    height: .78em;
+    margin-right: .5em;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    box-shadow: -2px -2px currentColor;
+    vertical-align: -.08em;
+}
+
 .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     height: 36px;
-    line-height: 36px;
+    line-height: 1;
     background-color: #364b6f;
     color: white;
     padding: 0px 20px;

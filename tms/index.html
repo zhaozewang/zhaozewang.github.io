@@ -40,10 +40,10 @@ citation: |
 </div>
 
 <div class="buttons">
-    <a href="https://arxiv.org/pdf/2408.05798" target="_blank" class="button">📄 Paper</a>
-    <a href="https://github.com/zhaozewang/place_cells_episodic_rnn" target="_blank" class="button">💻 Code</a>
-    <a href="https://neurips.cc/virtual/2024/poster/93988" target="_blank" class="button">🎬 Video</a>
-    <a href="https://neurips.cc/virtual/2024/poster/95187" target="_blank" class="button">🧠 Our Parallel Work</a>
+    <a href="https://arxiv.org/pdf/2408.05798" target="_blank" class="button"><img class="brand-icon" src="../images/icons/arxiv.png" alt="" width="16" height="16">Paper</a>
+    <a href="https://github.com/zhaozewang/place_cells_episodic_rnn" target="_blank" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg?v=2#github"></use></svg>Code</a>
+    <a href="https://neurips.cc/virtual/2024/poster/93988" target="_blank" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg#video"></use></svg>Video</a>
+    <a href="https://neurips.cc/virtual/2024/poster/95187" target="_blank" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg#related"></use></svg>Our Parallel Work</a>
 </div>
 
 <div class="section">
@@ -117,17 +117,5 @@ citation: |
 
 <div class="section">
     <div class="section-title">Cite this Paper</div>
-    <div class="citation-container">
-        <div class="citation-box" id="citation-text">
-            <p>
-@inproceedings{wang2024time,<br>
-&nbsp;&nbsp;title={Time Makes Space: Emergence of Place Fields in Networks Encoding Temporally Continuous Sensory Experiences},<br>
-&nbsp;&nbsp;author={Zhaoze Wang and Ronald W. Di. Tullio and Spencer Rooke and Vijay Balasubramanian},<br>
-&nbsp;&nbsp;booktitle={Proceedings of the 2024 Conference on Neural Information Processing Systems (NeurIPS)},<br>
-&nbsp;&nbsp;year={2024}<br>
-}
-            </p>
-        </div>
-        <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
-    </div>
+    {% include project-citation.html %}
 </div>

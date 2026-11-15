@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Makes Space</title>
-    <link rel="stylesheet" href="../paper-template.css">
+    <link rel="stylesheet" href="../paper-template.css?v=2">
+    <link rel="stylesheet" href="../project-citation.css">
+    <script defer src="../project-citation.js"></script>
 </head>
 <body>
     <div class="title">
@@ -28,10 +30,10 @@
     </div>
 
     <div class="buttons">
-        <a href="#" class="button">arXiv</a>
-        <a href="#" class="button">OpenReview</a>
-        <a href="#" class="button">Code</a>
-        <a href="#" class="button">Related</a>
+        <a href="#" class="button"><img class="brand-icon" src="../images/icons/arxiv.png" alt="" width="16" height="16">arXiv</a>
+        <a href="#" class="button"><img class="brand-icon" src="../images/icons/openreview.png" alt="" width="16" height="16">OpenReview</a>
+        <a href="#" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg#code"></use></svg>Code</a>
+        <a href="#" class="button"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../images/icons/project-buttons.svg#related"></use></svg>Related</a>
     </div>
 
     <div class="section">
@@ -58,42 +60,15 @@
     <div class="section">
         <div class="section-title">Cite this Paper</div>
         <div class="citation-container">
-            <div class="citation-box" id="citation-text">
-@inproceedings{yourpaper2024,<br>
-&nbsp;&nbsp;title={Your Paper Title Here},<br>
-&nbsp;&nbsp;author={Author One and Author Two and Author Three and Author Four},<br>
-&nbsp;&nbsp;booktitle={Conference Name},<br>
-&nbsp;&nbsp;year={2024}<br>
-}
-            </div>
-            <button class="copy-button" id="copy-button" onclick="copyToClipboard()" onmouseleave="resetCopyButton()">Copy</button>
-        </div>
-    </div>
-
-    <script>
-        function copyToClipboard() {
-            // Get the citation text without HTML tags
-            const citationText = `@inproceedings{yourpaper2024,
+  <div class="citation-box" id="citation-text"><pre>@inproceedings{yourpaper2024,
   title={Your Paper Title Here},
   author={Author One and Author Two and Author Three and Author Four},
   booktitle={Conference Name},
   year={2024}
-}`;
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(citationText).then(function() {
-                // Change button text to "Copied!"
-                const button = document.getElementById('copy-button');
-                button.textContent = 'copied';
-            }).catch(function(err) {
-                console.error('Failed to copy text: ', err);
-            });
-        }
+}</pre></div>
+  <button class="copy-button" type="button" aria-label="Copy BibTeX citation" aria-live="polite">Copy</button>
+</div>
+    </div>
 
-        function resetCopyButton() {
-            const button = document.getElementById('copy-button');
-            button.textContent = 'copy';
-        }
-    </script>
 </body>
 </html> 
