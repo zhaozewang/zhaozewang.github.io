@@ -2,12 +2,21 @@
   {%- if site.analytics.umami_website_id != empty and site.analytics.umami_website_id -%}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.analytics.umami_website_id | escape }}" data-domains="zhaozewang.github.io"></script>
   {%- endif -%}
-  {%- if site.analytics.leadfeeder_script_url != empty and site.analytics.leadfeeder_script_url -%}
+  {%- if site.analytics.leadfeeder_site_id != empty and site.analytics.leadfeeder_site_id -%}
     <script>
-      window.ldfdr = window.ldfdr || function () {
-        (window.ldfdr._q = window.ldfdr._q || []).push(Array.from(arguments));
-      };
+      (function(ss,ex){
+        window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};
+        (function(d,s){
+          var fs=d.getElementsByTagName(s)[0];
+          function ce(src){
+            var cs=d.createElement(s);
+            cs.src=src;
+            cs.async=1;
+            fs.parentNode.insertBefore(cs,fs);
+          }
+          ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
+        })(document,'script');
+      })('{{ site.analytics.leadfeeder_site_id }}');
     </script>
-    <script async src="{{ site.analytics.leadfeeder_script_url | escape }}"></script>
   {%- endif -%}
 {%- endif -%}
