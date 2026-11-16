@@ -1,3 +1,10 @@
+#overview-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+}
+
 /* TMS-specific mobile styles */
 
 @media (max-width: 768px) {

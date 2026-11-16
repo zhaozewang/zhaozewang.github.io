@@ -276,6 +276,7 @@ span.highlight {
 .research-list .project-preview { aspect-ratio:1; }
 .research-list .project-preview-wide { aspect-ratio:16 / 9; }
 #tiny-wam .project-preview { aspect-ratio:480 / 298; }
+#tms .tms-preview { aspect-ratio:16 / 9; height:auto; max-height:none; }
 #selected-projects, #publications, #other-projects { scroll-margin-top:20px; }
 #publications, #other-projects { margin-top:40px; }
 .project-state { color:#747474; font-size:13px; }
