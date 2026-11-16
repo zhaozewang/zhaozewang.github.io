@@ -3,7 +3,11 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.analytics.umami_website_id | escape }}" data-domains="zhaozewang.github.io"></script>
   {%- endif -%}
   {%- if site.analytics.leadfeeder_script_url != empty and site.analytics.leadfeeder_script_url -%}
-    <script>window.ldfdr = window.ldfdr || {};</script>
+    <script>
+      window.ldfdr = window.ldfdr || function () {
+        (window.ldfdr._q = window.ldfdr._q || []).push(Array.from(arguments));
+      };
+    </script>
     <script async src="{{ site.analytics.leadfeeder_script_url | escape }}"></script>
   {%- endif -%}
 {%- endif -%}

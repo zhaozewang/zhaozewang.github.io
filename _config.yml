@@ -15,4 +15,4 @@ exclude:
 # Public installation values from the two analytics dashboards.
 analytics:
   umami_website_id: "5a5d9d2b-f9c3-48aa-9aee-aaf0f35d4345"
-  leadfeeder_script_url: ""
+  leadfeeder_script_url: "https://sc.lfeeder.com/lftracker_v1_ywVkO4XXD3w4Z6Bj.js"
